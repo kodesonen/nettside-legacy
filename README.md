@@ -1,2 +1,2 @@
-# Kodesonen
+# Kodesonen.no
 Under utvikling!
