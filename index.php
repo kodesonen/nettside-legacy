@@ -4,6 +4,6 @@
 </head>
 
 <body>
-	Her skjer det spennende ting snart! :)
+	<center><img src="assets/img/logo.png" width="70%" height="70%"></center>
 </body>
 </html>
