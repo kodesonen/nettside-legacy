@@ -1,4 +1,7 @@
 all:
 	clear
-	@rsync -a . siratech@domeneshop:kodesonen/
-	@echo "Files uploaded to the FTP server!"
+	@rsync -a --stats --delete --exclude='.git/' ./ siratech@domeneshop:kodesonen/
+
+gitup:
+	git commit -a -m "Update"
+	git push origin master
