@@ -1,3 +1,5 @@
+<!-- Kodesonen @ https://github.com/kodesonen -->
+
 <html>
 <head>
 	<title>Kodesonen</title>
