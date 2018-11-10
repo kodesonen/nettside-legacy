@@ -15,6 +15,7 @@ $core = new Kodesonen;
 $core->betaAccess();
 $core->validPage();
 $core->checkSession();
+// To-do: add sql inside constructor
 
 //GetTimezone();
 
