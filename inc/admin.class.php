@@ -1,4 +1,6 @@
-admin extends Kodesonen{
+<?php
+
+class admin extends Kodesonen{
 	private function userLogin(){
 		//
 	}
@@ -7,3 +9,5 @@ admin extends Kodesonen{
 		//
 	}
 }
+
+?>
