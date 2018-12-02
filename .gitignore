@@ -1,3 +1,4 @@
 # Ignorer disse filene:
 *.DS_Store
 .DS_Store
+inc/config/sql_config.ini
