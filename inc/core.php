@@ -1,12 +1,10 @@
 <?php
 
 class Kodesonen{
-	protected $name, $version, $contact, $devs = [], $sql;
-
+	protected $name, $contact, $devs = [], $sql;
 	function __construct(){
 		$this->sql = new sqlCommunication;
 		$this->name = "Kodesonen";
-		$this->version = "1.0";
 		$this->contact = "kontakt@kodesonen.no";
 		$this->devs[0] = "Sirajuddin Asjad";
 		$this->devs[1] = "Daniel Skryseth";
@@ -14,7 +12,7 @@ class Kodesonen{
 
 	public function betaAccess(){
 		echo "<html><head><title>Kodesonen</title></head>
-		<body><strong>Kodesonen er under utvikling!</strong><br>Følg oss på Facebook og Instagram mens du venter! ;-)</body></html>";
+		<body><strong>Kodesonen er under utvikling!</strong><br>Følg oss på Facebook og Instagram mens du venter! ;)</body></html>";
 		die();
 	}
 
@@ -27,7 +25,13 @@ class Kodesonen{
 	}
 	
 	public function userLogin(){
-		//$user->userLogin();
+		$user = new user;
+		$user->login();
+	}
+
+	public function userRegister(){
+		//$user = new user;
+		//$user->register();
 	}
 }
 

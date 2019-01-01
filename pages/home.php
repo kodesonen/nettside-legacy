@@ -1,6 +1,6 @@
-<?php
 <!doctype html>
 <!-- Takk for at du tar en titt! Ønsker du hele kildekoden så sjekk oss ut på Github under https://github.com/kodesonen -->
+
 <html class="no-js" lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
 	<div class="header">
 		<div class="wrapper">
 			<div class="logo-section">
-				<a href="/"><img src="img/original-vannrett_copy.png" alt="Kodesonen logo"/></a>
+				<a href="/"><img src="/img/original-vannrett_copy.png" alt="Kodesonen logo"/></a>
 			</div>
 			<div class="navigation">
 				<ul class="nav">
@@ -73,4 +73,3 @@
 	</div>
   </body>
 </html>
-?>

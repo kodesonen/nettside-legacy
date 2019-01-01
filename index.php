@@ -9,6 +9,7 @@ error_reporting(E_ALL);
 
 require($_SERVER['DOCUMENT_ROOT'].'/inc/core.php');
 require($_SERVER['DOCUMENT_ROOT'].'/inc/sql.class.php');
+require($_SERVER['DOCUMENT_ROOT'].'/inc/user.class.php');
 
 $core = new Kodesonen;
 $core->validPage();
@@ -20,6 +21,7 @@ $core->userLogin();
 
 switch($_GET['side']){
     case 'hjem': include("pages/home.php"); break;
+    case 'medlem': include("pages/medlem.php"); break;
     default: include("pages/home.php"); break;
 }
 
