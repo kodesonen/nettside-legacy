@@ -1,13 +1,11 @@
 <?php
 
 class Kodesonen{
-	protected $name, $contact, $devs = [], $sql;
+	protected $name, $contact, $sql;
 	function __construct(){
-		$this->sql = new sqlCommunication;
 		$this->name = "Kodesonen";
 		$this->contact = "kontakt@kodesonen.no";
-		$this->devs[0] = "Sirajuddin Asjad";
-		$this->devs[1] = "Daniel Skryseth";
+		$this->sql = new sqlCommunication;
 	}
 
 	public function betaAccess(){
@@ -25,13 +23,13 @@ class Kodesonen{
 	}
 	
 	public function userLogin(){
-		$user = new user;
-		$user->login();
+		$usr = new user;
+		$usr->login();
 	}
 
 	public function userRegister(){
-		//$user = new user;
-		//$user->register();
+		//$usr = new user;
+		//$usr->register();
 	}
 }
 
