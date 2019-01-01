@@ -20,10 +20,9 @@ class sqlCommunication{
 		}
 	}
 
-	public function sqlSelect(){
+	public function sqlSelect($table){
 		$query = $this->pdo->prepare("SELECT * FROM medlemmer");
 		$query->execute();
-		echo $query->rowCount();
 	}
 
 	public function sqlUpdate(){

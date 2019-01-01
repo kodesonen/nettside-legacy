@@ -2,7 +2,7 @@
 
 class user extends Kodesonen{
     protected function login(){
-        echo "Test";
+        $this->sql->sqlSelect(1234);
     }
 
     protected function register(){

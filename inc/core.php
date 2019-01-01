@@ -23,8 +23,8 @@ class Kodesonen{
 	}
 	
 	public function userLogin(){
-		$usr = new user;
-		$usr->login();
+		//$usr = new user;
+		//$usr->login();
 	}
 
 	public function userRegister(){
