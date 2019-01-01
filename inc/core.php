@@ -14,7 +14,7 @@ class Kodesonen{
 
 	public function betaAccess(){
 		echo "<html><head><title>Kodesonen</title></head>
-		<body><strong>Kodesonen er under utvikling!</strong><br>Følg oss på Facebook og Instagram mens du venter! ;)</body></html>";
+		<body><strong>Kodesonen er under utvikling!</strong><br>Følg oss på Facebook og Instagram mens du venter! ;-)</body></html>";
 		die();
 	}
 

@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
+
+/* --------- MAIN STRUCTURE --------- */
+
+body{
+	background: #fff;
+}
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Lato', sans-serif;
+	transition: background-color 0.3s ease;
+	-webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+}
+.wrapper{
+	margin: auto;
+	max-width: 1200px;
+	display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+}
+h1, h2{
+	font-weight: 300;
+}
+h3 {
+	font-weight: bold;
+}
+p{
+	font-size: 16px;
+}
+.read-more h3{
+	color: #e9635e;
+	margin-top: 20px;
+	text-decoration: none;
+	font-weight: 500;
+}
+.read-more a{
+	text-decoration: none;
+}
+.read-more a:hover{
+	opacity: 0.8;
+}
+span .fas {
+	color: #000;
+}
+/* -------------- /END ------------- */
+
+/* ------------- HEADER ------------ */
+
+.header {
+	padding: 25px 0px 25px 0px;
+	width: 100%;
+	box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.2);
+}
+.logo-section{
+	grid-column: span 3;
+}
+.logo-section img{
+	max-width: 230px;
+}
+.navigation{
+	grid-column: span 9;
+}
+.nav {
+	margin-top: 3px;
+	float: right;
+}
+.nav li {
+	float: left;
+	margin-right: 20px;
+	list-style-type: none;
+	font-size: 20px;
+	color: #282828;
+	font-weight: 300;
+}
+.nav a li:last-child {
+	margin-right: 0px;
+	border: 1px solid #e9635e;
+	padding: 5px 15px 5px 15px;
+	border-radius: 20px;
+	margin-top: -5px;
+}
+.nav a li:last-child:hover {
+	background-color: #e9635e;
+}
+.nav li a {
+	color: #000;
+	text-decoration: none;
+}
+.nav li a:hover {
+	text-decoration: underline;
+}
+
+/* -------------- /END ------------- */
+
+/* ------------- CONTENT ----------- */
+
+/* Hjemsiden */
+
+.front-content {
+	background: url('../img/mainimage.jpg')no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding: 100px 0px 100px 0px;
+	grid-column: span 12;
+	text-align: center;
+}
+.front-content h1, .front-content h2, .front-content h3, .front-content h4, .front-content h5, .front-content h6 {
+	padding: 0px 40px 0px 40px;
+	color: #FFF;
+}
+.front-tab {
+	grid-column: span 4;
+	padding: 40px 20px 40px 20px;
+	background: #efefef;
+	bottom: 100px;
+	text-align: center;
+	border: 1px solid #dbdbdb;
+	margin-bottom: 30px;
+}
+.front-text {
+	grid-column: span 7;
+	padding: 30px;
+}
+.front-picture-1 {
+	grid-column: span 5;
+	background: url('../img/1.png')no-repeat center;
+	background-size: contain;
+}
+.front-picture-2 {
+	grid-column: span 5;
+	background: url('../img/2.png')no-repeat center;
+	background-size: contain;
+}
+.front-picture-3 {
+	grid-column: span 5;
+	background: url('../img/3.png')no-repeat center;
+	background-size: contain;
+}
+
+/* Utfordringer */
+
+/* Medlem */
+
+.medlem-form {
+	margin-top: 20px;
+	grid-column: span 7;
+}
+.medlem-form label {
+	display: block;
+	margin: 10px 0px 10px 0px;
+	font-weight: 300;
+}
+.medlem-form input[type=text], .medlem-form input[type=password], .medlem-form input[type=name] {
+	width: 100%;
+	padding: 15px;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+	border-radius: 3px;
+	display: inline-block;
+	border: none;
+	background: #efefef;
+	font-size: medium;
+}
+.medlem-form input[type=text]:focus, .medlem-form input[type=password]:focus, .medlem-form input[type=name]:focus {
+	background-color: #dbdbdb;
+	outline: none;
+}
+.medlem-form p {
+	margin: 20px 0px 20px 0px;
+}
+.medlem-form p a {
+	color: #e9635e;
+	text-decoration: none;
+}
+.medlem-form p a:hover {
+	text-decoration: underline;
+}
+.medlem-form hr {
+  border: 1px solid #f7f7f7;
+  margin: 20px 0px 20px 0px;
+}
+.medlem-button {
+	width: 100%;
+	margin: 5px 0px 20px 0px;
+	background-color: #e9635e;
+	color: white;
+	padding: 17px 20px;
+	border: none;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: medium;
+}
+.medlem-button:hover {
+	background-color: #dc5752;
+}
+.medlem-info {
+	margin: 30px;
+	grid-column: span 5;
+	margin-top:auto;
+    margin-bottom:auto;
+    text-align:center;
+}
+
+
+/* -------------- /END ------------- */
+
+/* ------------- FOOTER ------------ */
+
+.footer {
+	margin-top: 30px;
+	padding: 20px;
+	border-top: 1px solid #eeeeee;
+	grid-column: span 12;
+}
+.footer-trademark {
+	margin-top: 5px;
+	grid-column: span 4;
+}
+.footer-trademark a {
+	color: #000;
+	text-decoration: none;
+}
+.footer-trademark a:hover{
+	text-decoration: underline;
+}
+.footer-hyperlinks{
+	text-align: right;
+	grid-column: span 8;
+}
+.footer-hyperlinks a {
+	font-size: x-large;
+	margin-left: 7px;
+	color: #000;
+}
+.footer-hyperlinks a:hover{
+	color: #e9635e;
+}
+
+/* -------------- /END ------------- */
