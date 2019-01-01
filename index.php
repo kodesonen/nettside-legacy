@@ -19,8 +19,8 @@ $core->userLogin();
 //GetTimezone(); 
 
 switch($_GET['side']){
-	case 'hjem': include("pages/home.php"); break;
-	default: include("pages/home.php"); break;
+    case 'hjem': include("pages/home.php"); break;
+    default: include("pages/home.php"); break;
 }
 
 ?>
