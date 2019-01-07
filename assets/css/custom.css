@@ -100,7 +100,7 @@ span .fas {
 /* Hjemsiden */
 
 .front-content {
-	background: url('../img/mainimage.jpg')no-repeat center center fixed;
+	background: url('/assets/img/mainimage.jpg')no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -128,17 +128,17 @@ span .fas {
 }
 .front-picture-1 {
 	grid-column: span 5;
-	background: url('../img/1.png')no-repeat center;
+	background: url('/assets/img/1.png')no-repeat center;
 	background-size: contain;
 }
 .front-picture-2 {
 	grid-column: span 5;
-	background: url('../img/2.png')no-repeat center;
+	background: url('/assets/img/2.png')no-repeat center;
 	background-size: contain;
 }
 .front-picture-3 {
 	grid-column: span 5;
-	background: url('../img/3.png')no-repeat center;
+	background: url('/assets/img/3.png')no-repeat center;
 	background-size: contain;
 }
 

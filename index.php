@@ -16,8 +16,7 @@ $core->validPage();
 $core->checkSession();
 $core->betaAccess();
 $core->userLogin();
-
-//GetTimezone(); 
+//GetTimezone();
 
 switch($_GET['side']){
     case 'hjem': include("pages/home.php"); break;
