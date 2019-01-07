@@ -25,24 +25,25 @@
 
 	<div class="wrapper">
 		<div class="medlem-form">
-			<h1>Registrer deg som medlem</h1>
-			<hr/>
-			<label for="name"><b>Fullt navn</b></label>
-			<input type="text" placeholder="Oppgi fullt navn..." name="name" required>
-			
-			<label for="email"><b>E-post</b></label>
-			<input type="text" placeholder="Oppgi e-post adresse..." name="email" required>
+			<h1>Registrer deg som medlem</h1><hr/>
+			<?php if(isset($_POST['submit'])){ $core->newMember(); } ?>
 
-			<label for="sted"><b>Utdanningssted</b></label>
-			<input type="text" value="Universitetet i Sørøst-Norge (campus Kongsberg)" name="sted" disabled>
+			<form action='' method='POST'>
+				<label for="navn"><b>Fullt navn</b></label>
+				<input type="text" placeholder="Oppgi fullt navn..." name="navn" required>
+				
+				<label for="epost"><b>E-post</b></label>
+				<input type="text" placeholder="Oppgi e-post adresse..." name="epost" required>
 
-			<label for="retning"><b>Studieretning</b></label>
-			<input type="text" placeholder="..." name="retning" required>
+				<label for="sted"><b>Utdanningssted</b></label>
+				<input type="text" value="Universitetet i Sørøst-Norge (campus Kongsberg)" name="sted" disabled>
 
-			<hr/>
-			<p>Ved å opprette en konto godtår du våre <a href="#">vilkår og personvern</a>.</p>
-			
-			<button type="submit" class="medlem-button">Bli medlem</button>
+				<label for="retning"><b>Studieretning</b></label>
+				<input type="text" placeholder="Dropdown meny her" name="retning" required>
+
+				<hr/><p>Ved å opprette en konto godtår du våre <a href="#">vilkår og personvern</a>.</p>
+				<button type="submit" name="submit" class="medlem-button">Bli medlem</button>
+			</form>
 		</div>
 
 		<div class="medlem-info">

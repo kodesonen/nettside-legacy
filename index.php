@@ -15,7 +15,6 @@ $core = new Kodesonen;
 $core->validPage();
 $core->checkSession();
 $core->betaAccess();
-$core->userLogin();
 //GetTimezone();
 
 switch($_GET['side']){

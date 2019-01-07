@@ -20,7 +20,8 @@ class Kodesonen{
 			'2001:700:1b00:5a:4fc0:862:44e4:bba', 
 			'176.11.225.36', 
 			'158.36.228.8', 
-			'158.36.230.141');
+			'158.36.230.141', 
+			'79.160.56.198');
 
 		if(!in_array($this->GetIP(), $whitelist)){
 			echo "<html><head><title>Kodesonen</title></head><body><strong>Kodesonen er under utvikling!</strong><br>
@@ -55,15 +56,10 @@ class Kodesonen{
 		</div>
 		";
 	}
-	
-	public function userLogin(){
-		//$usr = new user;
-		//$usr->login();
-	}
 
-	public function userRegister(){
-		//$usr = new user;
-		//$usr->register();
+	public function newMember(){
+		$usr = new user;
+		$usr->register();
 	}
 }
 
