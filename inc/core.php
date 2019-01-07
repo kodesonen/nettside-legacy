@@ -20,6 +20,7 @@ class Kodesonen{
 			'2001:700:1b00:5a:4fc0:862:44e4:bba', 
 			'176.11.225.36', 
 			'158.36.228.8', 
+			'81.167.2.121', 
 			'158.36.230.141', 
 			'79.160.56.198');
 
@@ -60,6 +61,11 @@ class Kodesonen{
 	public function newMember(){
 		$usr = new user;
 		$usr->register();
+	}
+
+	public function getCourses(){
+		$usr = new user;
+		$usr->listCourses();
 	}
 }
 

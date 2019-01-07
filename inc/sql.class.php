@@ -8,7 +8,7 @@ class sqlCommunication{
 		$this->dbHost = $this->config['hostname'];
 		$this->dbName = $this->config['database'];
 		$this->dbUser = $this->config['username'];
-		$this->dbPass = $this->config['password'];	
+		$this->dbPass = $this->config['password'];
 
 		try{
 			$this->pdo = new PDO("mysql:host=$this->dbHost;dbname=$this->dbName", $this->dbUser, $this->dbPass);
@@ -20,7 +20,13 @@ class sqlCommunication{
 		}
 	}
 
-	public function sqlSelect($table, $column, $data){
+	public function selectNoData($table){
+		$query = $this->pdo->prepare("SELECT * FROM $table");
+        $query->execute();
+        return $query;
+	}
+
+	public function selectWithData($table, $column, $data){
 		$query = $this->pdo->prepare("SELECT * FROM $table WHERE $column = :data");
         $query->execute(array(':data' => $data));
         return $query;

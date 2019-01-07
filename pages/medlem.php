@@ -39,7 +39,15 @@
 				<input type="text" value="Universitetet i Sørøst-Norge (campus Kongsberg)" name="sted" disabled>
 
 				<label for="retning"><b>Studieretning</b></label>
-				<input type="text" placeholder="Dropdown meny her" name="retning" required>
+				
+				<div class="retning">
+					<select name="retning">
+						<option value="data">Dataingeniør</option>
+						<option value="elektro">Elektroingeniør</option>
+						<option value="maskin">Maskiningeniør</option>
+						<option value="flere_valg">Flere valg...</option>
+					</select>
+				</div>
 
 				<hr/><p>Ved å opprette en konto godtår du våre <a href="#">vilkår og personvern</a>.</p>
 				<button type="submit" name="submit" class="medlem-button">Bli medlem</button>

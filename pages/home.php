@@ -30,19 +30,19 @@
 		<div class="front-tab">
 			<h2><span><i class="fas fa-lightbulb"></i></span> Utfordringer</h2><br/>
 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
-			<div class="read-more"><a href="#"><h3>Les mer &#187;</h3></a></div>
+			<div class="read-more"><a href="#"><h3>Les mer <i class="fas fa-long-arrow-alt-right"></i></h3></a></div>
 		</div>
 
 		<div class="front-tab">
 			<h2><span><i class="fas fa-graduation-cap"></i></span> Kurskatalog</h2><br/>
 			<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem.</p>
-			<div class="read-more"><a href="#"><h3>Lær mer &#187;</h3></a></div>
+			<div class="read-more"><a href="#"><h3>Lær mer <i class="fas fa-long-arrow-alt-right"></i></h3></a></div>
 		</div>
 
 		<div class="front-tab">
 			<h2><span><i class="fas fa-users"></i></span> Bli Medlem</h2><br/>
 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
-			<div class="read-more"><a href="#"><h3>Lær mer &#187;</h3></a></div>
+			<div class="read-more"><a href="#"><h3>Lær mer <i class="fas fa-long-arrow-alt-right"></i></h3></a></div>
 		</div>
 
 		<div class="front-picture-1"></div>

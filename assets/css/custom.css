@@ -21,7 +21,7 @@ body{
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
 }
-h1, h2{
+h1, h2, h4{
 	font-weight: 300;
 }
 h3 {
@@ -100,7 +100,7 @@ span .fas {
 /* Hjemsiden */
 
 .front-content {
-	background: url('/assets/img/mainimage.jpg')no-repeat center center fixed;
+	background: url('../img/mainimage.jpg')no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -116,10 +116,10 @@ span .fas {
 .front-tab {
 	grid-column: span 4;
 	padding: 40px 20px 40px 20px;
-	background: #efefef;
+	background: rgb(245, 245, 245);
 	bottom: 100px;
 	text-align: center;
-	border: 1px solid #dbdbdb;
+	border: 1px solid #ededed;
 	margin-bottom: 30px;
 }
 .front-text {
@@ -155,7 +155,7 @@ span .fas {
 	margin: 10px 0px 10px 0px;
 	font-weight: 300;
 }
-.medlem-form input[type=text], .medlem-form input[type=password], .medlem-form input[type=name] {
+.medlem-form input[type=text], .medlem-form input[type=password], .medlem-form input[type=name], .retning select {
 	width: 100%;
 	padding: 15px;
 	box-sizing: border-box;
@@ -163,12 +163,47 @@ span .fas {
 	border-radius: 3px;
 	display: inline-block;
 	border: none;
-	background: #efefef;
+	background: rgb(245, 245, 245);
 	font-size: medium;
 }
 .medlem-form input[type=text]:focus, .medlem-form input[type=password]:focus, .medlem-form input[type=name]:focus {
 	background-color: #dbdbdb;
 	outline: none;
+}
+.retning {
+	position: relative;
+	display: block;
+	height: 3em;
+	line-height: 3;
+	background: #2c3e50;
+	overflow: hidden;
+	border-radius: .25em;
+}
+.retning select {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0 0 0 .5em;
+	color: #000;
+	cursor: pointer;
+}
+.retning select::-ms-expand {
+	display: none;
+}
+.retning::after {
+	content: '\276D';
+	position: absolute;
+	top: 1.4em;
+	right: -2em;
+	bottom: 0;
+	padding: 0 2em;
+	background: rgb(245, 245, 245);
+	pointer-events: none;
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	height: 60px;
+	width: 60px;
 }
 .medlem-form p {
 	margin: 20px 0px 20px 0px;
@@ -206,6 +241,94 @@ span .fas {
     text-align:center;
 }
 
+/* Kurskatalog */
+
+.kurs_info {
+	grid-column: span 12;
+	margin-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #f7f7f7;
+}
+.box-wrapper {
+	margin-top: 20px;
+	display: grid;
+    grid-template-columns: repeat(12, 1fr);
+	grid-column: span 12;
+    grid-template-rows: auto;
+	grid-gap: 15px;
+}
+.box_thread {
+	grid-column: span 6;
+	padding: 35px 25px;
+	background: rgb(245, 245, 245);
+	border-radius: 5px;
+	transition: .3s;
+	color: #000;
+}
+.box_thread:hover{
+	background: rgb(234, 234, 234);
+}
+.box_symbol {
+	color: #e9635e;
+	text-align: center;
+	float: left;
+	width: 25%;
+}
+.box_info {
+	float: left;
+	width: 60%;
+}
+.box_info h2, .box_info h4 {
+	margin-left: 10px;
+}
+.coming_soon {
+	background: rgb(234, 234, 234) !important;
+}
+.coming_soon .box_info {
+	margin-top: 5px;
+}
+.box_numbers {
+	text-align: center;
+	margin-top: 13px;
+	float: left;
+	width: 15%;
+	color: #d3d3d3;
+}
+.course_select {
+	grid-column: span 12;
+	background: rgb(245, 245, 245);
+	padding: 20px;
+	border-radius: 5px;
+	transition: .3s;
+	color: #000;
+	margin-bottom: 10px;
+}
+.course_select span {
+	font-weight: 400;
+}
+.course_select:hover{
+	background: rgb(234, 234, 234);
+}
+.course_select_info {
+	float: left;
+	width: 90%;
+}
+.course_select_info h3 {
+	font-weight: 400;
+}
+.course_select_symbol {
+	color: #e9635e;
+	float: left;
+	width: 10%;
+	text-align: right;
+}
+.course_jump_break {
+	grid-column: span 12;
+	margin: 20px 0px 20px 0px;
+}
+.course_jump_break h3 {
+	font-weight: 400;
+}
 
 /* -------------- /END ------------- */
 
