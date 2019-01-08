@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/custom.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<title>Kurskatalog - <?php echo $core->name; ?></title>
+	<title>Admin kontrollpanel - <?php echo $core->name; ?></title>
 </head>
 
 <body>
@@ -25,13 +25,11 @@
 
 	<div class="wrapper">
 		<div class="kurs_info">
-			<h1>Kurskatalog</h1><br/>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>			
+			<h1>Admin kontrollpanel</h1><br/>
+			<p>Denne siden er kun for Kodesonens administratorer.</p>			
 		</div>
 
 		<div class="box-wrapper">
-			<?php $core->getCourses(); ?>
-			
 			<div class="box_thread coming_soon">
 				<div class="box_symbol">
 					<h1><i class="fas fa-plus-square"></i></h1>

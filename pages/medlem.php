@@ -39,13 +39,24 @@
 				<input type="text" value="Universitetet i Sørøst-Norge (campus Kongsberg)" name="sted" disabled>
 
 				<label for="retning"><b>Studieretning</b></label>
-				
 				<div class="retning">
 					<select name="retning">
+						<option value="0" disabled selected>Velg din studieretning...</option>
 						<option value="data">Dataingeniør</option>
 						<option value="elektro">Elektroingeniør</option>
 						<option value="maskin">Maskiningeniør</option>
-						<option value="flere_valg">Flere valg...</option>
+						<option value="lektor">Lektor</option>
+						<option value="annet">Annet</option>
+					</select>
+				</div><br>
+
+				<label for="grad"><b>Studiegrad</b></label>
+				<div class="retning">
+					<select name="grad">
+						<option disabled selected>Velg din studiegrad...</option>
+						<option value="bachelor">Bachelor</option>
+						<option value="master">Master</option>
+						<option value="annet">Annet</option>
 					</select>
 				</div>
 
@@ -67,10 +78,12 @@
 				</div>
 
 				<div class="footer-hyperlinks">
-					<a href="<?php echo $core->fb_link; ?>" target="_blank"><i class="fab fa-facebook"></i></a> 
-					<a href="<?php echo $core->git_link; ?>" target="_blank"><i class="fab fa-github-square"></i></a> 
-					<a href="<?php echo $core->insta_link; ?>" target="_blank"><i class="fab fa-instagram"></i></a> 
-					<a href="<?php echo $core->twitter_link; ?>" target="_blank"><i class="fab fa-twitter-square"></i></a>
+					<a href="mailto:<?php echo $core->contact; ?>"><i class="fas fa-envelope"></i></a> 
+					<a href="<?php echo $core->facebook; ?>" target="_blank"><i class="fab fa-facebook"></i></a> 
+					<a href="<?php echo $core->github; ?>" target="_blank"><i class="fab fa-github-square"></i></a> 
+					<a href="<?php echo $core->instagram; ?>" target="_blank"><i class="fab fa-instagram"></i></a> 
+					<a href="<?php echo $core->linkedin; ?>" target="_blank"><i class="fab fa-linkedin"></i></a> 
+					<a href="<?php echo $core->twitter; ?>" target="_blank"><i class="fab fa-twitter-square"></i></a>
 				</div>
 			</div>
 		</div>

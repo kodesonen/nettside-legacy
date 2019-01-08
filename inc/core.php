@@ -1,16 +1,17 @@
 <?php
 
 class Kodesonen{
-	public $name, $contact, $fb_link, $git_link, $insta_link, $twitter_link;
+	public $name, $contact, $facebook, $github, $instagram, $twitter, $linkedin;
 	protected $sql;
 
 	function __construct(){
 		$this->name = "Kodesonen";
 		$this->contact = "kontakt@kodesonen.no";
-		$this->fb_link = "https://facebook.com/kodesonen";
-		$this->git_link = "https://github.com/kodesonen";
-		$this->insta_link = "https://instagram.com/kodesonen";
-		$this->twitter_link = "https://twitter.com/kodesonen";
+		$this->facebook = "https://facebook.com/kodesonen";
+		$this->github = "https://github.com/kodesonen";
+		$this->instagram = "https://instagram.com/kodesonen";
+		$this->twitter = "https://twitter.com/kodesonen";
+		$this->linkedin = "https://www.linkedin.com/company/kodesonen";
 		$this->sql = new sqlCommunication;
 	}
 
