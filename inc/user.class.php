@@ -10,12 +10,12 @@ class user extends Kodesonen{
             if($query->rowCount() == 0){
                 $query = $this->sql->pdo->prepare("INSERT INTO medlemmer (navn, epost) VALUES (:navn, :epost)");
                 $query->execute(array(':navn' => $navn, ':epost' => $epost));
-                echo "OK";
+                $this->labelText("SUCCESS", "Hurra", "Du er nå medlem av ".$this->name.". Velkommen skal du være!");
                 // send epost med verifisering
             }
-            else echo "Bruker finnes allerede.";
+            else $this->labelText("ERROR", "Oops", "Denne e-post adressen finnes allerede i systemet. Du er visst medlem fra før!");
         }
-        else echo "Fyll ut alle tekstfeltene.";
+        else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
     }
 
     protected function countCourses(){

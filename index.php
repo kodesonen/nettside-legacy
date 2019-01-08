@@ -22,6 +22,7 @@ switch($_GET['side']){
     case 'medlem': include("pages/medlem.php"); break;
 	case 'kurskatalog': include("pages/kurskatalog.php"); break;
     case 'admin': include("pages/admin.php"); break;
+    case 'endre-medlemmer': include("pages/endre-medlemmer.php"); break;
     default: include("pages/home.php"); break;
 }
 

@@ -59,6 +59,34 @@ class Kodesonen{
 		";
 	}
 
+	public function labelText($type, $title, $text){
+		switch($type){
+			case "SUCCESS":{
+				echo "
+				<div class='wrapper'>
+					<div class='success_label'>
+						<div class='label_text'>
+							<h3><strong>$title!</strong> $text</h3>
+						</div>
+					</div>
+				</div>
+				";
+			} break;
+
+			case "ERROR":{
+				echo "
+				<div class='wrapper'>
+					<div class='error_label'>
+						<div class='label_text'>
+							<h3><strong>$title!</strong> $text</h3>
+						</div>
+					</div>
+				</div>
+				";
+			} break;
+		}
+	}
+
 	public function newMember(){
 		$usr = new user;
 		$usr->register();
