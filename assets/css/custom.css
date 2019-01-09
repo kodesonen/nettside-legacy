@@ -16,7 +16,7 @@ body{
 }
 .wrapper{
 	margin: auto;
-	max-width: 1400px;
+	max-width: 1300px;
 	display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
@@ -31,16 +31,24 @@ p{
 	font-size: 20px;
 }
 .read-more h3{
-	color: #e9635e;
+	color: #000;
+	background: #fff;
 	margin-top: 20px;
 	text-decoration: none;
 	font-weight: 500;
+	padding: 10px 15px;
+	border: 1px solid #e9635e;
+	border-radius: 20px;
+	margin: auto;
+	margin-top: 20px;
+	width: 50%;
+}
+.read-more h3:hover{
+	background: #e9635e;
+	transition: .3s;
 }
 .read-more a{
 	text-decoration: none;
-}
-.read-more a:hover{
-	opacity: 0.8;
 }
 span .fas {
 	color: #000;
@@ -77,13 +85,15 @@ span .fas {
 }
 .nav a li:last-child {
 	margin-right: 0px;
-	border: 1px solid #e9635e;
-	padding: 5px 15px 5px 15px;
+	color: #fff;
+	background: #af4657;
+	padding: 7px 15px 7px 15px;
 	border-radius: 20px;
-	margin-top: -5px;
+	margin-top: -4px;
 }
 .nav a li:last-child:hover {
-	background-color: #e9635e;
+	background: #772834;
+	transition: .3s;
 }
 .nav li a {
 	color: #000;
@@ -103,14 +113,15 @@ span .fas {
 	background: url('../img/mainimage.png')no-repeat center center;
 	background-position: center bottom;	
 	background-size: contain;
-	min-height: 300px;
+	min-height: 200px;
 	padding-top: 70px;
 	grid-column: span 12;
 	text-align: center;
+	background-color: #af4657;
 }
 .front-content h1, .front-content h2, .front-content h3, .front-content h4, .front-content h5, .front-content h6 {
 	padding: 0px 40px 0px 40px;
-	color: #000;
+	color: #fff;
 }
 .front-tab {
 	grid-column: span 4;
@@ -382,7 +393,7 @@ span .fas {
 .footer {
 	margin-top: 30px;
 	padding: 20px;
-	border-top: 1px solid #eeeeee;
+	box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.2);
 	grid-column: span 12;
 }
 .footer-trademark {

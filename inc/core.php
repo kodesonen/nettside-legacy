@@ -45,20 +45,17 @@ class Kodesonen{
 		if(!isset($_GET['side'])) header("Location: /?side=hjem");
 	}
 
+	public function pageHead($title){
+		include($_SERVER['DOCUMENT_ROOT'].'/pages/parts/head.php');
+		echo "<title>$title - ".$this->name."</title>";
+	}
+
 	public function getHeader(){
-		echo "
-		<div class='navigation'>
-			<ul class='nav'>
-				<li><a href='/?side=hjem'>Hjemsiden</a></li>
-				<li><a href='/?side=utfordringer'>Utfordringer</a></li>
-				<li><a href='/?side=kurskatalog'>Kurskatalog</a></li>
-				<li><a href='/?side=medlemsliste'>Medlemsliste</a></li>
-				<li><a href='/?side=om-oss'>Om oss</a></li>
-				<li><a href='/?side=admin'>Admin</a></li>
-				<a href='/?side=medlem'><li><i class='fas fa-users'></i> Bli medlem</li></a>
-			</ul>
-		</div>
-		";
+		include($_SERVER['DOCUMENT_ROOT'].'/pages/parts/header.php');
+	}
+
+	public function getFooter(){
+		include($_SERVER['DOCUMENT_ROOT'].'/pages/parts/footer.php');
 	}
 
 	public function labelText($type, $title, $text){
