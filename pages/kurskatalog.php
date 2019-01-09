@@ -31,17 +31,6 @@
 
 		<div class="box-wrapper">
 			<?php $core->getCourses(); ?>
-			
-			<div class="box_thread coming_soon">
-				<div class="box_symbol">
-					<h1><i class="fas fa-plus-square"></i></h1>
-				</div>
-
-				<div class="box_info">
-					<h2>Mer kommer!</h2>
-				</div>
-				<div class="box_numbers"></div>
-			</div>
 		</div>
 	</div>
 	

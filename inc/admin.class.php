@@ -66,6 +66,19 @@ class admin extends Kodesonen{
         }
         else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
     }
+
+    protected function createChapter(){
+        if($_POST['navn'] !== '' AND $_POST['delnr'] !== ''){
+            $navn = $_POST['navn'];
+            $delnr = $_POST['delnr'];
+            $id = $_GET['id'];
+
+            $query = $this->sql->pdo->prepare("INSERT INTO kurskapitler (kursid, del, tittel) VALUES (:kursid, :del, :tittel)");
+            $query->execute(array(':kursid' => $id, ':del' => $delnr, ':tittel' => $navn));
+            $this->labelText("SUCCESS", "Hurra", "Du har opprettet et nytt kapittel.");
+        }
+        else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
+    }
 }
 
 ?>

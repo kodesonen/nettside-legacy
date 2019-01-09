@@ -27,6 +27,7 @@ switch($_GET['side']){
     case 'kursbehandler': include("pages/kursbehandler.php"); break;
     case 'kapittelbehandler': include("pages/kapittelbehandler.php"); break;
     case 'nytt-kurs': include("pages/nytt-kurs.php"); break;
+    case 'nytt-kapittel': include("pages/nytt-kapittel.php"); break;
     default: include("pages/home.php"); break;
 }
 

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/custom.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<title>Nytt kurs - <?php echo $core->name; ?></title>
+	<title>Nytt kapittel - <?php echo $core->name; ?></title>
 </head>
 
 <body>
@@ -25,23 +25,19 @@
 
 	<div class="wrapper">
 		<div class="medlem-form">
-			<h1>Legg til nytt kurs</h1><hr/>
+			<h1>Legg til nytt kapittel</h1><hr/>
 			<div class="wrapper">
-				<?php if(isset($_POST['submit'])){ $core->newCourse(); } ?>
+				<?php if(isset($_POST['submit'])){ $core->newChapter(); } ?>
 			</div>
 
 			<form action='' method='POST'>
-				<label for="navn"><b>Kursnavn</b></label>
-				<input type="text" placeholder="Oppgi kurs navnet" name="navn" required>
+				<label for="navn"><b>Kapittelnavn</b></label>
+				<input type="text" placeholder="Oppgi kapittel navnet" name="navn" required>
 				
-				<label for="beskrivelse"><b>Beskrivelse</b></label>
-				<input type="text" placeholder="Oppgi kurs beskrivelse" name="beskrivelse" required>
-
-				<label for="ikon"><b>Kursikon</b></label>
-				<input type="text" placeholder="Oppgi kurs ikonet" name="ikon" required>
-				Hent ikoner fra <a href="https://fontawesome.com" target="_blank" style="color: #e9635e; text-decoration: none">Font Awesome</a> og skriv hele ikon navnet. For eksempel: <strong>fas fa-toolbox</strong>.
+				<label for="delnr"><b>Delnummer</b></label>
+				<input type="text" placeholder="Oppgi delnummer (for eksempel 1.0)" name="delnr" required>
 				
-				<hr/><button type="submit" name="submit" class="medlem-button">Legg til kurs</button>
+				<hr/><button type="submit" name="submit" class="medlem-button">Legg til kapittel</button>
 			</form>
 		</div>
 

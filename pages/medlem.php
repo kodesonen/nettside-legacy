@@ -32,10 +32,10 @@
 
 			<form action='' method='POST'>
 				<label for="navn"><b>Fullt navn</b></label>
-				<input type="text" placeholder="Oppgi fullt navn..." name="navn" required>
+				<input type="text" placeholder="Oppgi fullt navn" name="navn" required>
 				
 				<label for="epost"><b>E-post</b></label>
-				<input type="text" placeholder="Oppgi e-post adresse..." name="epost" required>
+				<input type="text" placeholder="Oppgi e-post adresse" name="epost" required>
 
 				<label for="sted"><b>Utdanningssted</b></label>
 				<input type="text" value="Universitetet i Sørøst-Norge (campus Kongsberg)" name="sted" disabled>
@@ -43,7 +43,7 @@
 				<label for="retning"><b>Studieretning</b></label>
 				<div class="retning">
 					<select name="retning">
-						<option value="0" disabled selected>Velg din studieretning...</option>
+						<option value="0" disabled selected>Velg din studieretning</option>
 						<option value="data">Dataingeniør</option>
 						<option value="elektro">Elektroingeniør</option>
 						<option value="maskin">Maskiningeniør</option>
@@ -55,7 +55,7 @@
 				<label for="grad"><b>Studiegrad</b></label>
 				<div class="retning">
 					<select name="grad">
-						<option disabled selected>Velg din studiegrad...</option>
+						<option disabled selected>Velg din studiegrad</option>
 						<option value="bachelor">Bachelor</option>
 						<option value="master">Master</option>
 						<option value="annet">Annet</option>

@@ -109,6 +109,11 @@ class Kodesonen{
 		$adm = new admin;
 		$adm->createCourse();
 	}
+
+	public function newChapter(){
+		$adm = new admin;
+		$adm->createChapter();
+	}
 }
 
 ?>

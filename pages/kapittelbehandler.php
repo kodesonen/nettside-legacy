@@ -33,7 +33,7 @@
 			<h3>Alle kurskapitler:</h3>
 		</div>
 
-		<a href="/?side=nytt-kapittel" class="add_course_select">
+		<a href="/?side=nytt-kapittel&id=<?php echo $_GET['id']; ?>" class="add_course_select">
 			<div class="course_select_info">
 				<h2><i class="fas fa-plus-circle" style="padding-right: 6px;"></i> Legg til nytt kapittel</h2>
 			</div>
