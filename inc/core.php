@@ -23,7 +23,8 @@ class Kodesonen{
 			'158.36.228.8', 
 			'81.167.2.121', 
 			'158.36.230.141', 
-			'79.160.56.198');
+			'79.160.56.198', 
+			'158.39.210.210');
 
 		if(!in_array($this->GetIP(), $whitelist)){
 			echo "<html><head><title>Kodesonen</title></head><body><strong>Kodesonen er under utvikling!</strong><br>
@@ -53,6 +54,7 @@ class Kodesonen{
 				<li><a href='/?side=kurskatalog'>Kurskatalog</a></li>
 				<li><a href='/?side=medlemsliste'>Medlemsliste</a></li>
 				<li><a href='/?side=om-oss'>Om oss</a></li>
+				<li><a href='/?side=admin'>Admin</a></li>
 				<a href='/?side=medlem'><li><i class='fas fa-users'></i> Bli medlem</li></a>
 			</ul>
 		</div>
@@ -63,11 +65,9 @@ class Kodesonen{
 		switch($type){
 			case "SUCCESS":{
 				echo "
-				<div class='wrapper'>
-					<div class='success_label'>
-						<div class='label_text'>
-							<h3><strong>$title!</strong> $text</h3>
-						</div>
+				<div class='success_label'>
+					<div class='label_text'>
+						<h3><strong>$title!</strong> $text</h3>
 					</div>
 				</div>
 				";
@@ -75,11 +75,9 @@ class Kodesonen{
 
 			case "ERROR":{
 				echo "
-				<div class='wrapper'>
-					<div class='error_label'>
-						<div class='label_text'>
-							<h3><strong>$title!</strong> $text</h3>
-						</div>
+				<div class='error_label'>
+					<div class='label_text'>
+						<h3><strong>$title!</strong> $text</h3>
 					</div>
 				</div>
 				";
@@ -95,6 +93,21 @@ class Kodesonen{
 	public function getCourses(){
 		$usr = new user;
 		$usr->listCourses();
+	}
+
+	public function getAdminCourses(){
+		$adm = new admin;
+		$adm->listCourses();
+	}
+
+	public function getAdminChapters(){
+		$adm = new admin;
+		$adm->listChapters();
+	}
+
+	public function newCourse(){
+		$adm = new admin;
+		$adm->createCourse();
 	}
 }
 

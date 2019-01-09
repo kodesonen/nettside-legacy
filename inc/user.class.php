@@ -18,8 +18,8 @@ class user extends Kodesonen{
         else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
     }
 
-    protected function countCourses(){
-        $query = $this->sql->selectNoData("kurskatalog");
+    private function countChapters($id){
+        $query = $this->sql->selectWithData("kurskapitler", "kursid", $id);
         return $query->rowCount();
     }
 
@@ -43,7 +43,7 @@ class user extends Kodesonen{
                 </div>
 
                 <div class='box_numbers'>
-                    <h4><i class='fas fa-copy'></i> ".$this->countCourses()."</h4>
+                    <h4><i class='fas fa-copy'></i> ".$this->countChapters($id)."</h4>
                 </div>
             </a>
             ";

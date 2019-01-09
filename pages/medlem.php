@@ -26,7 +26,9 @@
 	<div class="wrapper">
 		<div class="medlem-form">
 			<h1>Registrer deg som medlem</h1><hr/>
-			<?php if(isset($_POST['submit'])){ $core->newMember(); } ?>
+			<div class="wrapper">
+				<?php if(isset($_POST['submit'])){ $core->newMember(); } ?>
+			</div>
 
 			<form action='' method='POST'>
 				<label for="navn"><b>Fullt navn</b></label>

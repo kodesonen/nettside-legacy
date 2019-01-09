@@ -137,7 +137,7 @@ span .fas {
 }
 .front-picture-3 {
 	grid-column: span 5;
-	background: url('../img/homepage/front_three.png')no-repeat center;
+	background: url('../img/homepage/front_three.svg')no-repeat center;
 	background-size: contain;
 }
 
@@ -322,13 +322,15 @@ span .fas {
 	color: #d3d3d3;
 }
 .course_select {
-	grid-column: span 12;
+	grid-column: span 6;
 	background: rgb(245, 245, 245);
 	padding: 20px;
 	border-radius: 5px;
 	transition: .3s;
 	color: #000;
 	margin-bottom: 10px;
+	margin-right: 8px;
+	margin-left: 8px;
 }
 .course_select span {
 	font-weight: 400;
@@ -338,7 +340,8 @@ span .fas {
 }
 .course_select_info {
 	float: left;
-	width: 90%;
+	width: 83%;
+	
 }
 .course_select_info h3 {
 	font-weight: 400;
@@ -346,7 +349,7 @@ span .fas {
 .course_select_symbol {
 	color: #e9635e;
 	float: left;
-	width: 10%;
+	width: 15%;
 	text-align: right;
 }
 .course_jump_break {
@@ -355,6 +358,21 @@ span .fas {
 }
 .course_jump_break h3 {
 	font-weight: 400;
+}
+.add_course_select {
+	grid-column: span 6;
+	background: #8cc8b5;
+	padding: 15px;
+	padding-left: 25px;
+	border-radius: 50px;
+	transition: .3s;
+	color: #000;
+	margin-bottom: 10px;
+	margin-right: 6px;
+	margin-left: 6px;
+}
+.add_course_select:hover{
+	background: #70bba3;
 }
 
 /* -------------- /END ------------- */
