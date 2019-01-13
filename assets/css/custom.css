@@ -28,30 +28,41 @@ h3 {
 	font-weight: bold;
 }
 p{
-	font-size: 20px;
+	font-size: 18px;
 }
-.read-more h3{
-	color: #000;
-	background: #fff;
-	margin-top: 20px;
+.hyperlink {
+	color: #2C3E50;
 	text-decoration: none;
-	font-weight: 500;
-	padding: 10px 15px;
-	border: 1px solid #e9635e;
+}
+.hyperlink:hover {
+	text-decoration: underline;
+}
+.sidebar-image {
+	grid-column: span 5;
+	background: none;
+	margin: 30px;
+}
+.sidebar-image img {
+	margin-top: 30px;
+	max-height: 400px;
+	max-width: 350px;
+}
+.text-info {
+	grid-column: span 12;
+	margin-top: 20px;
+	padding-bottom: 20px;
+}
+.button {
+	color: #fff;
+	background: #2C3E50;
 	border-radius: 20px;
-	margin: auto;
-	margin-top: 20px;
-	width: 50%;
-}
-.read-more h3:hover{
-	background: #e9635e;
-	transition: .3s;
-}
-.read-more a{
+	padding: 10px 15px 10px 15px;
 	text-decoration: none;
+	margin-right: 15px;
 }
-span .fas {
-	color: #000;
+.button:hover {
+	background: #0f151b;
+	transition: .3s;
 }
 /* -------------- /END ------------- */
 
@@ -60,7 +71,7 @@ span .fas {
 .header {
 	padding: 25px 0px 25px 0px;
 	width: 100%;
-	box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.2);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 .logo-section{
 	grid-column: span 3;
@@ -86,13 +97,13 @@ span .fas {
 .nav a li:last-child {
 	margin-right: 0px;
 	color: #fff;
-	background: #af4657;
+	background: #2C3E50;
 	padding: 7px 15px 7px 15px;
 	border-radius: 20px;
 	margin-top: -4px;
 }
 .nav a li:last-child:hover {
-	background: #772834;
+	background: #0f151b;
 	transition: .3s;
 }
 .nav li a {
@@ -103,6 +114,26 @@ span .fas {
 	text-decoration: underline;
 }
 
+/* Admin */
+
+.admin-header {
+	background-color: #222222;
+	padding: 10px;
+}
+.admin-links { 
+	grid-column: span 12;
+}
+.admin-links a {
+	float: right;
+	font-size: 16px;
+	color: #FFF;
+	text-decoration: none;
+	margin-left: 10px;
+}
+.admin-links a:hover {
+	text-decoration: underline;
+}
+
 /* -------------- /END ------------- */
 
 /* ------------- CONTENT ----------- */
@@ -110,14 +141,14 @@ span .fas {
 /* Hjemsiden */
 
 .front-content {
-	background: url('../img/mainimage.png')no-repeat center center;
+	background: url('../img/homepage/mainimage.png')no-repeat center center;
 	background-position: center bottom;	
 	background-size: contain;
 	min-height: 200px;
 	padding-top: 70px;
 	grid-column: span 12;
 	text-align: center;
-	background-color: #af4657;
+	background-color: #2C3E50;
 }
 .front-content h1, .front-content h2, .front-content h3, .front-content h4, .front-content h5, .front-content h6 {
 	padding: 0px 40px 0px 40px;
@@ -136,24 +167,45 @@ span .fas {
 	grid-column: span 7;
 	padding: 30px;
 }
-.front-picture-1 {
+.front-picture {
 	grid-column: span 5;
-	background: url('../img/homepage/front_one.svg')no-repeat center;
 	background-size: contain;
 }
-.front-picture-2 {
-	grid-column: span 5;
-	background: url('../img/homepage/front_two.svg')no-repeat center;
-	background-size: contain;
-}
-.front-picture-3 {
-	grid-column: span 5;
-	background: url('../img/homepage/front_three.svg')no-repeat center;
-	background-size: contain;
+.front-picture img {
+	max-width: 100%;
+    max-height: 100%;
+    position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 /* Utfordringer */
 
+.challenge-box {
+	grid-column: span 12;
+	display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+	background: rgb(245, 245, 245);
+	padding: 20px 30px;
+	border: 1px solid #ededed;
+	border-radius: 2px;
+}
+.challenge-image {
+	grid-column: span 4;
+}
+.challenge-image img {
+	max-height: 200px;
+	width: 100%;
+}
+.challenge-info {
+	grid-column: span 8;
+	padding-left: 20px;
+}
+.challenge-info-text {
+	width: 100%;
+	margin-bottom: 10px;
+}
 /* Medlem */
 
 .medlem-form {
@@ -219,7 +271,7 @@ span .fas {
 	margin: 20px 0px 20px 0px;
 }
 .medlem-form p a {
-	color: #e9635e;
+	color: #2C3E50;
 	text-decoration: none;
 }
 .medlem-form p a:hover {
@@ -233,18 +285,19 @@ span .fas {
 	width: 100%;
 	margin: 5px 0px 20px 0px;
 	background-color: #fff;
-	color: #000;
+	color: #fff;
 	padding: 17px 20px;
 	border: none;
 	cursor: pointer;
 	font-size: medium;
 	border-radius: 20px;
-	border: 1px solid #e9635e;
+	background: #2C3E50;
 	font-size: 20px;
 	font-weight: 3000;
 }
 .medlem-button:hover {
-	background-color: #dc5752;
+	background: #0f151b;
+	transition: .3s;
 }
 .medlem-info {
 	margin: 30px;
@@ -252,6 +305,10 @@ span .fas {
 	margin-top:auto;
     margin-bottom:auto;
     text-align:center;
+	background: rgb(245, 245, 245);
+	border: 1px solid #ededed;
+	padding: 40px;
+	border-radius: 2px;
 }
 .success_label {
 	grid-column: span 12;
@@ -277,6 +334,17 @@ span .fas {
 }
 .label_text h3 {
 	font-weight: 400;
+}
+.member-list {
+	grid-column: span 12;
+}
+.member {
+	width: 100%;
+	background: rgb(245, 245, 245);
+	padding: 10px;
+	border-radius: 5px;
+	color: #000;	
+	margin-bottom: 10px;
 }
 
 /* Kurskatalog */
@@ -307,7 +375,7 @@ span .fas {
 	background: rgb(234, 234, 234);
 }
 .box_symbol {
-	color: #e9635e;
+	color: #000;
 	text-align: center;
 	float: left;
 	width: 25%;
@@ -351,14 +419,13 @@ span .fas {
 }
 .course_select_info {
 	float: left;
-	width: 83%;
-	
+	width: 83%;	
 }
 .course_select_info h3 {
 	font-weight: 400;
 }
 .course_select_symbol {
-	color: #e9635e;
+	color: #d3d3d3;
 	float: left;
 	width: 15%;
 	text-align: right;
@@ -372,18 +439,18 @@ span .fas {
 }
 .add_course_select {
 	grid-column: span 6;
-	background: #8cc8b5;
+	background: #222222;
 	padding: 15px;
 	padding-left: 25px;
-	border-radius: 50px;
+	border-radius: 15px;
 	transition: .3s;
-	color: #000;
+	color: #fff;
 	margin-bottom: 10px;
 	margin-right: 6px;
 	margin-left: 6px;
 }
 .add_course_select:hover{
-	background: #70bba3;
+	background: #2d2c2c;
 }
 
 /* -------------- /END ------------- */
@@ -393,7 +460,7 @@ span .fas {
 .footer {
 	margin-top: 30px;
 	padding: 20px;
-	box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.2);
+	border-top: 2px solid rgba(0, 0, 0, 0.1);
 	grid-column: span 12;
 }
 .footer-trademark {
@@ -417,7 +484,7 @@ span .fas {
 	color: #000;
 }
 .footer-hyperlinks a:hover{
-	color: #e9635e;
+	color: #2C3E50;
 }
 
 /* -------------- /END ------------- */

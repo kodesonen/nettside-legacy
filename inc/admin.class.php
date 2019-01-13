@@ -6,6 +6,15 @@ class admin extends Kodesonen{
         return $query->rowCount();
     }
 
+    public function chapterName(){
+        $id = $_GET['id'];
+        $query = $this->sql->selectWithData("kurskapitler", "id", $id);
+        if($query->rowCount() != 0){
+            $row = $query->fetch(PDO::FETCH_ASSOC);
+            echo $row['tittel'];
+        }
+    }
+
     protected function listCourses(){
         $query = $this->sql->selectNoData("kurskatalog");
         while($row = $query->fetch(PDO::FETCH_ASSOC)){
@@ -78,6 +87,19 @@ class admin extends Kodesonen{
             $this->labelText("SUCCESS", "Hurra", "Du har opprettet et nytt kapittel.");
         }
         else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
+    }
+
+    protected function createNewPost(){
+        if($_POST['navn'] !== ''){
+            $navn = $_POST['navn'];
+            $tekst = nl2br($_POST['tekst']);
+            $id = $_GET['id'];
+
+            echo $tekst;
+
+            $query = $this->sql->pdo->prepare("INSERT INTO kursinnlegg (kapid, innhold) VALUES (:kapid, :innhold)");
+            $query->execute(array(':kapid' => $id, ':innhold' => $tekst));
+        }
     }
 }
 

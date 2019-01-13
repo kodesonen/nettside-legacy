@@ -17,15 +17,18 @@
 				<label for="delnr"><b>Delnummer</b></label>
 				<input type="text" placeholder="Oppgi delnummer (for eksempel 1.0)" name="delnr" required>
 				
-				<hr/><button type="submit" name="submit" class="medlem-button">Legg til kapittel</button>
+				<hr/><button type="submit" name="submit" class="medlem-button add_course_select">Legg til kapittel</button>
 			</form>
 		</div>
-
-		<div class="medlem-info">
-			<img src="/assets/img/homepage/test.png" height="90%" width="90%">
+		
+		<div class="sidebar-image">
+			<center>
+				<img src="/assets/img/raw_svg/woman_with_backpack.svg"/>
+			</center>
 		</div>
-
-		<?php $core->getFooter(); ?>
 	</div>
+	
+	<?php $core->getFooter(); ?>
+	
 </body>
 </html>

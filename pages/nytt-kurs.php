@@ -18,18 +18,21 @@
 				<input type="text" placeholder="Oppgi kurs beskrivelse" name="beskrivelse" required>
 
 				<label for="ikon"><b>Kursikon</b></label>
-				<input type="text" placeholder="Oppgi kurs ikonet" name="ikon" required>
-				Hent ikoner fra <a href="https://fontawesome.com" target="_blank" style="color: #e9635e; text-decoration: none">Font Awesome</a> og skriv hele ikon navnet. For eksempel: <strong>fas fa-toolbox</strong>.
+				<input type="text" placeholder='Oppgi kurs ikonet, f.eks. "fas ta-toolbox"' name="ikon" required>
+				<strong>OBS!</strong> Hent ikoner fra <a href="https://fontawesome.com" target="_blank" class="hyperlink">Font Awesome</a> og skriv hele ikon navnet. For eksempel: <strong>fas fa-toolbox</strong>.
 				
-				<hr/><button type="submit" name="submit" class="medlem-button">Legg til kurs</button>
+				<hr/><button type="submit" name="submit" class="medlem-button add_course_select">Legg til kurs</button>
 			</form>
 		</div>
 
-		<div class="medlem-info">
-			<img src="/assets/img/homepage/test.png" height="90%" width="90%">
+		<div class="sidebar-image">
+			<center>
+				<img src="/assets/img/raw_svg/hoodie_guy_jumping.svg"/>
+			</center>
 		</div>
-
-		<?php $core->getFooter(); ?>
 	</div>
+	
+	<?php $core->getFooter(); ?>
+	
 </body>
 </html>

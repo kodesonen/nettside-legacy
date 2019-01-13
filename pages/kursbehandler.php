@@ -10,7 +10,7 @@
 		</div>
 
 		<div class="course_jump_break">
-			<h3>Alle tilgjengelige kurser:</h3>
+			<h3>Endre, slett eller legg til et kurs:</h3>
 		</div>
 
 		<a href="/?side=nytt-kurs" class="add_course_select">
@@ -24,7 +24,11 @@
 				<h2><i class="fas fa-list-ul" style="padding-right: 6px;"></i> Endre kurskatalog</h2>
 			</div>
 		</a>
-
+		
+		<div class="course_jump_break">
+			<h3>Alle tilgjengelige kurs:</h3>
+		</div>
+		
 		<?php $core->getAdminCourses(); ?>
 	</div>
 	

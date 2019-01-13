@@ -6,14 +6,16 @@
 	<div class="wrapper">
 		<div class="kurs_info">
 			<h1>Kurskatalog</h1><br/>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>			
+			<p>Utforsk fullstendige kurs via Kodesonens kurskatalog, her kan alle gå gjennom alt fra grunnleggende webutvikling til programmering og teori om datavitenskap. Våre kurs blir gitt ut av studenter og skal være av høy kvalitet.</p><br/>
 		</div>
 
 		<div class="box-wrapper">
 			<?php $core->getCourses(); ?>
 		</div>
+		
 	</div>
 
 	<?php $core->getFooter(); ?>
+	
 </body>
 </html>
