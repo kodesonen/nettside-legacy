@@ -1,36 +1,34 @@
-<!doctype html><html>
-<?php $core->pageHead("Skriv innlegg"); ?>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.css" />
-<link rel="stylesheet" href="/assets/css/summernote.css">
 
-<body>
+<?php $core->pageHead("Skriv innlegg"); ?>
+
     <?php $core->getHeader(); ?>
     <div class="wrapper">
-        <div class="medlem-form">
-            <h1>Skriv innlegg</h1><hr/>
+		<div class="kurs_info">
+			<h1>Skriv kursinnlegg</h1>
+		</div>
+        <div class="write-course">
+	
             <div class="wrapper">
-                <?php if(isset($_POST['submit'])){ $core->newPost(); } ?>
+                <?php if(isset($_POST['save'])){ $core->newPost('save'); } ?>
+                <?php if(isset($_POST['publish'])){ $core->newPost('publish'); } ?>
             </div>
 
             <form action='' method='POST'>
                 <label for="navn"><b>Kapittelnavn</b></label>
                 <input type="text" value="<?php $core->getChapterName(); ?>" name="navn">
 
-                <textarea class="summernote" name="tekst"></textarea>
+                <textarea class="summernote" name="tekst"><?php $core->loadAdminPost(); ?></textarea>
 
                 <hr/>
-                <button type="submit" name="submit" class="medlem-button add_course_select">Lagre innlegg</button>
-                <button type="submit" name="submit" class="medlem-button add_course_select">Publiser innlegg</button>
+				<div class="write-course-buttons">
+					<button type="submit" name="save" class="medlem-button add_course_select save-course"><i class="fas fa-save"></i> Lagre innlegg</button>
+					<button type="submit" name="publish" class="medlem-button add_course_select"><i class="fas fa-upload"></i> Publiser innlegg</button>
+				</div>
             </form>
-        </div>
-
-        <div class="sidebar-image">
-            <center><img src="/assets/img/raw_svg/hoodie_guy_jumping.svg"/></center>
         </div>
     </div>
     
-    <?php $core->getFooter(); ?>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.5/umd/popper.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.js"></script>
     <script type="text/javascript" src="/assets/js/summernote.js"></script>
@@ -43,5 +41,5 @@
         });
     });
     </script>
-</body>
-</html>
+	
+    <?php $core->getFooter(); ?>

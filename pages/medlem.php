@@ -1,7 +1,6 @@
-<!doctype html><html>
+
 <?php $core->pageHead("Bli medlem"); ?>
 
-<body>
 	<?php $core->getHeader(); ?>
 	<div class="wrapper">
 		<div class="medlem-form">
@@ -42,19 +41,15 @@
 					</select>
 				</div>
 
-				<hr/><p>Ved å opprette en konto godtår du våre <a href="#">vilkår og personvern</a>.</p>
+				<hr/><p>Ved å opprette medlemskap godtår du våre <a href="#">vilkår og personvern</a>.</p>
 				<button type="submit" name="submit" class="medlem-button">Bli medlem</button>
 			</form>
 		</div>
 
-		<div class="medlem-info">
-			<h1>Hva innebærer det?</h1><br/>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p><br/>
-			<p>But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		<div class="sidebar-image">
+			<img src="/assets/img/member/member.svg">
 		</div>
 	</div>
 	
 	<?php $core->getFooter(); ?>
 	
-</body>
-</html>

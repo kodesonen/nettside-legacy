@@ -1,7 +1,6 @@
-<!doctype html><html>
+
 <?php $core->pageHead("Bli medlem"); ?>
 
-<body>
 	<?php $core->getHeader(); ?>
 	<div class="wrapper">
 		<div class="text-info">
@@ -11,5 +10,3 @@
 	
 	<?php $core->getFooter(); ?>
 	
-</body>
-</html>

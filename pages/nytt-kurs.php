@@ -1,7 +1,6 @@
-<!doctype html><html>
+
 <?php $core->pageHead("Nytt kurs"); ?>
 
-<body>
 	<?php $core->getHeader(); ?>
 	<div class="wrapper">
 		<div class="medlem-form">
@@ -26,13 +25,9 @@
 		</div>
 
 		<div class="sidebar-image">
-			<center>
-				<img src="/assets/img/raw_svg/hoodie_guy_jumping.svg"/>
-			</center>
+			<img src="/assets/img/raw_svg/guy_with_moustache_no_hat.svg"/>
 		</div>
 	</div>
 	
 	<?php $core->getFooter(); ?>
 	
-</body>
-</html>

@@ -1,7 +1,6 @@
-<!doctype html><html>
+
 <?php $core->pageHead("Nytt kapittel"); ?>
 
-<body>
 	<?php $core->getHeader(); ?>
 	<div class="wrapper">
 		<div class="medlem-form">
@@ -22,13 +21,9 @@
 		</div>
 		
 		<div class="sidebar-image">
-			<center>
-				<img src="/assets/img/raw_svg/woman_with_backpack.svg"/>
-			</center>
+			<img src="/assets/img/raw_svg/woman_with_backpack_and_robot.svg"/>
 		</div>
 	</div>
 	
 	<?php $core->getFooter(); ?>
 	
-</body>
-</html>

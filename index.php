@@ -21,7 +21,8 @@ $core->betaAccess();
 switch($_GET['side']){
     case 'hjem': include("pages/home.php"); break;
 	case 'utfordringer': include("pages/utfordringer.php"); break;
-	case 'kurskatalog': include("pages/kurskatalog.php"); break;
+	case 'kapitler': include("pages/kapitler.php"); break;
+    case 'kurskatalog': include("pages/kurskatalog.php"); break;
 	case 'medlemsliste': include("pages/medlemsliste.php"); break;
 	case 'om-oss': include("pages/om-oss.php"); break;
 	case 'medlem': include("pages/medlem.php"); break;
@@ -32,6 +33,7 @@ switch($_GET['side']){
     case 'nytt-kurs': include("pages/nytt-kurs.php"); break;
     case 'nytt-kapittel': include("pages/nytt-kapittel.php"); break;
     case 'skriv-innlegg': include("pages/skriv-innlegg.php"); break;
+    case 'les-innlegg': include("pages/les-innlegg.php"); break;
     default: include("pages/home.php"); break;
 }
 

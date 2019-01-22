@@ -89,17 +89,59 @@ class admin extends Kodesonen{
         else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
     }
 
-    protected function createNewPost(){
+    protected function loadPostText(){
+        $id = $_GET['id'];
+        $query = $this->sql->selectWithData("kursinnlegg", "kapid", $id);
+        if($query->rowCount() != 0){
+            $row = $query->fetch(PDO::FETCH_ASSOC);
+            echo $row['innhold'];
+        }
+    }
+
+    private function doesPostExist(){
+        $id = $_GET['id'];
+        $query = $this->sql->selectWithData("kursinnlegg", "kapid", $id);
+        if($query->rowCount() != 0) return true;
+        else return false;
+    }
+
+    protected function createNewPost($type){
         if($_POST['navn'] !== ''){
             $navn = $_POST['navn'];
             $tekst = nl2br($_POST['tekst']);
             $id = $_GET['id'];
 
-            echo $tekst;
+            $query = $this->sql->pdo->prepare("UPDATE kurskapitler SET tittel = :tittel WHERE id = :id");
+            $query->execute(array(':tittel' => $navn, ':id' => $id));
 
-            $query = $this->sql->pdo->prepare("INSERT INTO kursinnlegg (kapid, innhold) VALUES (:kapid, :innhold)");
-            $query->execute(array(':kapid' => $id, ':innhold' => $tekst));
+            switch($type){
+                case 'save':{
+                    if($this->doesPostExist()){
+                        $query = $this->sql->pdo->prepare("UPDATE kursinnlegg SET innhold = :innhold, publisert = :publisert WHERE kapid = :id");
+                        $query->execute(array(':innhold' => $tekst, ':publisert' => 0, ':id' => $id));
+                    }
+                    else{
+                        $query = $this->sql->pdo->prepare("INSERT INTO kursinnlegg (kapid, publisert, innhold) VALUES (:kapid, :publisert, :innhold)");
+                        $query->execute(array(':kapid' => $id, ':publisert' => 0, ':innhold' => $tekst));
+                    }
+                    $this->labelText("SUCCESS", "Supert", "Du har lagret dette innlegget.");
+                } break;
+
+                case 'publish':{
+                    if($this->doesPostExist()){
+                        $query = $this->sql->pdo->prepare("UPDATE kursinnlegg SET innhold = :innhold, publisert = :publisert WHERE kapid = :id");
+                        $query->execute(array(':innhold' => $tekst, ':publisert' => 1, ':id' => $id));
+                    }
+                    else{
+                        $query = $this->sql->pdo->prepare("INSERT INTO kursinnlegg (kapid, publisert, innhold) VALUES (:kapid, :publisert, :innhold)");
+                        $query->execute(array(':kapid' => $id, ':publisert' => 1, ':innhold' => $tekst));
+                    }
+                    $this->labelText("SUCCESS", "Nice", "Du har publisert dette innlegget.");
+                } break;
+            }
         }
+        else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
+
     }
 }
 

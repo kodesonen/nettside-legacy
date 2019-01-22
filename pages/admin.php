@@ -1,12 +1,12 @@
-<!doctype html><html>
+
 <?php $core->pageHead("Admin kontrollpanel"); ?>
 
-<body>
     <?php $core->getHeader(); ?>
+	
 	<div class="wrapper">
 		<div class="text-info">
 			<h1>Admin kontrollpanel</h1><br/>
-			<p>Denne siden er kun for Kodesonens administratorer.</p>			
+			<p>Denne siden er kun for Kodesonens administratorer. Ved komplikasjoner eller feil autentisering, vennligst ta kontakt med <a href="mailto:kontakt@kodesonen" class="hyperlink">kontakt@kodesonen.no</a></p>			
 		</div>
 
 		<div class="box-wrapper">
@@ -76,9 +76,7 @@
                 </div>
             </a>
 		</div>
-	
 	</div>
 
     <?php $core->getFooter(); ?>
-</body>
-</html>
+

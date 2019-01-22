@@ -1,7 +1,6 @@
-<!doctype html><html>
+
 <?php $core->pageHead("Kurskatalog"); ?>
 
-<body>
 	<?php $core->getHeader(); ?>
 	<div class="wrapper">
 		<div class="kurs_info">
@@ -16,6 +15,4 @@
 	</div>
 
 	<?php $core->getFooter(); ?>
-	
-</body>
-</html>
+

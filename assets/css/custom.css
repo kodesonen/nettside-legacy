@@ -30,6 +30,9 @@ h3 {
 p{
 	font-size: 18px;
 }
+a .fas {
+	margin-right: 5px;
+}
 .hyperlink {
 	color: #2C3E50;
 	text-decoration: none;
@@ -43,9 +46,11 @@ p{
 	margin: 30px;
 }
 .sidebar-image img {
-	margin-top: 30px;
-	max-height: 400px;
-	max-width: 350px;
+	max-width: 100%;
+	max-height: 100%;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }
 .text-info {
 	grid-column: span 12;
@@ -133,6 +138,11 @@ p{
 .admin-links a:hover {
 	text-decoration: underline;
 }
+.btn-primary.disabled, .btn-primary:disabled {
+	background: #222222 !important;
+	border-color: none !important;
+	opacity: 1 !important;
+}
 
 /* -------------- /END ------------- */
 
@@ -190,6 +200,7 @@ p{
 	padding: 20px 30px;
 	border: 1px solid #ededed;
 	border-radius: 2px;
+	margin-bottom: 20px;
 }
 .challenge-image {
 	grid-column: span 4;
@@ -205,6 +216,20 @@ p{
 .challenge-info-text {
 	width: 100%;
 	margin-bottom: 10px;
+}
+.challenge-info-buttons {
+	width: 100%;
+}
+.challenge-info-buttons .button {
+	float: left;
+}
+.challenge-info-buttons .hyperlink {
+	margin-left: 10px;
+	color: #2C3E50;
+	text-decoration: none;
+}
+.challenge-info-buttons .hyperlink:hover {
+	text-decoration: underline;
 }
 /* Medlem */
 
@@ -452,7 +477,23 @@ p{
 .add_course_select:hover{
 	background: #2d2c2c;
 }
-
+.write-course {
+	grid-column: span 12;
+}
+.write-course-buttons {
+	display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+	grid-gap: 15px;
+}
+.write-course-buttons button {
+	grid-column: span 6;
+}
+.save-course {
+	background: rgb(245, 245, 245) !important;
+	color: #000 !important;
+	border: 1px solid #ededed !important;
+}
 /* -------------- /END ------------- */
 
 /* ------------- FOOTER ------------ */

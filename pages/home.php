@@ -1,7 +1,6 @@
-<!doctype html><html>
+
 <?php $core->pageHead("Hjem"); ?>
 
-<body>
 	<?php $core->getHeader(); ?>
 	<div class="wrapper">
 		<div class="front-content">
@@ -55,5 +54,3 @@
 	</div>
 
 	<?php $core->getFooter(); ?>
-</body>
-</html>
