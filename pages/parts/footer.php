@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="wrapper">
         <div class="footer-trademark">
-            <p><a href="/?side=hjem"><?php echo $this->name; ?>.no</a> - © 2019, <a href="mailto:<?php echo $this->contact; ?>" class="hyperlink">kontakt@kodesonen.no</a></p>
+            <p>© 2019, <a href="/?side=hjem"><?php echo $this->name; ?>.no</a> - <a href="mailto:<?php echo $this->contact; ?>" class="hyperlink"><i class="fas fa-envelope"></i></a></p>
         </div>
 
         <div class="footer-hyperlinks">

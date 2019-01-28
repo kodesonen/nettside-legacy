@@ -9,7 +9,7 @@
 		</div>
 
 		<div class="course_jump_break">
-			<h3>Endre, slett eller legg til et kurskapittel:</h3>
+			<h3>Trykk på de enkelte kapitlene under for å behandle dem.</h3>
 		</div>
 
 		<a href="/?side=nytt-kapittel&id=<?php echo $_GET['id']; ?>" class="add_course_select">
@@ -18,9 +18,9 @@
 			</div>
 		</a>
 
-		<a href="#" class="add_course_select">
+		<a href="/?side=endre-kurs&id=<?php echo $_GET['id']; ?>" class="add_course_select">
 			<div class="course_select_info">
-				<h2><i class="fas fa-arrows-alt" style="padding-right: 6px;"></i> Endre rekkefølge</h2>
+				<h2><i class="fas fa-edit" style="padding-right: 6px;"></i> Endre kurs</h2>
 			</div>
 		</a>
 		

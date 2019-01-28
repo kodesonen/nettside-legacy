@@ -27,6 +27,7 @@ switch($_GET['side']){
 	case 'om-oss': include("pages/om-oss.php"); break;
 	case 'medlem': include("pages/medlem.php"); break;
     case 'admin': include("pages/admin.php"); break;
+    case 'login': include("pages/login.php"); break;
     case 'endre-medlemmer': include("pages/endre-medlemmer.php"); break;
     case 'kursbehandler': include("pages/kursbehandler.php"); break;
     case 'kapittelbehandler': include("pages/kapittelbehandler.php"); break;
@@ -34,6 +35,7 @@ switch($_GET['side']){
     case 'nytt-kapittel': include("pages/nytt-kapittel.php"); break;
     case 'skriv-innlegg': include("pages/skriv-innlegg.php"); break;
     case 'les-innlegg': include("pages/les-innlegg.php"); break;
+    case 'endre-kurs': include("pages/endre-kurs.php"); break;
     default: include("pages/home.php"); break;
 }
 

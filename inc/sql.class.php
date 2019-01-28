@@ -31,6 +31,14 @@ class sqlCommunication{
         $query->execute(array(':data' => $data));
         return $query;
 	}
+
+	public function grabData($table, $column, $data, $request){
+		$query = $this->selectWithData($table, $column, $data);
+        if($query->rowCount() != 0){
+            $row = $query->fetch(PDO::FETCH_ASSOC);
+            return $row[$request];
+        }
+	}
 }
 
 ?>

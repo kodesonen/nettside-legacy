@@ -6,7 +6,7 @@ class admin extends Kodesonen{
         return $query->rowCount();
     }
 
-    public function chapterName(){
+    protected function chapterName(){
         $id = $_GET['id'];
         $query = $this->sql->selectWithData("kurskapitler", "id", $id);
         if($query->rowCount() != 0){
@@ -76,6 +76,10 @@ class admin extends Kodesonen{
         else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
     }
 
+    protected function editCourse(){
+        echo "baba";
+    }
+
     protected function createChapter(){
         if($_POST['navn'] !== '' AND $_POST['delnr'] !== ''){
             $navn = $_POST['navn'];
@@ -141,7 +145,6 @@ class admin extends Kodesonen{
             }
         }
         else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
-
     }
 }
 

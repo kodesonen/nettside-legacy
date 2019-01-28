@@ -26,7 +26,8 @@ class Kodesonen{
 			'79.160.56.198', 
 			'158.39.210.210', 
 			'178.232.212.149',
-			'158.36.230.26');
+			'158.36.230.26',
+			'158.36.230.161');
 
 		if(!in_array($this->GetIP(), $whitelist)){
 			echo "<html><head><title>Kodesonen</title></head><body><strong>Kodesonen er under utvikling!</strong><br>
@@ -84,6 +85,10 @@ class Kodesonen{
 		}
 	}
 
+	public function requestData($table, $request){
+		echo $this->sql->grabData($table, "id", $_GET['id'], $request);
+	}
+
 	public function newMember(){
 		$usr = new user;
 		$usr->register();
@@ -112,6 +117,11 @@ class Kodesonen{
 	public function newCourse(){
 		$adm = new admin;
 		$adm->createCourse();
+	}
+
+	public function updateCourse(){
+		$adm = new admin;
+		$adm->editCourse();
 	}
 
 	public function newChapter(){

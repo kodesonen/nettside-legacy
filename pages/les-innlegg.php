@@ -9,7 +9,10 @@
         </div>
 
         <div class="course_jump_break">
-        <?php $core->loadPost(); ?></div>
+			<div class="course_read_section">
+				<?php $core->loadPost(); ?>
+			</div>
+		</div>
     </div>
 
     <?php $core->getFooter(); ?>

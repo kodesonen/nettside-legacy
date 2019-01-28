@@ -143,7 +143,10 @@ a .fas {
 	border-color: none !important;
 	opacity: 1 !important;
 }
-
+.kapittelnavn {
+	padding: 5px 10px;
+	margin: 20px;
+}
 /* -------------- /END ------------- */
 
 /* ------------- CONTENT ----------- */
@@ -493,6 +496,12 @@ a .fas {
 	background: rgb(245, 245, 245) !important;
 	color: #000 !important;
 	border: 1px solid #ededed !important;
+}
+.course_read_section p, .course_read_section h3 {
+	margin-bottom: 10px;
+}
+.course_read_section h3 {
+	font-size: 1.75rem
 }
 /* -------------- /END ------------- */
 

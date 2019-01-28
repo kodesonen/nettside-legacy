@@ -14,8 +14,8 @@
             </div>
 
             <form action='' method='POST'>
-                <label for="navn"><b>Kapittelnavn</b></label>
-                <input type="text" value="<?php $core->getChapterName(); ?>" name="navn">
+                <label for="navn"><b>Kapittelnavn:</b></label>
+                <input type="text" class="kapittelnavn" value="<?php $core->getChapterName(); ?>" name="navn">
 
                 <textarea class="summernote" name="tekst"><?php $core->loadAdminPost(); ?></textarea>
 
