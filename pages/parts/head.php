@@ -15,6 +15,8 @@
             <link rel='stylesheet' href='/assets/css/summernote.css'>
         ";
     } ?>
+	
+	<?php include 'seo.php'; ?>
 
 </head>
 <body>

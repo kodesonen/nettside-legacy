@@ -27,11 +27,15 @@ class Kodesonen{
 			'158.39.210.210', 
 			'178.232.212.149',
 			'158.36.230.26',
-			'158.36.230.161');
+			'158.36.230.161',
+			'158.36.230.128',
+			'172.20.10.4',
+			'178.232.74.104',
+			'158.39.208.52');
 
 		if(!in_array($this->GetIP(), $whitelist)){
 			echo "<html><head><title>Kodesonen</title></head><body><strong>Kodesonen er under utvikling!</strong><br>
-			Følg oss på Facebook og Instagram mens du venter! ;)</body></html>";
+			Følg oss på Facebook og Instagram mens du venter! :)</body></html>";
 			die();
 	    }
 	}
@@ -87,6 +91,10 @@ class Kodesonen{
 
 	public function requestData($table, $request){
 		echo $this->sql->grabData($table, "id", $_GET['id'], $request);
+	}
+
+	public function requestRawData($table, $request){
+		return $this->sql->grabData($table, "id", $_GET['id'], $request);
 	}
 
 	public function newMember(){
@@ -147,6 +155,41 @@ class Kodesonen{
 	public function loadAdminPost(){
 		$adm = new admin;
 		$adm->loadPostText();
+	}
+
+	public function getChallenges(){
+		$usr = new user;
+		$usr->listChallenges();
+	}
+
+	public function getAdminChallenges(){
+		$adm = new admin;
+		$adm->listChallenges();
+	}
+
+	public function getMembers(){
+		$usr = new user;
+		$usr->getMemberList();
+	}
+
+	public function hideMembership(){
+		$usr = new user;
+		$usr->privateUser();
+	}
+
+	public function newChallenge(){
+		$adm = new admin;
+		$adm->createChallenge();
+	}
+
+	public function updateChallenge(){
+		$adm = new admin;
+		$adm->editChallenge();
+	}
+
+	public function deleteChallenge(){
+		$adm = new admin;
+		$adm->delChallenge();
 	}
 }
 

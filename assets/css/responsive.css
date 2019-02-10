@@ -187,3 +187,8 @@
 		font-size: xx-large;
 	}
 }
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}

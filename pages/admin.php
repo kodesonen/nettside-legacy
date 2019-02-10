@@ -43,7 +43,7 @@
                 </div>
             </a>
 
-            <a href='#' class='box_thread'>
+            <a href='/?side=endre-utfordringer' class='box_thread'>
                 <div class='box_symbol'>
                     <h1><i class="fas fa-code"></i></h1>
                 </div>

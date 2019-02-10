@@ -1,10 +1,12 @@
 <div class="admin-header">
-	<div class="wrapper">
-		<div class="admin-links">
-		<a href="/?side=admin"><i class="fas fa-cog"></i> Kontrollpanel</a>
-		</div>
-	</div>
+    <div class="wrapper">
+        <div class="admin-links">
+            <a href="/?side=admin"><i class="fas fa-cog"></i> Admin kontrollpanel</a>
+            <a href="/?side=settings"><i class="fas fa-users-cog"></i> Brukerinnstillinger</a>
+        </div>
+    </div>
 </div>
+
 <div class="header">
     <div class="wrapper">
         <div class="logo-section">

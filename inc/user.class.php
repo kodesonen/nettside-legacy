@@ -88,6 +88,111 @@ class user extends Kodesonen{
         }
         else $this->labelText("ERROR", "Beklager", "Dette innlegget har ikke blitt skrevet enda!");
     }
+
+    private function countDownloads($id){
+        $query = $this->sql->selectWithData("utfordringer", "id", $id);
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        $count = $row['nedlastninger'] + 1;
+
+        $query = $this->sql->pdo->prepare("UPDATE utfordringer SET nedlastninger = :count WHERE id = :id");
+        $query->execute(array(':count' => $count, ':id' => $id));
+    }
+
+    protected function listChallenges(){
+        $query = $this->sql->selectNoData("utfordringer");
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+            $id = $row['id'];
+            $tittel = $row['tittel'];
+            $beskrivelse = $row['beskrivelse'];
+            $bilde = $row['bilde'];
+            $pdf = $row['pdf'];
+            $git = $row['git'];
+
+            echo "
+            <div class='challenge-box'>
+                <div class='challenge-image'>
+                    <center><img id='image-ufordringer-id' alt='Dette er en eksempel tekst!' src='assets/img/challenges/meetup-example.jpg'/></center>
+                </div>
+
+                <div class='challenge-info'>
+                    <div class='challenge-info-text'>
+                        <h2>$tittel</h2><br/>
+                        <p>$beskrivelse</p>
+                    </div>
+
+                    <div class='challenge-info-buttons'>
+                        <br/><p><a href='/assets/pdf/$pdf' target='_blank' class='button'><i class='fas fa-file-pdf'></i> Last ned pdf</a></p> 
+                        <p style='margin-top: 10px'> | <a href='$git' target='_blank' class='hyperlink'><i class='fab fa-github-square'></i> GitHub</a></p>
+                    </div>
+                </div>
+            </div>
+			<div id='utfordringer-modal' class='image-utfordringer-modal'>
+			  <span class='close'>&times;</span>
+			  <img class='modal-content' id='utfordringer_image'>
+			  <div id='caption'></div>
+			</div>
+            ";
+        }
+    }
+
+    private function getStudy($navn){
+        switch($navn){
+            case 'DATAING': return "Dataingeniør"; break;
+            case 'ELEKING': return "Elektroingeniør"; break;
+            case 'MASKING': return "Maskiningeniør"; break;
+            case 'LEKTOR': return "Lektorstudent"; break;
+            default: return "Ukjent"; break;
+        }
+    }
+
+    private function getDegree($navn){
+        switch($navn){
+            case 'BACH': return "Bachelor"; break;
+            case 'MAST': return "Master"; break;
+            case 'STAFF': return "Lærer"; break;
+            default: return "Ukjent"; break;
+        }
+    }
+
+    protected function getMemberList(){
+        $query = $this->sql->selectNoData("medlemmer");
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+            $navn = $row['navn'];
+            $studie = $row['studie'];
+            $grad = $row['grad'];
+            $regdato = $row['regdato'];
+            $privat = $row['privat'];
+
+            if($privat != true){
+                echo "
+                <tr>
+                    <td>$navn</td>
+                    <td>".$this->getStudy($studie)." (".$this->getDegree($grad).")</td>
+                    <td>$regdato</td>
+                </tr>
+                ";
+            }
+        }
+    }
+
+    protected function privateUser(){
+        if($_POST['epost'] !== ''){
+            $epost = $_POST['epost'];
+            $begrunnelse = $_POST['begrunnelse'];
+
+            $query = $this->sql->selectWithData("medlemmer", "epost", $epost);
+            if($query->rowCount() != 0){
+                $row = $query->fetch(PDO::FETCH_ASSOC);
+                $privat = $row['privat'];
+
+                $query = $this->sql->pdo->prepare("UPDATE medlemmer SET privat = :num WHERE epost = :epost");
+                $query->execute(array(':num' => !$privat, ':epost' => $epost));
+                $this->labelText("SUCCESS", "Grattis", "Du har oppdatert synligheten på medlemskapet ditt!");
+            }
+            else $this->labelText("ERROR", "Hmmm", "Du er ikke medlem av Kodesonen!");
+        }
+        else $this->labelText("ERROR", "Heyyy", "Du er nødt til å skrive e-post adressen din!");
+    }
 }
 
 ?>

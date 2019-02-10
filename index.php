@@ -36,6 +36,10 @@ switch($_GET['side']){
     case 'skriv-innlegg': include("pages/skriv-innlegg.php"); break;
     case 'les-innlegg': include("pages/les-innlegg.php"); break;
     case 'endre-kurs': include("pages/endre-kurs.php"); break;
+    case 'endre-utfordringer': include("pages/endre-utfordringer.php"); break;
+    case 'skjul-medlem': include("pages/skjul-medlem.php"); break;
+    case 'ny-utfordring': include("pages/ny-utfordring.php"); break;
+    case 'endre-utfordring': include("pages/endre-utfordring.php"); break;
     default: include("pages/home.php"); break;
 }
 

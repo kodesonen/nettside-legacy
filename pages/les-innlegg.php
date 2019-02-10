@@ -2,6 +2,15 @@
 <?php $core->pageHead("Kursside"); ?>
 
     <?php $core->getHeader(); ?>
+	<div class="breadcrumbs">
+		<div class="wrapper">
+			<ul class="breadcrumb-nav">
+				<li><a href="#">Kurskatalog</a></li>
+				<li><a href="#">Kapittel Navn</a></li>
+				<li><a href="#">Innlegg Navn</a></li>
+			</ul>
+		</div>
+	</div>
     <div class="wrapper">
         <div class="kurs_info">
             <h1><?php $core->getChapterName(); ?></h1><br/>

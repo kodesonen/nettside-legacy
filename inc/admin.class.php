@@ -146,6 +146,92 @@ class admin extends Kodesonen{
         }
         else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
     }
+
+    protected function listChallenges(){
+        $query = $this->sql->selectNoData("utfordringer");
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+            $id = $row['id'];
+            $tittel = $row['tittel'];
+            $nedlastinger = $row['nedlastinger'];
+
+            echo "
+            <a href='/?side=endre-utfordring&id=$id' class='course_select'>
+                <div class='course_select_info'>
+                    <h2>$tittel</h2>
+                </div>
+            </a>
+            ";
+        }
+    }
+
+    protected function createChallenge(){
+        if($_POST['tittel'] !== '' AND $_POST['beskrivelse'] !== '' AND $_POST['kildekode'] !== ''){
+            $tittel = $_POST['tittel'];
+            $beskrivelse = $_POST['beskrivelse'];
+            $kildekode = $_POST['kildekode'];
+
+            $opg_navn = $_FILES['oppgave']['name'];
+            $opg_tmp = $_FILES['oppgave']['tmp_name'];
+            $opg_type = $_FILES['oppgave']['type'];
+            $tmp = explode('.', $opg_navn);
+            $opg_ext = strtolower(end($tmp));
+
+            $img_navn = $_FILES['bilde']['name'];
+            $img_tmp = $_FILES['bilde']['tmp_name'];
+            $img_type = $_FILES['bilde']['type'];
+            $tmp = explode('.', $img_navn);
+            $img_ext = strtolower(end($tmp));
+
+            $opg_formats = array("pdf");
+            $img_formats = array("jpeg", "jpg", "png");
+            if(in_array($opg_ext, $opg_formats)){
+                if(in_array($img_ext, $img_formats)){
+                    move_uploaded_file($opg_tmp, "assets/pdf/".strtolower($opg_navn));
+                    move_uploaded_file($img_tmp, "assets/img/uploads/".strtolower($img_navn));
+                }
+                else $this->labelText("ERROR", "Oops", "Bildet må enten være JPEG eller PNG format.");
+            }
+            else $this->labelText("ERROR", "Oops", "Oppgaven må være i PDF format.");
+
+            $query = $this->sql->pdo->prepare("
+                INSERT INTO utfordringer (tittel, beskrivelse, git, bilde, pdf) 
+                VALUES (:tittel, :beskrivelse, :git, :bilde, :pdf)");
+            $query->execute(array(
+                ':tittel' => $tittel, 
+                ':beskrivelse' => $beskrivelse, 
+                ':git' => $kildekode, 
+                ':bilde' => strtolower($img_navn), 
+                ':pdf' => strtolower($opg_navn)
+            ));
+            $this->labelText("SUCCESS", "Hurra", "Du har opprettet en ny utfordring.");
+        }
+        else $this->labelText("ERROR", "Hei du", "Husk å fylle ut alle tekstfeltene!");
+    }
+
+    protected function editChallenge(){
+        if($_POST['tittel'] !== '' AND $_POST['beskrivelse'] !== '' AND $_POST['kildekode'] !== ''){
+            $tittel = $_POST['tittel'];
+            $beskrivelse = $_POST['beskrivelse'];
+            $kildekode = $_POST['kildekode'];
+
+            $query = $this->sql->pdo->prepare("
+                UPDATE utfordringer 
+                SET tittel = :tittel, beskrivelse = :beskrivelse, git = :git WHERE id = :id");
+            $query->execute(array(
+                ':tittel' => $tittel, 
+                ':beskrivelse' => $beskrivelse, 
+                ':git' => $kildekode, 
+                ':id' => $_GET['id']));
+            $this->labelText("SUCCESS", "Hurra", "Du har oppdatert en utfordring.");
+        }
+        else $this->labelText("ERROR", "Hei du", "Husk å fylle ut alle tekstfeltene!");
+    }
+
+    protected function delChallenge(){
+        $query = $this->sql->pdo->prepare("DELETE FROM utfordringer WHERE id = :id");
+        $query->execute(array(':id' => $_GET['id']));
+        header("Location: /?side=endre-utfordringer");
+    }
 }
 
 ?>

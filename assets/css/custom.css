@@ -30,6 +30,23 @@ h3 {
 p{
 	font-size: 18px;
 }
+hr {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+table {
+	margin: 20px 0px;
+	width: 100%;
+	background-color: transparent;
+	border-collapse: collapse;
+}
+td {
+	border: 1px solid #dee2e6;
+	padding: 0.75rem;
+	vertical-align: top;
+}
+.table-bordered {
+	border: 1px solid #dee2e6;
+}
 a .fas {
 	margin-right: 5px;
 }
@@ -69,6 +86,31 @@ a .fas {
 	background: #0f151b;
 	transition: .3s;
 }
+.breadcrumbs {
+	width: 100%;
+	background: rgb(245, 245, 245);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 10px 0px;
+}
+.breadcrumb-nav {
+	list-style-type: none;
+	grid-column: span 12;
+}
+.breadcrumb-nav li {
+	margin-right: 10px;
+	float: left;
+}
+.breadcrumb-nav li:after {
+	content: " / ";
+}
+.breadcrumb-nav li a {
+	color: #000;
+	text-decoration: none;
+}
+.breadcrumb-nav li a:hover {
+	text-decoration: underline;
+}
+
 /* -------------- /END ------------- */
 
 /* ------------- HEADER ------------ */
@@ -144,8 +186,15 @@ a .fas {
 	opacity: 1 !important;
 }
 .kapittelnavn {
-	padding: 5px 10px;
+	font-size: medium;
+	box-sizing: border-box;
+	background: rgb(245, 245, 245);
+	margin-bottom: 15px;
+	border-radius: 3px;
+	padding: 10px 5px;
 	margin: 20px;
+	min-width: 300px;
+	border: 1px solid #a9a9a9 !important;
 }
 /* -------------- /END ------------- */
 
@@ -231,9 +280,66 @@ a .fas {
 	color: #2C3E50;
 	text-decoration: none;
 }
+#image-ufordringer-id {
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.1s;
+}
+#image-ufordringer-id:hover {
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;;
+}
+.image-utfordringer-modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.9);
+}
+.image-utfordringer-modal .modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 1300px;
+}
 .challenge-info-buttons .hyperlink:hover {
 	text-decoration: underline;
 }
+#caption {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 0;
+	height: 150px;
+}
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+.close:hover, .close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+}
+
 /* Medlem */
 
 .medlem-form {
@@ -357,22 +463,29 @@ a .fas {
 	margin-bottom: 10px;
 }
 .label_text {
-	float: left;
 	width: 90%;
 }
 .label_text h3 {
 	font-weight: 400;
+	margin-bottom: 0px !important;
 }
 .member-list {
 	grid-column: span 12;
 }
+.member-list table {
+	margin: 0px !important;
+}
 .member {
 	width: 100%;
 	background: rgb(245, 245, 245);
-	padding: 10px;
+	border: 1px solid #ededed;
 	border-radius: 5px;
 	color: #000;	
 	margin-bottom: 10px;
+}
+.member-leading td {
+	background-color: #dbdbdb;
+	font-weight: bold;
 }
 
 /* Kurskatalog */
@@ -503,6 +616,43 @@ a .fas {
 .course_read_section h3 {
 	font-size: 1.75rem
 }
+
+/* Om oss */
+
+.kodesonen-story {
+	grid-column: span 6;
+}
+.kodesonen-story-image {
+	grid-column: span 6;
+}
+.kodesonen-story-image img {
+	max-width: 100%;
+	max-height: 100%;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.profile-box {
+	grid-column: span 4;
+	float: left;
+}
+.profile-box img {
+	margin: auto;
+	display: block;
+	height: 250px;
+	width: 250px;
+	border-radius: 5px;
+}
+.profile-box h3 {
+	font-weight: 300;
+	margin: 20px 0px;
+}
+.profile-box span {
+	color: #999;
+	font-weight: 300;
+	font-size: large;
+}
+
 /* -------------- /END ------------- */
 
 /* ------------- FOOTER ------------ */
