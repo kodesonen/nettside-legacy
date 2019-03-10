@@ -18,6 +18,18 @@ class user extends Kodesonen{
         else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
     }
 
+    protected function courseName(){
+        $id = $_GET['id'];
+        //$courseId = $this->sql->
+
+        $query = $this->sql->selectWithData("kurskapitler", "id", $id);
+
+        if($query->rowCount() != 0){
+            $row = $query->fetch(PDO::FETCH_ASSOC);
+            echo $row['tittel'];
+        }
+    }
+
     private function countChapters($id){
         $query = $this->sql->selectWithData("kurskapitler", "kursid", $id);
         return $query->rowCount();

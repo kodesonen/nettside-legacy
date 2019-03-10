@@ -31,7 +31,9 @@ class Kodesonen{
 			'158.36.230.128',
 			'172.20.10.4',
 			'178.232.74.104',
-			'158.39.208.52');
+			'92.221.227.181',
+			'158.39.208.52',
+			'158.36.230.136');
 
 		if(!in_array($this->GetIP(), $whitelist)){
 			echo "<html><head><title>Kodesonen</title></head><body><strong>Kodesonen er under utvikling!</strong><br>
@@ -95,6 +97,10 @@ class Kodesonen{
 
 	public function requestRawData($table, $request){
 		return $this->sql->grabData($table, "id", $_GET['id'], $request);
+	}
+
+	public function requestSpecificData($table, $column, $data, $request){
+		echo $this->sql->grabData($table, $column, $data, $request);
 	}
 
 	public function newMember(){
