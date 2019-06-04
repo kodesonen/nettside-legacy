@@ -1,53 +1,68 @@
-
-<?php $core->pageHead("Bli medlem"); ?>
+<?php $core->pageHead("Om oss"); ?>
 
 	<?php $core->getHeader(); ?>
 	<div class="wrapper">
 		<div class="text-info">
 			<h1>Om Kodesonen</h1><br/>
 		</div>
+
 		<div class="kodesonen-story">
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p><br/>
-			<p>But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			<h2>Målet vårt er å ha et trivelig og utfordrende miljø for alle som har interesse for programmering og teknologi.</h2><br>
+
+			<p>Kodesonen er en studentorganisasjon stiftet av tre dataingeniørstudenter ved Universitet i Sørøst-Norge, campus Kongsberg. Her på campus har vi flere retninger innenfor ingeniørfag og realfag, og en stor andel av studentene har en interesse for teknologi og programmering. Derfor har vi startet Kodesonen, en klubb som vil arrangere aktiviteter som inkluderer utfordringer, showcase, små foredrag og muligheter for å lære nye ting her på nettsiden.</p><br/>
+
+			<p>Følg oss gjerne på sosiale medier, Github og LinkedIn dersom du ønsker å holde deg oppdatert på informasjon relatert til Kodesonen. Om du ønsker å ta kontakt med oss vil vi gjerne høre fra deg, du kan du når som helst sende oss en melding på Facebook eller på e-post. Vi er åpen for en prat, spørsmål og tilbakemeldinger.</p>
 		</div>
+
 		<div class="kodesonen-story-image">
-			<img src="assets/img/homepage/front_one.svg">
+			<img id="steam" class="animated wobble" src="assets/img/raw_svg/steam.svg"/>
+			<img id="om-oss-image" src="assets/img/raw_svg/om_oss.svg"/>
 		</div>
+
+		<br>
 		<div class="text-info">
 			<h1>Styret i Kodesonen</h1><br/><hr/>
 		</div>
+
 		<div class="box-wrapper">
 			<div class="profile-box">
-				<img src="assets/img/team/abel.jpg"/>
-				<h3>Niels Henrik Abel <span>test</span></h3>
-				<p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+				<img src="assets/img/team/daniel.png"/>
+				<center>
+				<h3>Daniel Skryseth - <span>Dataingeniør</span></h3>
+				<p>Marked- og designansvarlig, frontend-utvikler</p>
+				<div class="profile-social-links">
+					<a href="#" target="_blank"><i class="fab fa-github-square"></i></a>
+					<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+				</div>
+				</center>
 			</div>
+
 			<div class="profile-box">
-				<img src="assets/img/team/abel.jpg"/>
-				<h3>Niels Henrik Abel <span>test</span></h3>
-				<p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+				<img src="assets/img/team/sirajuddin.png"/>
+				<center>
+				<h3>Sirajuddin Asjad - <span>Dataingeniør</span></h3>
+				<p>Systemansvarlig/webmaster, backend-utvikler</p>
+				<div class="profile-social-links">
+					<a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+					<a href="#" target="_blank"><i class="fab fa-github-square"></i></a>
+					<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+				</div>
+				</center>
 			</div>
+
 			<div class="profile-box">
-				<img src="assets/img/team/abel.jpg"/>
-				<h3>Niels Henrik Abel <span>test</span></h3>
-				<p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-			</div>
-		</div>
-		<div class="text-info">
-			<br/><h1>Forfattere av våre kurs</h1><br/><hr/>
-		</div>
-		<div class="box-wrapper">
-			<div class="profile-box">
-				<p>test</p>
-			</div>
-			<div class="profile-box">
-				<p>test</p>
-			</div>
-			<div class="profile-box">
-				<p>test</p>
+				<img src="assets/img/team/kirisan.png"/>
+				<center>
+				<h3>Kirisan Manivannan - <span>Dataingeniør</span></h3>
+				<p>Logistikk- og økonomiansvarlig</p>
+				<div class="profile-social-links">
+					<a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+					<a href="#" target="_blank"><i class="fab fa-github-square"></i></a>
+					<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+				</div>
+				</center>
 			</div>
 		</div>
 	</div>
 	
 	<?php $core->getFooter(); ?>
-	

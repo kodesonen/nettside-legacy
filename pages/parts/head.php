@@ -1,13 +1,16 @@
 <!-- Takk for at du tar en titt! Ønsker du hele kildekoden så sjekk oss ut på Github: https://github.com/kodesonen -->
 <!doctype html><html>
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/assets/css/custom.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+	<link rel='stylesheet' href='/assets/css/animate.css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	
+	<link rel="icon" type="image/png" href="assets/img/favicon.png" />
 	
     <?php if($_GET['side'] == 'skriv-innlegg'){
         echo "
@@ -15,8 +18,8 @@
             <link rel='stylesheet' href='/assets/css/summernote.css'>
         ";
     } ?>
-	
-	<?php include 'seo.php'; ?>
+
+	<?php include ("pages/parts/seo.php"); ?>
 
 </head>
 <body>

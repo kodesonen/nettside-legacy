@@ -11,12 +11,13 @@
 
 <div class="wrapper">
     <div class="kurs_info">
-        <h1>Kurs kapitler</h1><br/>
-        <p>Disse kapitlene er tilgjengelig innenfor dette emnet. Skriv noe mer tekst her!</p>           
+        <h1>Kurs kapitler</h1><br/>      
     </div>
 
     <div class="course_jump_break"></div>
-    <?php $core->getChapters(); ?>
+	
+	<?php $core->getChapters(); ?>
+	
 </div>
 
 <?php $core->getFooter(); ?>

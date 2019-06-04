@@ -17,7 +17,7 @@
 				<input type="text" placeholder="Oppgi e-post adresse" name="epost" required>
 
 				<label for="sted"><b>Utdanningssted</b></label>
-				<input type="text" value="Universitetet i Sørøst-Norge (campus Kongsberg)" name="sted" disabled>
+				<input type="text" value="Universitetet i Sørøst-Norge (campus Kongsberg)" class="disabled_input" name="sted" disabled>
 
 				<label for="retning"><b>Studieretning</b></label>
 				<div class="retning">
@@ -46,8 +46,11 @@
 			</form>
 		</div>
 
-		<div class="sidebar-image">
-			<img src="/assets/img/member/member.svg">
+		<div class="member-sidebar-image">
+			<center>
+				<img id="banner-animation" src="/assets/img/member/banner.svg"/>
+				<img id="person-animation" class="animated slideInRight" src="/assets/img/member/person.svg"/>
+			</center>
 		</div>
 	</div>
 	
