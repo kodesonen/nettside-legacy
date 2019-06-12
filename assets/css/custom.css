@@ -9,10 +9,6 @@ body{
 	margin: 0px;
 	padding: 0px;
 	font-family: 'Lato', sans-serif;
-	transition: background-color 0.3s ease;
-	-webkit-transition: background-color 0.3s ease;
-    -moz-transition: background-color 0.3s ease;
-    -o-transition: background-color 0.3s ease;
 }
 .wrapper{
 	margin: auto;
@@ -41,8 +37,11 @@ table {
 }
 td {
 	border: 1px solid #dee2e6;
-	padding: 0.75rem;
+	padding: 0.65rem;
 	vertical-align: top;
+}
+tr:nth-child(odd) {
+	background-color: #eaeaea;
 }
 .table-bordered {
 	border: 1px solid #dee2e6;
@@ -56,6 +55,10 @@ a .fas {
 }
 .hyperlink:hover {
 	text-decoration: underline;
+}
+.disabled_input {
+	background-color: #dbdbdb !important;
+	cursor: not-allowed;
 }
 .sidebar-image {
 	grid-column: span 5;
@@ -224,6 +227,14 @@ a .fas {
 	text-align: center;
 	border: 1px solid #ededed;
 	margin-bottom: 30px;
+}
+.front-section {
+	grid-column:span 12;
+	display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+	grid-gap: 30px 0px;
+	margin: 30px 0px;
 }
 .front-text {
 	grid-column: span 7;
@@ -485,7 +496,28 @@ a .fas {
 }
 .member-leading td {
 	background-color: #dbdbdb;
-	font-weight: bold;
+	font-weight: 600;
+	font-size: 16px;
+}
+.medlemskap-textarea {
+	max-width: 718px;
+	width: 100%;
+	background: rgb(245, 245, 245);
+	min-height: 150px;
+	border: none;
+	padding: 20px;
+}
+.member-sidebar-image img {
+	margin-top: 60px;
+	max-width: 550px;
+}
+#banner-animation {
+	position: absolute;
+	z-index: 1;
+}
+#person-animation {
+	position: absolute;
+	z-index: -1;
 }
 
 /* Kurskatalog */
@@ -516,7 +548,7 @@ a .fas {
 	background: rgb(234, 234, 234);
 }
 .box_symbol {
-	color: #000;
+	color: #2C3E50;
 	text-align: center;
 	float: left;
 	width: 25%;
@@ -610,11 +642,20 @@ a .fas {
 	color: #000 !important;
 	border: 1px solid #ededed !important;
 }
+.course_read_section {
+	max-width: 900px;
+}
 .course_read_section p, .course_read_section h3 {
 	margin-bottom: 10px;
 }
 .course_read_section h3 {
 	font-size: 1.75rem
+}
+.kurs_placeholder {
+	grid-column: span 12;
+	background: rgb(245, 245, 245);
+	padding: 35px 25px;
+	border-radius: 5px;
 }
 
 /* Om oss */
@@ -626,11 +667,7 @@ a .fas {
 	grid-column: span 6;
 }
 .kodesonen-story-image img {
-	max-width: 100%;
-	max-height: 100%;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+	max-width: 550px;
 }
 .profile-box {
 	grid-column: span 4;
@@ -639,18 +676,40 @@ a .fas {
 .profile-box img {
 	margin: auto;
 	display: block;
-	height: 250px;
-	width: 250px;
+	height: 150px;
+	width: 150px;
 	border-radius: 5px;
 }
 .profile-box h3 {
 	font-weight: 300;
-	margin: 20px 0px;
+	margin: 20px 0px 10px 0px;
+}
+.profile-box p {
+	margin-right: 30px;
+	font-size: 16px;
 }
 .profile-box span {
 	color: #999;
 	font-weight: 300;
 	font-size: large;
+}
+#steam {
+	position: absolute;
+	z-index: 1;
+}
+#om-oss-image {
+	position: absolute;
+	z-index: -1;
+}
+.profile-social-links {
+	margin-top: 10px;
+}
+.profile-social-links a{
+	color: #2C3E50;
+	font-size: x-large;
+}
+.profile-social-links a:hover {
+	color: rgb(0, 0, 0);
 }
 
 /* -------------- /END ------------- */

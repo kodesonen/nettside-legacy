@@ -19,9 +19,8 @@
 			<img id="om-oss-image" src="assets/img/raw_svg/om_oss.svg"/>
 		</div>
 
-		<br>
-		<div class="text-info">
-			<h1>Styret i Kodesonen</h1><br/><hr/>
+		<div class="text-info"><br/><br/>
+			<h1>Styret i Kodesonen</h1><br/><br><hr/><br/>
 		</div>
 
 		<div class="box-wrapper">
@@ -60,7 +59,7 @@
 					<a href="#" target="_blank"><i class="fab fa-github-square"></i></a>
 					<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
 				</div>
-				</center>
+				</center><br/>
 			</div>
 		</div>
 	</div>

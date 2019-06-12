@@ -108,6 +108,16 @@
 		background-color: #2C3E50 !important;
 		padding-bottom: 70px;
 	}
+	.kodesonen-story {
+		grid-column: span 12;
+	}
+	.kodesonen-story h2, .kodesonen-story p {
+		padding: 0px 20px;
+	}
+	.kodesonen-story-image {
+		grid-column: span 12;
+		height: auto;
+	}
 	
 	@media only screen and (max-width: 1075px) {
 		.front-content {
