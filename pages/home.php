@@ -7,7 +7,7 @@
 			<h1>En kodeklubb ved Universitet i Sørøst-Norge, Kongsberg. Vi har som formål å skape et trivelig, teknologisk og utfordrende miljø for våre medlemmer. </h1>
 		</div>
 
-		<div class="front-tab">
+		<div class="front-tab first">
 			<h2><span><i class="fas fa-lightbulb"></i></span> Utfordringer</h2><br/>
 			<p>Bli med på kodeoppgaver og teknologi prosjekter. Alt fra nybegynnere til mer erfarne kan være med å løse oppgaver.</p>
 		</div>
@@ -17,7 +17,7 @@
 			<p>Vår kurskatalog tar for seg komplette kurs i alt fra C++ til teori om datavitenskap. Her kan alle gå gjennom det som blir publisert.</p>
 		</div>
 
-		<div class="front-tab">
+		<div class="front-tab last">
 			<h2><span><i class="fas fa-users"></i></span> Bli Medlem</h2><br/>
 			<p>Det er helt gratis å bli medlem i Kodesonen! Vi ønsker alle fra USN velkommen uavhengig studieretning og studiegrad.</p>
 		</div>

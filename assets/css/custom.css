@@ -113,6 +113,22 @@ a .fas {
 .breadcrumb-nav li a:hover {
 	text-decoration: underline;
 }
+#cookieChoiceInfo {
+	padding: 20px !important;
+	width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(to bottom, rgb(245, 245, 245) 7%, rgb(245, 245, 245) 0%, rgba(51,51,51,0.7) 0%, rgba(51,51,51,0.7) 93%) !important;
+}
+#cookieChoiceInfo a {
+	color: #2C3E50;
+	text-decoration: none;
+	font-weight: bold;
+}
+#cookieChoiceInfo a:hover {
+	text-decoration: underline;
+}
 
 /* -------------- /END ------------- */
 
@@ -227,6 +243,12 @@ a .fas {
 	text-align: center;
 	border: 1px solid #ededed;
 	margin-bottom: 30px;
+}
+.first{
+	border-bottom-left-radius: 5px !important;
+}
+.last{
+	border-bottom-right-radius: 5px;
 }
 .front-section {
 	grid-column:span 12;
@@ -656,6 +678,55 @@ a .fas {
 	background: rgb(245, 245, 245);
 	padding: 35px 25px;
 	border-radius: 5px;
+}
+.course-navigation {
+	margin-top: 20px;
+	grid-column: 100%;
+	color: #000;
+}
+.course-navigation-select {
+	color: #000;
+	text-decoration: none;
+	width: calc(50% - 25px);
+	text-align: center;
+	float: left;
+	background: rgb(245, 245, 245);
+	padding: 10px;
+	transition: .3s;
+}
+.course-navigation-select:hover {
+	background: rgb(234, 234, 234);
+}
+.course-navigation-select h3 {
+	font-weight: 300;
+}
+.select-left {
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.select-right {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.course-navigation-select .fas {
+	margin-top: 7px;
+	font-size: x-large !important;
+	color: #d3d3d3;
+}
+.course-navigation-select .fa-long-arrow-alt-left {
+	float: left;
+	margin-left: 15px;
+}
+.course-navigation-select .fa-long-arrow-alt-right {
+	float: right;
+	margin-right: 15px;
+}
+.course-navigation-info-break {
+	width: 100%;
+	padding: 20px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #f7f7f7;
 }
 
 /* Om oss */

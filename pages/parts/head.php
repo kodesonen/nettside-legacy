@@ -23,3 +23,11 @@
 
 </head>
 <body>
+
+<script src="/assets/js/cookiechoices/cookiechoices.js"></script>
+	<script>
+	  document.addEventListener('DOMContentLoaded', function(event) {
+		cookieChoices.showCookieConsentBar('Vi bruker Cookies! Hvis dette er greit for deg, klikk på godkjent.',
+			'godkjent', 'les mer', 'http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm');
+	  });
+	</script>
