@@ -27,7 +27,7 @@
 <script src="/assets/js/cookiechoices/cookiechoices.js"></script>
 	<script>
 	  document.addEventListener('DOMContentLoaded', function(event) {
-		cookieChoices.showCookieConsentBar('Vi bruker Cookies! Hvis dette er greit for deg, klikk på godkjent.',
-			'godkjent', 'les mer', 'http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm');
+		cookieChoices.showCookieConsentBar('Vi bruker informasjonskapsler!', 'Kodesonen bruker informasjonskapsler for å samle inn enkel informasjon over din aktivitet på denne nettsiden. Vi gjør dette for å analysere bruksmønsteret og aktiviteten til alle våre besøkende. Hvis dette er greit for deg, klikk på godkjent.', 
+			'godkjent', 'les mer', 'https://www.datatilsynet.no/personvern-pa-ulike-omrader/internett-og-apper/cookies/');
 	  });
 	</script>
