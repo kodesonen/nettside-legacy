@@ -124,6 +124,7 @@ class user extends Kodesonen{
             <div class='challenge-box'>
                 <div class='challenge-image'>
                     <center><img id='image-ufordringer-id' alt='Dette er en eksempel tekst!' src='assets/img/challenges/meetup-example.jpg'/></center>
+					<div class='utfordringer_image_overlay'><i class='fas fa-search-plus'></i></div>
                 </div>
 
                 <div class='challenge-info'>
@@ -134,7 +135,7 @@ class user extends Kodesonen{
 
                     <div class='challenge-info-buttons'>
                         <br/><p><a href='/assets/pdf/$pdf' target='_blank' class='button'><i class='fas fa-file-pdf'></i> Last ned pdf</a></p> 
-                        <p style='margin-top: 10px'> | <a href='$git' target='_blank' class='hyperlink'><i class='fab fa-github-square'></i> GitHub</a></p>
+                        <p style='margin-top: 10px'> <a href='$git' target='_blank' class='hyperlink'><i class='fab fa-github-square'></i> GitHub</a></p>
                     </div>
                 </div>
             </div>

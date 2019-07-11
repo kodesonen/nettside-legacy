@@ -41,7 +41,7 @@
 					</select>
 				</div>
 
-				<hr/><p>Ved å opprette medlemskap godtår du våre <a href="#">vilkår og personvern</a>.</p>
+				<hr/><p>Ved å opprette medlemskap godtår du våre <a href="/?side=vilkar-og-personvern">vilkår og personvern</a>.</p>
 				<button type="submit" name="submit" class="medlem-button">Bli medlem</button>
 			</form>
 		</div>
@@ -52,6 +52,8 @@
 				<img id="person-animation" class="animated slideInRight" src="/assets/img/member/person.svg"/>
 			</center>
 		</div>
+	</div>
+	
 	</div>
 	
 	<?php $core->getFooter(); ?>

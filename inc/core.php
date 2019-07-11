@@ -33,7 +33,10 @@ class Kodesonen{
 			'178.232.74.104',
 			'92.221.227.181',
 			'158.39.208.52',
-			'158.36.230.136');
+			'158.36.230.136',
+			'158.36.230.116',
+			'158.36.230.34',
+			'193.69.87.166');
 
 		if(!in_array($this->GetIP(), $whitelist)){
 			echo "<html><head><title>Kodesonen</title></head><body><strong>Kodesonen er under utvikling!</strong><br>
@@ -48,6 +51,17 @@ class Kodesonen{
 
 	public function checkSession(){
 		if(isset($_SESSION['UID'])) $UID = $_SESSION['UID'];
+	}
+
+	public function isLoggedIn(){
+		if(isset($_SESSION['UID'])) return true;
+		else return false;
+	}
+
+	public function isAdmin(){		
+		$admin = $this->sql->grabData("medlemmer", "id", $_SESSION['UID'], "admin");
+		if($admin >= 2) return true;
+		else return false;
 	}
 
 	public function validPage(){
@@ -196,6 +210,42 @@ class Kodesonen{
 	public function deleteChallenge(){
 		$adm = new admin;
 		$adm->delChallenge();
+	}
+
+	public function login(){
+		$adm = new admin;
+		$adm->adminLogin();
+	}
+
+	public function listMembers(){
+		$adm = new admin;
+		$adm->listAllMembers();
+	}
+
+	public function listAdmins(){
+		$adm = new admin;
+		$adm->listAllAdmins();
+	}
+
+	public function logout(){
+        $_SESSION['UID'] = 0;
+        session_destroy();
+        header("Location: /?side=hjem");
+    }
+
+    public function studyDropdown($study){
+    	$retning = $this->requestRawData("medlemmer", "studie");
+    	if($retning == $study) echo "selected";
+	}
+
+    public function findMember(){
+		$adm = new admin;
+		$adm->findUser();
+	}
+
+    public function editMember(){
+		$adm = new admin;
+		$adm->editUser();
 	}
 }
 

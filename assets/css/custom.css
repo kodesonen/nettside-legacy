@@ -160,6 +160,11 @@ a .fas {
 	transition: .3s;
 	text-decoration: none !important;
 }
+.error-404 {
+	grid-column: span 12;
+	text-align: center;
+	margin: 80px 0px;
+}
 
 /* -------------- /END ------------- */
 
@@ -347,7 +352,6 @@ a .fas {
 #image-ufordringer-id {
 	border-radius: 5px;
 	cursor: pointer;
-	transition: 0.1s;
 }
 #image-ufordringer-id:hover {
     -webkit-filter: brightness(70%);
@@ -357,6 +361,25 @@ a .fas {
     -ms-transition: all 1s ease;
     transition: all 1s ease;;
 }
+/* Fiks et overlay for hovering av bilder? Testet her: */ 
+.utfordringer_image_overlay {
+	position: absolute;
+	color: #f1f1f1;
+	transition: .5s ease;
+	opacity:0;
+	color: #fff;
+	font-size: 20px;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+    top: 18rem;
+    left: 22rem;
+}
+/*
+.challenge-image:hover .utfordringer_image_overlay {
+	opacity: 1;
+}
+*/
 .image-utfordringer-modal {
 	display: none;
 	position: fixed;

@@ -7,18 +7,19 @@
 		</div>
 
 		<div class="kodesonen-story">
-			<h2>Målet vårt er å ha et trivelig og utfordrende miljø for alle som har interesse for programmering og teknologi.</h2><br>
 
 			<p>Kodesonen er en studentorganisasjon stiftet av tre dataingeniørstudenter ved Universitet i Sørøst-Norge, campus Kongsberg. Her på campus har vi flere retninger innenfor ingeniørfag og realfag, og en stor andel av studentene har en interesse for teknologi og programmering. Derfor har vi startet Kodesonen, en klubb som vil arrangere aktiviteter som inkluderer utfordringer, showcase, små foredrag og muligheter for å lære nye ting her på nettsiden.</p><br/>
 
-			<p>Følg oss gjerne på sosiale medier, Github og LinkedIn dersom du ønsker å holde deg oppdatert på informasjon relatert til Kodesonen. Om du ønsker å ta kontakt med oss vil vi gjerne høre fra deg, du kan du når som helst sende oss en melding på Facebook eller på e-post. Vi er åpen for en prat, spørsmål og tilbakemeldinger.</p>
+			<p>Følg oss gjerne på sosiale medier, Github og LinkedIn dersom du ønsker å holde deg oppdatert på informasjon relatert til Kodesonen. Om du ønsker å ta kontakt med oss vil vi gjerne høre fra deg, du kan du når som helst sende oss en melding på Facebook eller på e-post. Vi er åpen for en prat, spørsmål og tilbakemeldinger.</p><br/>
+		
+			<p>Målet vårt er å ha et trivelig og utfordrende miljø for alle som har interesse for programmering og teknologi.</p>
 		</div>
 
 		<div class="kodesonen-story-image">
 			<img id="steam" class="animated wobble" src="assets/img/raw_svg/steam.svg"/>
 			<img id="om-oss-image" src="assets/img/raw_svg/om_oss.svg"/>
 		</div>
-
+		
 		<div class="text-info"><br/><br/>
 			<h1>Styret i Kodesonen</h1><br/><br><hr/><br/>
 		</div>

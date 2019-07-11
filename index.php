@@ -40,6 +40,8 @@ switch($_GET['side']){
     case 'skjul-medlem': include("pages/skjul-medlem.php"); break;
     case 'ny-utfordring': include("pages/ny-utfordring.php"); break;
     case 'endre-utfordring': include("pages/endre-utfordring.php"); break;
+    case 'vilkar-og-personvern': include("pages/vilkar-og-personvern.php"); break;
+    case '404': include("pages/404.php"); break;
     default: include("pages/home.php"); break;
 }
 

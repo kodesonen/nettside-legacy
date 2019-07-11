@@ -232,6 +232,124 @@ class admin extends Kodesonen{
         $query->execute(array(':id' => $_GET['id']));
         header("Location: /?side=endre-utfordringer");
     }
+
+    protected function adminLogin(){
+        if(isset($_POST['email']) && isset($_POST['password'])){
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $password = hash('whirlpool', $password);
+            $password = strtoupper($password);
+
+            $query = $this->sql->selectWithData("medlemmer", "epost", $email);
+            if($query->rowCount() == 1){
+                if($this->verifyPassword($password)){
+                    $row = $query->fetch(PDO::FETCH_ASSOC);
+                    $_SESSION['UID'] = $row['id'];
+                    header("Location: /?side=admin");
+                }
+                else $this->labelText("ERROR", "Oops", "Passordet ditt stemmer ikke!");
+            }
+            else $this->labelText("ERROR", "Oops", "Kontoen din finnes ikke!");
+        }
+    }
+
+    private function verifyPassword($password){
+        $query = $this->sql->selectWithData("medlemmer", "passord", $password);
+        if($query->rowCount() == 1) return true;
+        else return false;
+    }
+
+    private function validAPIKey($key){
+        switch($key){
+            case 0: return "N/A"; break;
+            default: return $key; break;
+        }
+    }
+
+    private function adminRole($role){
+        switch($role){
+            case 0: return "Ingen"; break;
+            case 1: return "Forfatter"; break;
+            case 2: return "Administrator"; break;
+            default: return "Ukjent"; break;
+        }
+    }
+
+    private function privateMember($state){
+        switch($state){
+            case 0: return "Nei"; break;
+            case 1: return "Ja"; break;
+            default: return "Ukjent"; break;
+        }
+    }
+
+    protected function listAllAdmins(){
+        $query = $this->sql->pdo->prepare("SELECT * FROM medlemmer WHERE admin > 0");
+        $query->execute();
+
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+            echo "
+            <tr>
+                <td>".$row['navn']."</td>
+                <td>".$row['epost']."</td>
+                <td>".$this->adminRole($row['admin'])."</td>
+                <td>".$this->getStudy($row['studie'])." (".$this->getDegree($row['grad']).")</td>
+                <td>".$row['regdato']."</td>
+                <td>".$this->validAPIKey($row['apikey'])."</td>
+            </tr>
+            ";
+        }
+    }
+
+    protected function listAllMembers(){
+        $query = $this->sql->pdo->prepare("SELECT * FROM medlemmer WHERE admin = 0");
+        $query->execute();
+
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+            echo "
+            <tr>
+                <td>".$row['navn']."</td>
+                <td>".$row['epost']."</td>
+                <td>".$this->getStudy($row['studie'])." (".$this->getDegree($row['grad']).")</td>
+                <td>".$row['regdato']."</td>
+                <td>".$this->privateMember($row['privat'])."</td>
+                <td>".$this->validAPIKey($row['apikey'])."</td>
+            </tr>
+            ";
+        }
+    }
+
+    protected function findUser(){
+        if(isset($_POST['epost'])){
+            $query = $this->sql->pdo->prepare("SELECT id FROM medlemmer WHERE epost = :epost");
+            $query->execute(array(':epost' => $_POST['epost']));
+            if($query->rowCount() != 0){
+                $row = $query->fetch(PDO::FETCH_ASSOC);
+                header("Location: /?side=endre-bruker&id=".$row['id']."");
+            }
+            else $this->labelText("ERROR", "Oops", "Denne brukeren finnes ikke!");
+        }
+        else $this->labelText("ERROR", "Hei du", "Husk å fylle ut alle tekstfeltene!");
+    }
+
+    protected function editUser(){
+        if($_POST['tittel'] !== '' AND $_POST['beskrivelse'] !== '' AND $_POST['kildekode'] !== ''){
+            $tittel = $_POST['tittel'];
+            $beskrivelse = $_POST['beskrivelse'];
+            $kildekode = $_POST['kildekode'];
+
+            $query = $this->sql->pdo->prepare("
+                UPDATE utfordringer 
+                SET tittel = :tittel, beskrivelse = :beskrivelse, git = :git WHERE id = :id");
+            $query->execute(array(
+                ':tittel' => $tittel, 
+                ':beskrivelse' => $beskrivelse, 
+                ':git' => $kildekode, 
+                ':id' => $_GET['id']));
+            $this->labelText("SUCCESS", "Hurra", "Du har oppdatert en utfordring.");
+        }
+        else $this->labelText("ERROR", "Hei du", "Husk å fylle ut alle tekstfeltene!");
+    }
 }
 
 ?>
