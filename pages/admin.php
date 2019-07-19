@@ -10,7 +10,7 @@
 		</div>
 
 		<div class="box-wrapper">
-			<a href='#' class='box_thread'>
+			<a href='#' class='box_thread admin-black'>
                 <div class='box_symbol'>
                     <h1><i class="fas fa-cogs"></i></h1>
                 </div>
@@ -21,7 +21,7 @@
                 </div>
             </a>
 
-			<a href='/?side=endre-medlemmer' class='box_thread'>
+			<a href='/?side=endre-medlemmer' class='box_thread admin-black'>
                 <div class='box_symbol'>
                     <h1><i class="fas fa-users"></i></h1>
                 </div>
@@ -32,7 +32,7 @@
                 </div>
             </a>
 
-            <a href='/?side=kursbehandler' class='box_thread'>
+            <a href='/?side=kursbehandler' class='box_thread admin-black'>
                 <div class='box_symbol'>
                     <h1><i class="fas fa-list-ol"></i></h1>
                 </div>
@@ -43,7 +43,7 @@
                 </div>
             </a>
 
-            <a href='/?side=endre-utfordringer' class='box_thread'>
+            <a href='/?side=endre-utfordringer' class='box_thread admin-black'>
                 <div class='box_symbol'>
                     <h1><i class="fas fa-code"></i></h1>
                 </div>
@@ -54,7 +54,7 @@
                 </div>
             </a>
 
-            <a href='#' class='box_thread'>
+            <a href='#' class='box_thread admin-black'>
                 <div class='box_symbol'>
                     <h1><i class="fas fa-envelope"></i></h1>
                 </div>
@@ -65,7 +65,7 @@
                 </div>
             </a>
 
-            <a href='#' class='box_thread'>
+            <a href='#' class='box_thread admin-black'>
                 <div class='box_symbol'>
                     <h1><i class="fas fa-file-alt"></i></h1>
                 </div>
@@ -75,7 +75,25 @@
                     <h4>Alle handlinger på nettsiden loggføres</h4>
                 </div>
             </a>
+			
+			<a href='#' class='box_thread admin-black'>
+                <div class='box_symbol'>
+                    <h1><i class="fas fa-chart-line"></i></h1>
+                </div>
+
+                <div class='box_info'>
+                    <h2>Søkemotoroptimalisering</h2>
+                    <h4>Endre On-Page SEO for alle sider</h4>
+                </div>
+            </a>
 		</div>
+		
+		
+		<div class="text-info">
+			<h1>Informasjon</h1><br/>
+			<p>Her vil nyttig informasjon bli lagt til.</p>			
+		</div>
+		
 	</div>
 
     <?php $core->getFooter(); ?>

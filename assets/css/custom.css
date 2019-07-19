@@ -251,6 +251,17 @@ a .fas {
 	min-width: 300px;
 	border: 1px solid #a9a9a9 !important;
 }
+.admin-black {
+	background-color: #222222 !important;
+	color: #FFF !important;
+}
+.admin-black .box_symbol {
+	color: #FFF !important;
+}
+.admin-black:hover {
+	opacity: .8;
+}
+
 /* -------------- /END ------------- */
 
 /* ------------- CONTENT ----------- */
@@ -691,7 +702,7 @@ a .fas {
 	background: #222222;
 	padding: 15px;
 	padding-left: 25px;
-	border-radius: 15px;
+	border-radius: 5px;
 	transition: .3s;
 	color: #fff;
 	margin-bottom: 10px;

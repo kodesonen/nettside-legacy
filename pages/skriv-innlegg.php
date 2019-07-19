@@ -4,7 +4,8 @@
     <?php $core->getHeader(); ?>
     <div class="wrapper">
 		<div class="kurs_info">
-			<h1>Skriv kursinnlegg</h1>
+			<h1>Skriv et innlegg</h1>
+			<p>Om man ønsker å legge inn kode i innlegget, anbefales det å bruke <a href="http://hilite.me/" class="hyperlink">kildekode til HTML</a>. Da kan HTMLen legges direkte inn i tekst området.</p>
 		</div>
         <div class="write-course">
 	

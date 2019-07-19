@@ -5,6 +5,7 @@
 	<div class="wrapper">
 		<div class="medlem-form">
 			<h1>Legg til nytt kapittel</h1><hr/>
+			<p>Delnummeret vil sortere kapittelene. Det vil si at kapittel 1.0 vil være i en kategori enn 2.0.</p>
 			<div class="wrapper">
 				<?php if(isset($_POST['submit'])){ $core->newChapter(); } ?>
 			</div>

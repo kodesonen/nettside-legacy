@@ -20,7 +20,7 @@
 		padding: 20px 0px 20px 0px;
 	}
 	.admin-links a {
-		font-size: x-large;
+		font-size: large;
 	}
 	.logo-section {
 		grid-column: span 8;
@@ -119,6 +119,9 @@
 		background-position: center bottom;	
 		background-color: #2C3E50 !important;
 		padding-bottom: 70px;
+	}
+	.front-section .front-c:nth-of-type(1) {
+		order: 3;
 	}
 	.kodesonen-story {
 		grid-column: span 12;
