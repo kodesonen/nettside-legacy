@@ -148,25 +148,6 @@ class user extends Kodesonen{
         }
     }
 
-    private function getStudy($navn){
-        switch($navn){
-            case 'DATAING': return "Dataingeniør"; break;
-            case 'ELEKING': return "Elektroingeniør"; break;
-            case 'MASKING': return "Maskiningeniør"; break;
-            case 'LEKTOR': return "Lektorstudent"; break;
-            default: return "Ukjent"; break;
-        }
-    }
-
-    private function getDegree($navn){
-        switch($navn){
-            case 'BACH': return "Bachelor"; break;
-            case 'MAST': return "Master"; break;
-            case 'STAFF': return "Lærer"; break;
-            default: return "Ukjent"; break;
-        }
-    }
-
     protected function getMemberList(){
         $query = $this->sql->selectNoData("medlemmer");
         while($row = $query->fetch(PDO::FETCH_ASSOC)){

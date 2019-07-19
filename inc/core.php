@@ -247,6 +247,25 @@ class Kodesonen{
 		$adm = new admin;
 		$adm->editUser();
 	}
+
+	public function getStudy($navn){
+        switch($navn){
+            case 'DATAING': return "Dataingeniør"; break;
+            case 'ELEKING': return "Elektroingeniør"; break;
+            case 'MASKING': return "Maskiningeniør"; break;
+            case 'LEKTOR': return "Lektorstudent"; break;
+            default: return "Ukjent"; break;
+        }
+    }
+
+    public function getDegree($navn){
+        switch($navn){
+            case 'BACH': return "Bachelor"; break;
+            case 'MAST': return "Master"; break;
+            case 'STAFF': return "Lærer"; break;
+            default: return "Ukjent"; break;
+        }
+    }
 }
 
 ?>
