@@ -156,9 +156,7 @@ class admin extends Kodesonen{
 
             echo "
             <a href='/?side=endre-utfordring&id=$id' class='course_select'>
-                <div class='course_select_info'>
-                    <h2>$tittel</h2>
-                </div>
+                <div class='course_select_info'><h2>$tittel</h2></div>
             </a>
             ";
         }
@@ -181,7 +179,7 @@ class admin extends Kodesonen{
             $img_type = $_FILES['bilde']['type'];
             $tmp = explode('.', $img_navn);
             $img_ext = strtolower(end($tmp));
-
+            
             $opg_formats = array("pdf");
             $img_formats = array("jpeg", "jpg", "png");
             if(in_array($opg_ext, $opg_formats)){
