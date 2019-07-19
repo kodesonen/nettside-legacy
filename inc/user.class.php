@@ -46,7 +46,7 @@ class user extends Kodesonen{
                 $tittel = $row['tittel'];
 
                 echo "
-                <a href='/?side=les-innlegg&id=$chapterid' class='course_select'>
+                <a href='/?side=les-innlegg&id=$chapterid&kurs=$id' class='course_select'>
                     <div class='course_select_info'>
                         <h2>$del - $tittel</h2>
                     </div>

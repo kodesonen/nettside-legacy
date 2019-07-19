@@ -22,8 +22,8 @@
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <ul class="nav overlay-content">
                 <li><a href="/?side=hjem">Hjemsiden</a></li>
-                <li><a href="/?side=utfordringer">Utfordringer</a></li>
                 <li><a href="/?side=kurskatalog">Kurskatalog</a></li>
+                <li><a href="/?side=utfordringer">Utfordringer</a></li>
                 <li><a href="/?side=medlemsliste">Medlemsliste</a></li>
                 <li><a href="/?side=om-oss">Om oss</a></li>
                 <a href="/?side=medlem"><li><i class="fas fa-users"></i> Bli medlem</li></a>

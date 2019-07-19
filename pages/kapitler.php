@@ -1,5 +1,6 @@
 <?php $core->pageHead("Kurs kapitler"); ?>
 <?php $core->getHeader(); ?>
+
 <div class="breadcrumbs">
 	<div class="wrapper">
 		<ul class="breadcrumb-nav">
@@ -15,9 +16,7 @@
     </div>
 
     <div class="course_jump_break"></div>
-	
 	<?php $core->getChapters(); ?>
-	
 </div>
 
 <?php $core->getFooter(); ?>
