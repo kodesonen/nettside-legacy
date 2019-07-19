@@ -42,8 +42,7 @@ switch($_GET['side']){
     case 'endre-utfordring': include("pages/endre-utfordring.php"); break;
     case 'endre-bruker': include("pages/endre-bruker.php"); break;
     case 'vilkar-og-personvern': include("pages/vilkar-og-personvern.php"); break;
-    case '404': include("pages/404.php"); break;
-    default: include("pages/home.php"); break;
+    default: include("pages/404.php"); break;
 }
 
 ?>
