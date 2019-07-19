@@ -1,11 +1,16 @@
-<div class="admin-header">
-    <div class="wrapper">
-        <div class="admin-links">
-            <a href="/?side=admin"><i class="fas fa-cog"></i> Admin kontrollpanel</a>
-            <a href="/?side=settings"><i class="fas fa-users-cog"></i> Brukerinnstillinger</a>
+<?php if($this->isLoggedIn()){
+    echo "
+    <div class='admin-header'>
+        <div class='wrapper'>
+            <div class='admin-links'>
+                <a href='/?side=logout'><i class='fas fa-cog'></i> Logg ut</a>
+                <a href='/?side=admin'><i class='fas fa-users-cog'></i> Kontrollpanel</a>
+            </div>
         </div>
     </div>
-</div>
+    ";
+}
+?>
 
 <div class="header">
     <div class="wrapper">
@@ -27,4 +32,3 @@
 		<span class="mobile_nav" onclick="openNav()">&#9776;</span>
     </div>
 </div>
-

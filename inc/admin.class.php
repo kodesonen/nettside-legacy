@@ -242,7 +242,7 @@ class admin extends Kodesonen{
 
             $query = $this->sql->selectWithData("medlemmer", "epost", $email);
             if($query->rowCount() == 1){
-                if($this->verifyPassword($password)){
+                if($this->verifyPassword($email, $password)){
                     $row = $query->fetch(PDO::FETCH_ASSOC);
                     $_SESSION['UID'] = $row['id'];
                     header("Location: /?side=admin");
@@ -253,8 +253,9 @@ class admin extends Kodesonen{
         }
     }
 
-    private function verifyPassword($password){
-        $query = $this->sql->selectWithData("medlemmer", "passord", $password);
+    private function verifyPassword($email, $password){
+        $query = $this->sql->pdo->prepare("SELECT id FROM medlemmer WHERE epost = :epost AND passord = :passord");
+        $query->execute(array(':epost' => $email, ':passord' => $password));
         if($query->rowCount() == 1) return true;
         else return false;
     }
