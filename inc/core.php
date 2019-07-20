@@ -111,7 +111,7 @@ class Kodesonen{
 
 	public function requestRawData($table, $request){
 		return $this->sql->grabData($table, "id", $_GET['id'], $request);
-	}
+	}	
 
 	public function requestSpecificData($table, $column, $data, $request){
 		echo $this->sql->grabData($table, $column, $data, $request);
@@ -265,6 +265,16 @@ class Kodesonen{
             case 'STAFF': return "Lærer"; break;
             default: return "Ukjent"; break;
         }
+    }
+
+    public function getAuthor(){
+    	$usr = new user;
+		$usr->getAuthorName();
+    }
+
+    public function getPostDate(){
+    	$usr = new user;
+		$usr->getPostedDate();
     }
 }
 

@@ -187,6 +187,15 @@ class user extends Kodesonen{
         }
         else $this->labelText("ERROR", "Heyyy", "Du er nødt til å skrive e-post adressen din!");
     }
+
+    protected function getAuthorName(){
+        $forfatter = $this->sql->grabData("kursinnlegg", "kapid", $_GET['id'], "forfatter");
+        $this->requestSpecificData("medlemmer", "id", $forfatter, "navn");
+    }
+
+    protected function getPostedDate(){
+        $this->requestSpecificData("kursinnlegg", "kapid", $_GET['id'], "dato");
+    }
 }
 
 ?>

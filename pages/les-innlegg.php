@@ -20,7 +20,7 @@
 <div class="wrapper">
     <div class="kurs_info">
         <h1><?php $core->getChapterName(); ?></h1><br/>
-        <p>Dato: 01.01.2019 | Skrevet av: Navn Navnesen</p>           
+        <p>Dato: <?php $core->getPostDate(); ?> | Skrevet av: <?php $core->getAuthor(); ?></p>           
     </div>
 
     <div class="course_jump_break">
