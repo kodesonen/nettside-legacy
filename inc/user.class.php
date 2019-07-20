@@ -42,7 +42,7 @@ class user extends Kodesonen{
         if($query->rowCount() != 0){
             while($row = $query->fetch(PDO::FETCH_ASSOC)){
                 $chapterid = $row['id'];
-                $del = $row['del'];
+                $del = $row['delkapittel'];
                 $tittel = $row['tittel'];
 
                 echo "

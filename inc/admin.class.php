@@ -44,7 +44,7 @@ class admin extends Kodesonen{
         if($query->rowCount() != 0){
             while($row = $query->fetch(PDO::FETCH_ASSOC)){
                 $chapterid = $row['id'];
-                $del = $row['del'];
+                $del = $row['delkapittel'];
                 $tittel = $row['tittel'];
 
                 echo "
@@ -86,8 +86,8 @@ class admin extends Kodesonen{
             $delnr = $_POST['delnr'];
             $id = $_GET['id'];
 
-            $query = $this->sql->pdo->prepare("INSERT INTO kurskapitler (kursid, del, tittel) VALUES (:kursid, :del, :tittel)");
-            $query->execute(array(':kursid' => $id, ':del' => $delnr, ':tittel' => $navn));
+            $query = $this->sql->pdo->prepare("INSERT INTO kurskapitler (kursid, delkapittel, tittel) VALUES (:kursid, :delkapittel, :tittel)");
+            $query->execute(array(':kursid' => $id, ':delkapittel' => $delnr, ':tittel' => $navn));
             $this->labelText("SUCCESS", "Hurra", "Du har opprettet et nytt kapittel.");
         }
         else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
