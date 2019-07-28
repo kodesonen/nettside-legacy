@@ -276,6 +276,16 @@ class Kodesonen{
     	$usr = new user;
 		$usr->getPostedDate();
     }
+
+    public function loadNextPost(){
+    	$usr = new user;
+		$usr->getNextPost();
+    }
+
+    public function loadPrevPost(){
+    	$usr = new user;
+		$usr->getPrevPost();
+    }
 }
 
 ?>

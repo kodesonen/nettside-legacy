@@ -199,6 +199,83 @@ class user extends Kodesonen{
     protected function getPostedDate(){
         $this->requestSpecificData("kursinnlegg", "kapid", $_GET['id'], "dato");
     }
+
+    protected function getNextPost(){
+        // Counting total chapters
+        $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :kurs GROUP BY kapittel");
+        $query->execute(array(':kurs' => $_GET['kurs']));
+        $total_chapters = $query->rowCount();
+
+        // Getting current chapter number
+        $query = $this->sql->pdo->prepare("SELECT kapittel, delkapittel FROM kurskapitler WHERE id = :id");
+        $query->execute(array(':id' => $_GET['id']));
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        $current_chapter = $row['kapittel'];
+        $current_subchapter = $row['delkapittel'];
+
+        // Getting next sub-chapter number
+        $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :kurs AND kapittel = :kapittel AND delkapittel = :delkapittel");
+        $query->execute(array(':kurs' => $_GET['kurs'], ':kapittel' => $current_chapter, ':delkapittel' => $current_subchapter+1));
+
+        if($query->rowCount() != 0){
+            $row = $query->fetch(PDO::FETCH_ASSOC);
+            echo "
+            <a href='/?side=les-innlegg&id=".$row['id']."&kurs=".$_GET['kurs']."'>
+                <div class='course-navigation-select select-right'>
+                    <i class='fas fa-long-arrow-alt-right'></i> 
+                    <h3>".$row['kapittel'].".".$row['delkapittel']." - ".$row['tittel']."</h3>
+                </div>
+            </a>
+            ";
+        }
+        else{
+            // Getting next chapter number
+            $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :kurs AND kapittel = :kapittel AND delkapittel = 1");
+            $query->execute(array(':kurs' => $_GET['kurs'], ':kapittel' => $current_chapter+1));
+            
+            if($query->rowCount() != 0){
+                $row = $query->fetch(PDO::FETCH_ASSOC);
+                echo "
+                <a href='/?side=les-innlegg&id=".$row['id']."&kurs=".$_GET['kurs']."'>
+                    <div class='course-navigation-select select-right'>
+                        <i class='fas fa-long-arrow-alt-right'></i> 
+                        <h3>".$row['kapittel'].".".$row['delkapittel']." - ".$row['tittel']."</h3>
+                    </div>
+                </a>
+                ";
+            }
+        }
+    }
+
+    protected function getPrevPost(){
+        // Counting total chapters
+        $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :kurs GROUP BY kapittel");
+        $query->execute(array(':kurs' => $_GET['kurs']));
+        $total_chapters = $query->rowCount();
+
+        // Getting current chapter number
+        $query = $this->sql->pdo->prepare("SELECT kapittel, delkapittel FROM kurskapitler WHERE id = :id");
+        $query->execute(array(':id' => $_GET['id']));
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        $current_chapter = $row['kapittel'];
+        $current_subchapter = $row['delkapittel'];
+
+        // Getting previous sub-chapter number
+        $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :kurs AND kapittel = :kapittel AND delkapittel = :delkapittel");
+        $query->execute(array(':kurs' => $_GET['kurs'], ':kapittel' => $current_chapter, ':delkapittel' => $current_subchapter-1));
+
+        if($query->rowCount() != 0){
+            $row = $query->fetch(PDO::FETCH_ASSOC);
+            echo "
+            <a href='/?side=les-innlegg&id=".$row['id']."&kurs=".$_GET['kurs']."'>
+                <div class='course-navigation-select select-left'>
+                    <i class='fas fa-long-arrow-alt-left'></i> 
+                    <h3>".$row['kapittel'].".".$row['delkapittel']." - ".$row['tittel']."</h3>
+                </div>
+            </a>
+            ";
+        }
+    }
 }
 
 ?>

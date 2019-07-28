@@ -28,16 +28,13 @@
 			<?php $core->loadPost(); ?>
 
 			<div class="course-navigation-info-break"></div>
-			<h1>Du leste nettopp om <?php $core->getChapterName(); ?></h1><br/>
+
+			<h2>Du leste nettopp om "<?php $core->getChapterName(); ?>"</h2><br/>
 			<p>Vil du fortsette til neste seksjon eller gå tilbake til forrige?</p>
 			
 			<div class="course-navigation">
-				<a href="#"><div class="course-navigation-select select-left">
-					<i class="fas fa-long-arrow-alt-left"></i><h3> x.x - forrige innlegg navn</h3>
-				</div></a>
-				<a href="#"><div class="course-navigation-select select-right">
-					<i class="fas fa-long-arrow-alt-right"></i><h3>x.x - neste innlegg navn</h3>
-				</div></a>
+				<?php $core->loadPrevPost(); ?>
+				<?php $core->loadNextPost(); ?>
 				<br/>
 			</div>
 		</div>
