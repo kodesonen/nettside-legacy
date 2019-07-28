@@ -36,29 +36,32 @@ class user extends Kodesonen{
     }
 
     protected function listChapters(){
-        $id = $_GET['id'];
-        $query = $this->sql->selectWithData("kurskapitler", "kursid", $id);
+        $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :id GROUP BY kapittel");
+        $query->execute(array(':id' => $_GET['id']));
+        $total_chapters = $query->rowCount();
 
-        if($query->rowCount() != 0){
-            while($row = $query->fetch(PDO::FETCH_ASSOC)){
-                $chapterid = $row['id'];
-                $del = $row['delkapittel'];
-                $tittel = $row['tittel'];
+        for($i = 1; $i <= $total_chapters; $i++){
+            $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :id AND kapittel = $i");
+            $query->execute(array(':id' => $_GET['id']));
 
-                echo "
-                <a href='/?side=les-innlegg&id=$chapterid&kurs=$id' class='course_select'>
-                    <div class='course_select_info'>
-                        <h2>$del - $tittel</h2>
-                    </div>
+            if($query->rowCount() != 0){
+                echo "<div class='kurs_info'><h2>Kapittel $i:</h2></div>";
 
-                    <div class='course_select_symbol'>
-                        <h2><i class='fas fa-book-open'></i></h2>
-                    </div>
-                </a>
-                ";
+                while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                    echo "
+                    <a href='/?side=les-innlegg&id=".$row['id']."&kurs=".$_GET['id']."' class='course_select'>
+                        <div class='course_select_info'>
+                            <h2>".$row['kapittel'].".".$row['delkapittel']." - ".$row['tittel']."</h2>
+                        </div>
+
+                        <div class='course_select_symbol'>
+                            <h2><i class='fas fa-book-open'></i></h2>
+                        </div>
+                    </a>
+                    ";
+                }
             }
         }
-        else $this->labelText("ERROR", "Beklager", "Det finnes ingen kapitler innenfor dette kurset.");
     }
 
     protected function listCourses(){
