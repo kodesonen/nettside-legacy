@@ -39,7 +39,9 @@ class user extends Kodesonen{
         $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :id GROUP BY kapittel");
         $query->execute(array(':id' => $_GET['id']));
         $total_chapters = $query->rowCount();
+
         echo $total_chapters;
+
 
         for($i = 1; $i <= $total_chapters; $i++){
             $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :id AND kapittel = $i");

@@ -81,6 +81,7 @@ class admin extends Kodesonen{
     }
 
     protected function createChapter(){
+
         if($_POST['navn'] !== '' AND $_POST['kapittel'] !== '' AND $_POST['delnr'] !== ''){
             if($_POST['delnr'] !== '0'){
                 $query = $this->sql->pdo->prepare("
@@ -96,6 +97,15 @@ class admin extends Kodesonen{
                 $this->labelText("SUCCESS", "Hurra", "Du har opprettet et nytt kapittel.");
             }
             else $this->labelText("ERROR", "Oops", "Alle delkapitler må starte fra 1.");
+
+        if($_POST['navn'] !== '' AND $_POST['delnr'] !== ''){
+            $navn = $_POST['navn'];
+            $delnr = $_POST['delnr'];
+            $id = $_GET['id'];
+
+            $query = $this->sql->pdo->prepare("INSERT INTO kurskapitler (kursid, delkapittel, tittel) VALUES (:kursid, :delkapittel, :tittel)");
+            $query->execute(array(':kursid' => $id, ':delkapittel' => $delnr, ':tittel' => $navn));
+            $this->labelText("SUCCESS", "Hurra", "Du har opprettet et nytt kapittel.");
         }
         else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
     }
