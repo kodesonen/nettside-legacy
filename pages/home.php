@@ -34,12 +34,12 @@
 		</div>
 		
 		<div class="front-section">
-			<div class="front-text">
+			<div class="front-text front-c">
 				<h1>Hva slags utfordringer har vi?</h1><br/>
 				<p>Våre utfordringer vil bygge på programmering og utvikling av teknologi. Vi ønsker å skape både morsomme og utfordrende oppgaver som inkluderer mange aspekter innen teknologi. Noe vi tenker å gjøre, er å utvikle alt fra roboter i Arduino til kode i C++. Du kan følge med på våre utfordringer under siden kalt utfordringer, eller på Github.</p><br/>
 			</div>
 			
-			<div class="front-picture">
+			<div class="front-picture front-c">
 				<img src="assets/img/homepage/front_two.svg" />
 			</div>
 		</div>

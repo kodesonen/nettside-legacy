@@ -36,31 +36,35 @@ class user extends Kodesonen{
     }
 
     protected function listChapters(){
-        $id = $_GET['id'];
-        $query = $this->sql->selectWithData("kurskapitler", "kursid", $id);
+        $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :id GROUP BY kapittel");
+        $query->execute(array(':id' => $_GET['id']));
+        $total_chapters = $query->rowCount();
+        echo $total_chapters;
 
-        if($query->rowCount() != 0){
-            while($row = $query->fetch(PDO::FETCH_ASSOC)){
-                $chapterid = $row['id'];
-                $del = $row['del'];
-                $tittel = $row['tittel'];
+        for($i = 1; $i <= $total_chapters; $i++){
+            $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :id AND kapittel = $i");
+            $query->execute(array(':id' => $_GET['id']));
 
-                echo "
-                <a href='/?side=les-innlegg&id=$chapterid' class='course_select'>
-                    <div class='course_select_info'>
-                        <h2>$del - $tittel</h2>
-                    </div>
+            if($query->rowCount() != 0){
+                echo "<div class='kurs_info'><h2>Kapittel $i:</h2></div>";
 
-                    <div class='course_select_symbol'>
-                        <h2><i class='fas fa-book-open'></i></h2>
-                    </div>
-                </a>
-                ";
+                while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                    echo "
+                    <a href='/?side=les-innlegg&id=".$row['id']."&kurs=".$_GET['id']."' class='course_select'>
+                        <div class='course_select_info'>
+                            <h2>".$row['kapittel'].".".$row['delkapittel']." - ".$row['tittel']."</h2>
+                        </div>
+
+                        <div class='course_select_symbol'>
+                            <h2><i class='fas fa-book-open'></i></h2>
+                        </div>
+                    </a>
+                    ";
+                }
             }
         }
-        else $this->labelText("ERROR", "Beklager", "Det finnes ingen kapitler innenfor dette kurset.");
     }
-
+    
     protected function listCourses(){
         $query = $this->sql->selectNoData("kurskatalog");
         while($row = $query->fetch(PDO::FETCH_ASSOC)){
@@ -148,25 +152,6 @@ class user extends Kodesonen{
         }
     }
 
-    private function getStudy($navn){
-        switch($navn){
-            case 'DATAING': return "Dataingeniør"; break;
-            case 'ELEKING': return "Elektroingeniør"; break;
-            case 'MASKING': return "Maskiningeniør"; break;
-            case 'LEKTOR': return "Lektorstudent"; break;
-            default: return "Ukjent"; break;
-        }
-    }
-
-    private function getDegree($navn){
-        switch($navn){
-            case 'BACH': return "Bachelor"; break;
-            case 'MAST': return "Master"; break;
-            case 'STAFF': return "Lærer"; break;
-            default: return "Ukjent"; break;
-        }
-    }
-
     protected function getMemberList(){
         $query = $this->sql->selectNoData("medlemmer");
         while($row = $query->fetch(PDO::FETCH_ASSOC)){
@@ -205,6 +190,92 @@ class user extends Kodesonen{
             else $this->labelText("ERROR", "Hmmm", "Du er ikke medlem av Kodesonen!");
         }
         else $this->labelText("ERROR", "Heyyy", "Du er nødt til å skrive e-post adressen din!");
+    }
+
+    protected function getAuthorName(){
+        $forfatter = $this->sql->grabData("kursinnlegg", "kapid", $_GET['id'], "forfatter");
+        $this->requestSpecificData("medlemmer", "id", $forfatter, "navn");
+    }
+
+    protected function getPostedDate(){
+        $this->requestSpecificData("kursinnlegg", "kapid", $_GET['id'], "dato");
+    }
+
+    protected function getNextPost(){
+        // Counting total chapters
+        $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :kurs GROUP BY kapittel");
+        $query->execute(array(':kurs' => $_GET['kurs']));
+        $total_chapters = $query->rowCount();
+
+        // Getting current chapter number
+        $query = $this->sql->pdo->prepare("SELECT kapittel, delkapittel FROM kurskapitler WHERE id = :id");
+        $query->execute(array(':id' => $_GET['id']));
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        $current_chapter = $row['kapittel'];
+        $current_subchapter = $row['delkapittel'];
+
+        // Getting next sub-chapter number
+        $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :kurs AND kapittel = :kapittel AND delkapittel = :delkapittel");
+        $query->execute(array(':kurs' => $_GET['kurs'], ':kapittel' => $current_chapter, ':delkapittel' => $current_subchapter+1));
+
+        if($query->rowCount() != 0){
+            $row = $query->fetch(PDO::FETCH_ASSOC);
+            echo "
+            <a href='/?side=les-innlegg&id=".$row['id']."&kurs=".$_GET['kurs']."'>
+                <div class='course-navigation-select select-right'>
+                    <i class='fas fa-long-arrow-alt-right'></i> 
+                    <h3>".$row['kapittel'].".".$row['delkapittel']." - ".$row['tittel']."</h3>
+                </div>
+            </a>
+            ";
+        }
+        else{
+            // Getting next chapter number
+            $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :kurs AND kapittel = :kapittel AND delkapittel = 1");
+            $query->execute(array(':kurs' => $_GET['kurs'], ':kapittel' => $current_chapter+1));
+            
+            if($query->rowCount() != 0){
+                $row = $query->fetch(PDO::FETCH_ASSOC);
+                echo "
+                <a href='/?side=les-innlegg&id=".$row['id']."&kurs=".$_GET['kurs']."'>
+                    <div class='course-navigation-select select-right'>
+                        <i class='fas fa-long-arrow-alt-right'></i> 
+                        <h3>".$row['kapittel'].".".$row['delkapittel']." - ".$row['tittel']."</h3>
+                    </div>
+                </a>
+                ";
+            }
+        }
+    }
+
+    protected function getPrevPost(){
+        // Counting total chapters
+        $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :kurs GROUP BY kapittel");
+        $query->execute(array(':kurs' => $_GET['kurs']));
+        $total_chapters = $query->rowCount();
+
+        // Getting current chapter number
+        $query = $this->sql->pdo->prepare("SELECT kapittel, delkapittel FROM kurskapitler WHERE id = :id");
+        $query->execute(array(':id' => $_GET['id']));
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        $current_chapter = $row['kapittel'];
+        $current_subchapter = $row['delkapittel'];
+
+        // Getting previous sub-chapter number
+        $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :kurs AND kapittel = :kapittel AND delkapittel = :delkapittel");
+        $query->execute(array(':kurs' => $_GET['kurs'], ':kapittel' => $current_chapter, ':delkapittel' => $current_subchapter-1));
+
+        if($query->rowCount() != 0){
+            $row = $query->fetch(PDO::FETCH_ASSOC);
+            echo "
+            <a href='/?side=les-innlegg&id=".$row['id']."&kurs=".$_GET['kurs']."'>
+                <div class='course-navigation-select select-left'>
+                    <i class='fas fa-long-arrow-alt-left'></i> 
+                    <h3>".$row['kapittel'].".".$row['delkapittel']." - ".$row['tittel']."</h3>
+                </div>
+            </a>
+            ";
+        }
     }
 }
 

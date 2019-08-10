@@ -44,7 +44,7 @@ class admin extends Kodesonen{
         if($query->rowCount() != 0){
             while($row = $query->fetch(PDO::FETCH_ASSOC)){
                 $chapterid = $row['id'];
-                $del = $row['del'];
+                $del = $row['delkapittel'];
                 $tittel = $row['tittel'];
 
                 echo "
@@ -81,14 +81,21 @@ class admin extends Kodesonen{
     }
 
     protected function createChapter(){
-        if($_POST['navn'] !== '' AND $_POST['delnr'] !== ''){
-            $navn = $_POST['navn'];
-            $delnr = $_POST['delnr'];
-            $id = $_GET['id'];
-
-            $query = $this->sql->pdo->prepare("INSERT INTO kurskapitler (kursid, del, tittel) VALUES (:kursid, :del, :tittel)");
-            $query->execute(array(':kursid' => $id, ':del' => $delnr, ':tittel' => $navn));
-            $this->labelText("SUCCESS", "Hurra", "Du har opprettet et nytt kapittel.");
+        if($_POST['navn'] !== '' AND $_POST['kapittel'] !== '' AND $_POST['delnr'] !== ''){
+            if($_POST['delnr'] !== '0'){
+                $query = $this->sql->pdo->prepare("
+                    INSERT INTO kurskapitler (kursid, kapittel, delkapittel, tittel) 
+                    VALUES (:kursid, :kapittel, :delkapittel, :tittel)
+                ");
+                $query->execute(array(
+                    ':kursid' => $_GET['id'], 
+                    ':kapittel' => $_POST['kapittel'], 
+                    ':delkapittel' => $_POST['delnr'], 
+                    ':tittel' => $_POST['navn']
+                ));
+                $this->labelText("SUCCESS", "Hurra", "Du har opprettet et nytt kapittel.");
+            }
+            else $this->labelText("ERROR", "Oops", "Alle delkapitler må starte fra 1.");
         }
         else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
     }
@@ -156,9 +163,7 @@ class admin extends Kodesonen{
 
             echo "
             <a href='/?side=endre-utfordring&id=$id' class='course_select'>
-                <div class='course_select_info'>
-                    <h2>$tittel</h2>
-                </div>
+                <div class='course_select_info'><h2>$tittel</h2></div>
             </a>
             ";
         }
@@ -181,7 +186,7 @@ class admin extends Kodesonen{
             $img_type = $_FILES['bilde']['type'];
             $tmp = explode('.', $img_navn);
             $img_ext = strtolower(end($tmp));
-
+            
             $opg_formats = array("pdf");
             $img_formats = array("jpeg", "jpg", "png");
             if(in_array($opg_ext, $opg_formats)){
@@ -242,7 +247,7 @@ class admin extends Kodesonen{
 
             $query = $this->sql->selectWithData("medlemmer", "epost", $email);
             if($query->rowCount() == 1){
-                if($this->verifyPassword($password)){
+                if($this->verifyPassword($email, $password)){
                     $row = $query->fetch(PDO::FETCH_ASSOC);
                     $_SESSION['UID'] = $row['id'];
                     header("Location: /?side=admin");
@@ -253,8 +258,9 @@ class admin extends Kodesonen{
         }
     }
 
-    private function verifyPassword($password){
-        $query = $this->sql->selectWithData("medlemmer", "passord", $password);
+    private function verifyPassword($email, $password){
+        $query = $this->sql->pdo->prepare("SELECT id FROM medlemmer WHERE epost = :epost AND passord = :passord");
+        $query->execute(array(':epost' => $email, ':passord' => $password));
         if($query->rowCount() == 1) return true;
         else return false;
     }

@@ -111,7 +111,7 @@ class Kodesonen{
 
 	public function requestRawData($table, $request){
 		return $this->sql->grabData($table, "id", $_GET['id'], $request);
-	}
+	}	
 
 	public function requestSpecificData($table, $column, $data, $request){
 		echo $this->sql->grabData($table, $column, $data, $request);
@@ -247,6 +247,45 @@ class Kodesonen{
 		$adm = new admin;
 		$adm->editUser();
 	}
+
+	public function getStudy($navn){
+        switch($navn){
+            case 'DATAING': return "Dataingeniør"; break;
+            case 'ELEKING': return "Elektroingeniør"; break;
+            case 'MASKING': return "Maskiningeniør"; break;
+            case 'LEKTOR': return "Lektorstudent"; break;
+            default: return "Ukjent"; break;
+        }
+    }
+
+    public function getDegree($navn){
+        switch($navn){
+            case 'BACH': return "Bachelor"; break;
+            case 'MAST': return "Master"; break;
+            case 'STAFF': return "Lærer"; break;
+            default: return "Ukjent"; break;
+        }
+    }
+
+    public function getAuthor(){
+    	$usr = new user;
+		$usr->getAuthorName();
+    }
+
+    public function getPostDate(){
+    	$usr = new user;
+		$usr->getPostedDate();
+    }
+
+    public function loadNextPost(){
+    	$usr = new user;
+		$usr->getNextPost();
+    }
+
+    public function loadPrevPost(){
+    	$usr = new user;
+		$usr->getPrevPost();
+    }
 }
 
 ?>
