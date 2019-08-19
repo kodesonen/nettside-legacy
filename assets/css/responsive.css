@@ -166,9 +166,6 @@
 	.medlem-info {
 		grid-column: span 12;
 	}
-	.course_jump_break {
-		margin: 20px 20px;
-	}
 	.add_course_select {
 		grid-column: span 12;
 	}
@@ -203,11 +200,18 @@
 	.member-list {
 		margin: 0px 20px !important;
 	}
+	.course-navigation-info-break {
+		padding: 0px !important;
+	}
+	.course_read_section img {
+		max-width: 100% !important;
+		height: auto !important; 
+	}
 	
 	/* Kurskatalog innlegg */
 	@media screen and (max-height: 960px) {
 		.course_read_section {
-			width: 100%;
+			margin: 20px 20px;
 		}
 		.course_jump_break {
 			width: 100%;
@@ -218,6 +222,9 @@
 		}
 		.course_read_section img {
 			width: 100%;
+		}
+		.course-navigation-select .fas, .course-navigation-select h3 {
+			font-size: large !important;
 		}
 	}
 

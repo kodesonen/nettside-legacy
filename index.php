@@ -15,7 +15,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/inc/admin.class.php');
 $core = new Kodesonen;
 $core->validPage();
 $core->checkSession();
-$core->betaAccess();
+//$core->betaAccess();
 
 switch($_GET['side']){
     case 'hjem': include("pages/home.php"); break;
@@ -42,6 +42,7 @@ switch($_GET['side']){
     case 'endre-utfordring': include("pages/endre-utfordring.php"); break;
     case 'endre-bruker': include("pages/endre-bruker.php"); break;
     case 'vilkar-og-personvern': include("pages/vilkar-og-personvern.php"); break;
+    case 'sokemotoroptimalisering': include("pages/sokemotoroptimalisering.php"); break;
     default: include("pages/404.php"); break;
 }
 

@@ -78,7 +78,7 @@
                     </div>
                 </a>
 		
-        		<a href='#' class='box_thread admin-black'>
+        		<a href='/?side=sokemotoroptimalisering' class='box_thread admin-black'>
                     <div class='box_symbol'>
                         <h1><i class='fas fa-chart-line'></i></h1>
                     </div>
@@ -106,10 +106,6 @@
         ?>
 	</div>
 	
-	<div class="text-info">
-		<h1>Informasjon</h1><br/>
-		<p>Her vil nyttig informasjon bli lagt til.</p>			
-	</div>
 	
 </div>
 

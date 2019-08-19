@@ -11,11 +11,14 @@
 			</div>
 
 			<form action='' method='POST'>
-				<label for="navn"><b>Kapittelnavn</b></label>
+				<label for="navn"><b>Navn</b></label>
 				<input type="text" placeholder="Oppgi kapittel navnet" name="navn" required>
+
+				<label for="delnr"><b>Kapittel</b></label>
+				<input type="text" placeholder="Oppgi kapittel nummer (for eksempel 1)" name="kapittel" required>
 				
-				<label for="delnr"><b>Delnummer</b></label>
-				<input type="text" placeholder="Oppgi delnummer (for eksempel 1.0)" name="delnr" required>
+				<label for="delnr"><b>Delkapittel</b></label>
+				<input type="text" placeholder="Oppgi delnummer (for eksempel 5)" name="delnr" required>
 				
 				<hr/><button type="submit" name="submit" class="medlem-button add_course_select">Legg til kapittel</button>
 			</form>

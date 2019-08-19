@@ -286,6 +286,11 @@ class Kodesonen{
     	$usr = new user;
 		$usr->getPrevPost();
     }
+	
+	public function listSEO(){
+		$adm = new admin;
+		$adm->SEO();
+	}
 }
 
 ?>

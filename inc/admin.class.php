@@ -81,6 +81,24 @@ class admin extends Kodesonen{
     }
 
     protected function createChapter(){
+        /* MÅ RYDDES OPP
+        if($_POST['navn'] !== '' AND $_POST['kapittel'] !== '' AND $_POST['delnr'] !== ''){
+            if($_POST['delnr'] !== '0'){
+                $query = $this->sql->pdo->prepare("
+                    INSERT INTO kurskapitler (kursid, kapittel, delkapittel, tittel) 
+                    VALUES (:kursid, :kapittel, :delkapittel, :tittel)
+                ");
+
+                $query->execute(array(
+                    ':kursid' => $_GET['id'], 
+                    ':kapittel' => $_POST['kapittel'], 
+                    ':delkapittel' => $_POST['delnr'], 
+                    ':tittel' => $_POST['navn']
+                ));
+                $this->labelText("SUCCESS", "Hurra", "Du har opprettet et nytt kapittel.");
+            }
+            else $this->labelText("ERROR", "Oops", "Alle delkapitler må starte fra 1.");
+
         if($_POST['navn'] !== '' AND $_POST['delnr'] !== ''){
             $navn = $_POST['navn'];
             $delnr = $_POST['delnr'];
@@ -91,6 +109,7 @@ class admin extends Kodesonen{
             $this->labelText("SUCCESS", "Hurra", "Du har opprettet et nytt kapittel.");
         }
         else $this->labelText("ERROR", "Heyyy", "Husk å fylle ut alle tekstfeltene!");
+        */
     }
 
     protected function loadPostText(){
@@ -349,6 +368,40 @@ class admin extends Kodesonen{
         }
         else $this->labelText("ERROR", "Hei du", "Husk å fylle ut alle tekstfeltene!");
     }
+
+	protected function SEO(){
+		$excludedFiles = array(
+            'login.php',
+            'admin.php', 
+            'nytt-kurs.php',
+            'endre-kurs.php',
+            'skriv-inlegg.php',
+            'skjul-medlem.php',
+            'kapittelbehandler.php',
+            'nytt-kapittel.php',
+            'ny-utfordring.php',
+            'endre-utfordring.php',
+            'endre-medlemmer.php',
+            'kursbehandler.php',
+            'endre-utfordringer.php',
+            'sokemotoroptimalisering.php'
+        );
+			
+		if($handle = opendir('./pages/')){
+			while(false !== ($entry = readdir($handle))){	
+				if($entry != "." && $entry != ".." && preg_match('/\.php$/', $entry) && !in_array(strtolower($entry), $excludedFiles)){
+					echo "
+					<a href='/?side=sokemotoroptimalisering&id=$entry'>
+						<div class='seo-listing-select' style='width: calc(33% - 60px); text-align: center;background: rgb(245, 245, 245);padding: 20px; border-radius: 5px; color: #000;margin-bottom: 20px; margin-right: 20px; float: left;'>
+							<h2>" . basename($entry, ".php") . "</h2>
+						</div>
+					</a>
+					";
+				}
+			}
+			closedir($handle);
+        }
+	}
 }
 
 ?>

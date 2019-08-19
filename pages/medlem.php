@@ -1,4 +1,3 @@
-
 <?php $core->pageHead("Bli medlem"); ?>
 
 	<?php $core->getHeader(); ?>
