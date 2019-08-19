@@ -1,7 +1,7 @@
 <?php
 // Utviklet av Sirajuddin Asjad og Daniel Skryseth
 // GitHub: https://github.com/kodesonen
-// E-post: kontakt@kodesonen.no
+// E-post: kontakt@kodesonen.no 
 
 session_start(); ob_start();
 ini_set('display_errors', 1);
