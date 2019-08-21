@@ -1,7 +1,7 @@
 <?php
 // Utviklet av Sirajuddin Asjad og Daniel Skryseth
 // GitHub: https://github.com/kodesonen
-// E-post: kontakt@kodesonen.no
+// E-post: kontakt@kodesonen.no 
 
 session_start(); ob_start();
 ini_set('display_errors', 1);
@@ -15,7 +15,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/inc/admin.class.php');
 $core = new Kodesonen;
 $core->validPage();
 $core->checkSession();
-$core->betaAccess();
+//$core->betaAccess();
 
 switch($_GET['side']){
     case 'hjem': include("pages/home.php"); break;
