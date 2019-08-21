@@ -3,15 +3,20 @@
 class user extends Kodesonen{
     protected function register(){
         if($_POST['navn'] !== '' AND $_POST['epost'] !== ''){
-            $navn = $_POST['navn'];
-            $epost = $_POST['epost'];
-
-            $query = $this->sql->selectWithData("medlemmer", "epost", $epost);
+            $query = $this->sql->selectWithData("medlemmer", "epost", $_POST['epost']);
             if($query->rowCount() == 0){
-                $query = $this->sql->pdo->prepare("INSERT INTO medlemmer (navn, epost) VALUES (:navn, :epost)");
-                $query->execute(array(':navn' => $navn, ':epost' => $epost));
+                $query = $this->sql->pdo->prepare("
+                    INSERT INTO medlemmer (navn, epost, studie, grad, regdato) 
+                    VALUES (:navn, :epost, :studie, :grad, :regdato)");
+                $query->execute(array(
+                    ':navn' => $_POST['navn'], 
+                    ':epost' => $_POST['epost'],
+                    ':studie' => $_POST['retning'],
+                    ':grad' => $_POST['grad'],
+                    ':regdato' => $this->getDate(1)
+                ));
+
                 $this->labelText("SUCCESS", "Hurra", "Du er nå medlem av ".$this->name.". Velkommen skal du være!");
-                // send epost med verifisering
             }
             else $this->labelText("ERROR", "Oops", "Denne e-post adressen finnes allerede i systemet. Du er visst medlem fra før!");
         }
@@ -39,9 +44,6 @@ class user extends Kodesonen{
         $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :id GROUP BY kapittel");
         $query->execute(array(':id' => $_GET['id']));
         $total_chapters = $query->rowCount();
-
-        echo $total_chapters;
-
 
         for($i = 1; $i <= $total_chapters; $i++){
             $query = $this->sql->pdo->prepare("SELECT * FROM kurskapitler WHERE kursid = :id AND kapittel = $i");
@@ -104,7 +106,7 @@ class user extends Kodesonen{
             }
             else $this->labelText("ERROR", "Beklager", "Dette innlegget har ikke blitt publisert enda!"); 
         }
-        else $this->labelText("ERROR", "Beklager", "Dette innlegget har ikke blitt skrevet enda!");
+        else $this->labelText("ERROR", "Beklager", "Dette innlegget har ikke blitt publisert enda!");
     }
 
     private function countDownloads($id){
@@ -118,40 +120,45 @@ class user extends Kodesonen{
 
     protected function listChallenges(){
         $query = $this->sql->selectNoData("utfordringer");
-        while($row = $query->fetch(PDO::FETCH_ASSOC)){
-            $id = $row['id'];
-            $tittel = $row['tittel'];
-            $beskrivelse = $row['beskrivelse'];
-            $bilde = $row['bilde'];
-            $pdf = $row['pdf'];
-            $git = $row['git'];
 
-            echo "
-            <div class='challenge-box'>
-                <div class='challenge-image'>
-                    <center><img id='image-ufordringer-id' alt='Dette er en eksempel tekst!' src='assets/img/challenges/meetup-example.jpg'/></center>
-					<div class='utfordringer_image_overlay'><i class='fas fa-search-plus'></i></div>
-                </div>
+        if($query->rowCount() != 0){
+            while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                $id = $row['id'];
+                $tittel = $row['tittel'];
+                $beskrivelse = $row['beskrivelse'];
+                $bilde = $row['bilde'];
+                $pdf = $row['pdf'];
+                $git = $row['git'];
 
-                <div class='challenge-info'>
-                    <div class='challenge-info-text'>
-                        <h2>$tittel</h2><br/>
-                        <p>$beskrivelse</p>
+                echo "
+                <div class='challenge-box'>
+                    <div class='challenge-image'>
+                        <center><img id='image-ufordringer-id' alt='Dette er en eksempel tekst!' src='assets/img/challenges/meetup-example.jpg'/></center>
+                        <div class='utfordringer_image_overlay'><i class='fas fa-search-plus'></i></div>
                     </div>
 
-                    <div class='challenge-info-buttons'>
-                        <br/><p><a href='/assets/pdf/$pdf' target='_blank' class='button'><i class='fas fa-file-pdf'></i> Last ned pdf</a></p> 
-                        <p style='margin-top: 10px'> <a href='$git' target='_blank' class='hyperlink'><i class='fab fa-github-square'></i> GitHub</a></p>
+                    <div class='challenge-info'>
+                        <div class='challenge-info-text'>
+                            <h2>$tittel</h2><br/>
+                            <p>$beskrivelse</p>
+                        </div>
+
+                        <div class='challenge-info-buttons'>
+                            <br/><p><a href='/assets/pdf/$pdf' target='_blank' class='button'><i class='fas fa-file-pdf'></i> Last ned pdf</a></p> 
+                            <p style='margin-top: 10px'> <a href='$git' target='_blank' class='hyperlink'><i class='fab fa-github-square'></i> GitHub</a></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-			<div id='utfordringer-modal' class='image-utfordringer-modal'>
-			  <span class='close'>&times;</span>
-			  <img class='modal-content' id='utfordringer_image'>
-			  <div id='caption'></div>
-			</div>
-            ";
+                <div id='utfordringer-modal' class='image-utfordringer-modal'>
+                  <span class='close'>&times;</span>
+                  <img class='modal-content' id='utfordringer_image'>
+                  <div id='caption'></div>
+                </div>
+                ";
+            }
         }
+        else $this->labelText("ERROR", "Hmmm", "Vi har ikke lagt ut noen utfordringer for øyeblikket. Kom tilbake senere!");
+        
     }
 
     protected function getMemberList(){

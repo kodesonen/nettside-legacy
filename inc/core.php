@@ -49,6 +49,14 @@ class Kodesonen{
 		return $_SERVER['REMOTE_ADDR'];
 	}
 
+	public function getDate($type){
+		switch($type){
+			case 1: return date('d.m.Y'); break;
+			case 2: return date('m/d/Y (H:i)'); break;
+			case 3: return date('j F Y'); break;
+		}
+	}
+
 	public function checkSession(){
 		if(isset($_SESSION['UID'])) $UID = $_SESSION['UID'];
 	}
@@ -286,6 +294,11 @@ class Kodesonen{
     	$usr = new user;
 		$usr->getPrevPost();
     }
+	
+	public function listSEO(){
+		$adm = new admin;
+		$adm->SEO();
+	}
 }
 
 ?>
