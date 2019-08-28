@@ -1,6 +1,7 @@
 <?php $core->pageHead("Søkemotoroptimalisering"); ?>
-
 <?php $core->getHeader(); ?>
+
+<?php $core->checkAuth(); ?>
 
 <div class="wrapper">
 	<div class="text-info">

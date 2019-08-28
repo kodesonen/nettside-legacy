@@ -2,6 +2,8 @@
 <?php if(!$core->isLoggedIn() || !$core->isAdmin()) header("Location: /?side=hjem"); ?>
 <?php $core->getHeader(); ?>
 
+<?php $core->checkAuth(); ?>
+
 <div class="wrapper">
     <div class="text-info">
         <h1>Endre medlemmer</h1><br/>

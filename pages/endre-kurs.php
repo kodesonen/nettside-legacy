@@ -1,6 +1,8 @@
 <?php $core->pageHead("Endre kurs"); ?>
-
 <?php $core->getHeader(); ?>
+
+<?php $core->checkAuth(); ?>
+
 <div class="wrapper">
     <div class="medlem-form">
         <h1>Endre kurs</h1><hr/>

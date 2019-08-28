@@ -71,6 +71,12 @@ class Kodesonen{
 		if($admin >= 2) return true;
 		else return false;
 	}
+	
+	public function checkAuth() {
+		if(!isset($_SESSION['UID'])) {
+			header("Location: /?side=404");
+		}
+	}
 
 	public function validPage(){
 		if(!isset($_GET['side'])) header("Location: /?side=hjem");
@@ -299,6 +305,7 @@ class Kodesonen{
 		$adm = new admin;
 		$adm->SEO();
 	}
+
 }
 
 ?>

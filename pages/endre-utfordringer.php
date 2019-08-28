@@ -2,6 +2,8 @@
 <?php if(!$core->isLoggedIn() || !$core->isAdmin()) header("Location: /?side=hjem"); ?>
 <?php $core->getHeader(); ?>
 
+<?php $core->checkAuth(); ?>
+
 <div class="wrapper">
 	<div class="kurs_info">
 		<h1>Behandle utfordringer</h1><br/>
