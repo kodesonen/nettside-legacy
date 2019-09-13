@@ -10,7 +10,7 @@
 	<link rel='stylesheet' href='/assets/css/animate.css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 	
-	<link rel="icon" type="image/png" href="assets/img/favicon.png" />
+	<link rel="icon" type="image/png" href="favicon.ico" />
 	
     <?php if($_GET['side'] == 'skriv-innlegg'){
         echo "
@@ -18,8 +18,6 @@
             <link rel='stylesheet' href='/assets/css/summernote.css'>
         ";
     } ?>
-
-	<?php include ("pages/parts/seo.php"); ?>
 
 </head>
 <body>

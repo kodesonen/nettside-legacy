@@ -261,6 +261,17 @@ a .fas {
 .admin-black:hover {
 	opacity: .8;
 }
+.seo-listing-select {
+	width: calc(33% - 60px); 
+	text-align: center;
+	background: rgb(245, 245, 245);
+	padding: 20px; 
+	border-radius: 5px; 
+	color: #000;
+	margin-bottom: 20px; 
+	margin-right: 20px; 
+	float: left;
+}
 
 /* -------------- /END ------------- */
 

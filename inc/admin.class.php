@@ -392,7 +392,7 @@ class admin extends Kodesonen{
 				if($entry != "." && $entry != ".." && preg_match('/\.php$/', $entry) && !in_array(strtolower($entry), $excludedFiles)){
 					echo "
 					<a href='/?side=sokemotoroptimalisering&id=$entry'>
-						<div class='seo-listing-select' style='width: calc(33% - 60px); text-align: center;background: rgb(245, 245, 245);padding: 20px; border-radius: 5px; color: #000;margin-bottom: 20px; margin-right: 20px; float: left;'>
+						<div class='seo-listing-select'>
 							<h2>" . basename($entry, ".php") . "</h2>
 						</div>
 					</a>

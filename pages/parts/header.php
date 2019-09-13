@@ -15,7 +15,7 @@
 <div class="header">
     <div class="wrapper">
         <div class="logo-section">
-            <a href="/?side=hjem"><img src="/assets/img/original-vannrett.png" alt="Kodesonen logo"/></a>
+            <a href="/?side=hjem"><img src="/assets/img/logo-horizontal.png" alt="Kodesonen logo"/></a>
         </div>
 
         <div id="navigation" class="navigation overlay">
