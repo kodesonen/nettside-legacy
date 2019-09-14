@@ -3,6 +3,17 @@
 
 <?php $core->checkAuth(); ?>
 
+<div class="breadcrumbs">
+	<div class="wrapper">
+		<ul class="breadcrumb-nav">
+			<li><a href="/?side=admin">Kontrollpanel</a></li>
+			
+			<li><a href="/?side=sokemotoroptimalisering">Søkemotoroptimalisering</a></li>
+			
+		</ul>
+	</div>
+</div>
+
 <div class="wrapper">
 	<div class="text-info">
 		<h1>Søkemotoroptimalisering</h1><br/>

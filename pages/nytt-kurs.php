@@ -4,6 +4,19 @@
 
 <?php $core->checkAuth(); ?>
 
+<div class="breadcrumbs">
+	<div class="wrapper">
+		<ul class="breadcrumb-nav">
+			<li><a href="/?side=admin">Kontrollpanel</a></li>
+			
+			<li><a href="/?side=kursbehandler">Kursbehandler</a></li>
+			
+			<li><a href="#">...</a></li>
+			
+		</ul>
+	</div>
+</div>
+
 <div class="wrapper">
 	<div class="medlem-form">
 		<h1>Legg til nytt kurs</h1><hr/>

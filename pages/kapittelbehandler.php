@@ -3,6 +3,21 @@
 
 <?php $core->checkAuth(); ?>
 
+<div class="breadcrumbs">
+	<div class="wrapper">
+		<ul class="breadcrumb-nav">
+			<li><a href="/?side=admin">Kontrollpanel</a></li>
+			
+			<li><a href="/?side=kursbehandler">Kursbehandler</a></li>
+			
+			<li><a href="/?side=kapittelbehandler&id=<?php echo $_GET['id']; ?>">
+				<?php $core->requestSpecificData("kurskatalog", "id", $_GET['id'], "navn"); ?>
+			</a></li>
+			
+		</ul>
+	</div>
+</div>
+
 <div class="wrapper">
 	<div class="kurs_info">
 		<h1>Behandle kapitler</h1><br/>

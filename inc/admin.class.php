@@ -339,13 +339,15 @@ class admin extends Kodesonen{
 
     protected function findUser(){
         if(isset($_POST['epost'])){
-            $query = $this->sql->pdo->prepare("SELECT id FROM medlemmer WHERE epost = :epost");
+            $query = $this->sql->pdo->prepare("SELECT id FROM medlemmer WHERE epost = :epost OR navn = :epost");
             $query->execute(array(':epost' => $_POST['epost']));
             if($query->rowCount() != 0){
                 $row = $query->fetch(PDO::FETCH_ASSOC);
                 header("Location: /?side=endre-bruker&id=".$row['id']."");
             }
-            else $this->labelText("ERROR", "Oops", "Denne brukeren finnes ikke!");
+            else {
+				$this->labelText("ERROR", "Oops", "Denne brukeren finnes ikke!");
+			}
         }
         else $this->labelText("ERROR", "Hei du", "Husk å fylle ut alle tekstfeltene!");
     }

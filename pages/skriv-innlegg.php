@@ -2,6 +2,26 @@
 <?php $core->pageHead("Skriv innlegg"); ?>
 
     <?php $core->getHeader(); ?>
+	
+	<div class="breadcrumbs">
+		<div class="wrapper">
+			<ul class="breadcrumb-nav" style="margin-bottom: 0px !important;">
+				<li><a href="/?side=admin">Kontrollpanel</a></li>
+				
+				<li><a href="/?side=kursbehandler">Kursbehandler</a></li>
+				
+				<li><a href="/?side=kapittelbehandler&id=<?php echo $_GET['id']; ?>">
+					<?php $core->requestSpecificData("kurskatalog", "id", $_GET['id'], "navn"); ?>
+				</a></li>
+				
+				<li><a href="/?side=kapittelbehandler&id=<?php echo $_GET['id']; ?>">
+					<?php $core->requestSpecificData("kurskapitler", "id", $_GET['id'], "tittel"); ?>
+				</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
     <div class="wrapper">
 		<div class="kurs_info">
 			<h1>Skriv et innlegg</h1>

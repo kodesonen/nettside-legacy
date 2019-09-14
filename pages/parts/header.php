@@ -1,3 +1,4 @@
+
 <?php if($this->isLoggedIn()){
     echo "
     <div class='admin-header'>

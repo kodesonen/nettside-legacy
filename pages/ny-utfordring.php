@@ -4,6 +4,19 @@
 
 <?php $core->checkAuth(); ?>
 
+<div class="breadcrumbs">
+	<div class="wrapper">
+		<ul class="breadcrumb-nav">
+			<li><a href="/?side=admin">Kontrollpanel</a></li>
+			
+			<li><a href="/?side=endre-utfordringer">Endre utfordringer</a></li>
+			
+			<li><a href="#">...</a></li>
+			
+		</ul>
+	</div>
+</div>
+
 <div class="wrapper">
 	<div class="medlem-form">
 		<h1>Legg til ny utfordring</h1><hr/>

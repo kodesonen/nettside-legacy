@@ -2,6 +2,14 @@
 <?php if(!$core->isLoggedIn()) header("Location: /?side=hjem"); ?>
 <?php $core->getHeader(); ?>
 
+<div class="breadcrumbs">
+	<div class="wrapper">
+		<ul class="breadcrumb-nav">
+			<li><a href="/?side=admin">Kontrollpanel</a></li>
+		</ul>
+	</div>
+</div>
+
 <div class="wrapper">
 	<div class="text-info">
         <h1>Admin kontrollpanel</h1><br/>

@@ -272,6 +272,9 @@ a .fas {
 	margin-right: 20px; 
 	float: left;
 }
+.seo-listing-select:hover {
+	background: rgb(234, 234, 234);
+}
 
 /* -------------- /END ------------- */
 
