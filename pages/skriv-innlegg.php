@@ -14,9 +14,7 @@
 					<?php $core->requestSpecificData("kurskatalog", "id", $_GET['id'], "navn"); ?>
 				</a></li>
 				
-				<li><a href="/?side=kapittelbehandler&id=<?php echo $_GET['id']; ?>">
-					<?php $core->requestSpecificData("kurskapitler", "id", $_GET['id'], "tittel"); ?>
-				</a></li>
+				<li><a href="#">...</a></li>
 				
 			</ul>
 		</div>

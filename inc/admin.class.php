@@ -394,7 +394,7 @@ class admin extends Kodesonen{
 			while(false !== ($entry = readdir($handle))){	
 				if($entry != "." && $entry != ".." && preg_match('/\.php$/', $entry) && !in_array(strtolower($entry), $excludedFiles)){
 					echo "
-					<a href='/?side=sokemotoroptimalisering&id=$entry'>
+					<a href='/?side=endre-seo&id=$entry'>
 						<div class='seo-listing-select'>
 							<h2>" . basename($entry, ".php") . "</h2>
 						</div>
