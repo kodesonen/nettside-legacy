@@ -32,10 +32,9 @@
                 <?php if(isset($_POST['publish'])){ $core->newPost('publish'); } ?>
             </div>
 
-            <form action='' method='POST'>
-                <label for="navn"><b>Kapittelnavn:</b></label>
+            <form action='' method='POST'><br/>
+                <label for="navn">Kapittelnavn:</label><br/>
                 <input type="text" class="kapittelnavn" value="<?php $core->getChapterName(); ?>" name="navn">
-
                 <textarea class="summernote" name="tekst"><?php $core->loadAdminPost(); ?></textarea>
 
                 <hr/>

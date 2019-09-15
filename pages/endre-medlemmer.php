@@ -30,7 +30,7 @@
         <form action='' method='POST' class="mendre-medlemmer">
             <input type="text" id="search-user" class="endre-medlemmer-input" placeholder="Søk etter navn eller e-post..." name="epost" required>
             
-            <button type="submit" name="submit" class="endre-medlemmer-button">Søk etter medlem</button>
+            <button type="submit" name="submit" class="endre-medlemmer-button"><i class="fas fa-search"></i> Søk etter medlem</button>
         </form>
     </div>
 	

@@ -20,7 +20,7 @@
         <?php 
             if($core->isAdmin()){
                 echo "
-        		<a href='#' class='box_thread admin-black'>
+        		<a href='/?side=generelle-innstillinger' class='box_thread admin-black'>
                     <div class='box_symbol'>
                         <h1><i class='fas fa-cogs'></i></h1>
                     </div>
@@ -93,7 +93,7 @@
 
                     <div class='box_info'>
                         <h2>Søkemotoroptimalisering</h2>
-                        <h4>Endre On-Page SEO for alle sider</h4>
+                        <h4>Endre On-Page SEO for alle undersider</h4>
                     </div>
                 </a>";
             }

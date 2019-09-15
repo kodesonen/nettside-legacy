@@ -45,6 +45,7 @@ switch($_GET['side']){
     case 'sokemotoroptimalisering': include("pages/sokemotoroptimalisering.php"); break;
     case 'endre-seo': include("pages/endre-seo.php"); break;
     case 'send-epost': include("pages/send-epost.php"); break;
+    case 'generelle-innstillinger': include("pages/generelle-innstillinger.php"); break;
     default: include("pages/404.php"); break;
 }
 

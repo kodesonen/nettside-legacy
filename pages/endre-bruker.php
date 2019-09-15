@@ -9,7 +9,7 @@
 		<ul class="breadcrumb-nav">
 			<li><a href="/?side=admin">Kontrollpanel</a></li>
 			
-			<li><a href="/?side=endre-medlemmer">Endre medlemmer</a></li>
+			<li><a href="/?side=endre-medlemmer">Endre bruker</a></li>
 			
 			<li><a href="#">...</a></li>
 			
@@ -19,7 +19,9 @@
 
 <div class="wrapper">
 	<div class="grid-12 medlem-form endre-bruker">
-		<h1>Endre bruker</h1><hr/>
+		<h1>Endre på <?php echo $core->requestData("medlemmer", "navn"); ?></h1>
+		<p>Her vil du kunne endre instillingene til <?php echo $core->requestData("medlemmer", "navn"); ?>. For å oppdatere detaljene for brukeren kan du redigere feltene nedenfor, for å så klikke på "Oppdater bruker".</p>
+		<hr/>
 		<div class="wrapper">
 			<?php if(isset($_POST['submit'])){ $core->newCourse(); } ?>
 		</div>
@@ -93,7 +95,7 @@
 				
 				<div class="wrapper grid-12 grid-gap-standard">
 					<div class="grid-4">
-						<button type="submit" id="kodesonen-button" name="edit-user" class="medlem-button add_course_select">Endre bruker</button>
+						<button type="submit" id="kodesonen-button" name="edit-user" class="medlem-button add_course_select">Oppdater bruker</button>
 					</div>
 					
 					<div class="grid-4">

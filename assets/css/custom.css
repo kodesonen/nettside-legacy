@@ -181,8 +181,11 @@ a .fas {
 .grid-gap-standard {grid-gap: 0px 30px; !important}
 
 #warning-button {color: #fff; background: #c91e1e; }
+#warning-button:hover {opacity: .8; }
 #neutral-button {color: #000; background: #dbdbdb; }
+#neutral-button:hover {background: #d3d1d1; }
 #kodesonen-button {color: #fff; background: #2C3E50;}
+#kodesonen-button:hover {background: #0f151b; }
 
 /* -------------- /END ------------- */
 
@@ -265,7 +268,6 @@ a .fas {
 	margin-bottom: 15px;
 	border-radius: 3px;
 	padding: 10px 5px;
-	margin: 20px;
 	min-width: 300px;
 	border: 1px solid #a9a9a9 !important;
 }
@@ -321,7 +323,7 @@ a .fas {
 	margin-left: 6px;
 	border: 0px solid;
 	height: 54px;
-	font-size: medium;
+	font-size: large;
 	cursor: pointer;
 }
 .endre-medlemmer-button:hover {
