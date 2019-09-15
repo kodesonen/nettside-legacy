@@ -64,7 +64,7 @@
                     </div>
                 </a>
 
-                <a href='#' class='box_thread admin-black'>
+                <a href='/?side=send-epost' class='box_thread admin-black'>
                     <div class='box_symbol'>
                         <h1><i class='fas fa-envelope'></i></h1>
                     </div>

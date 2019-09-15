@@ -386,7 +386,8 @@ class admin extends Kodesonen{
             'endre-medlemmer.php',
             'kursbehandler.php',
             'endre-utfordringer.php',
-            'sokemotoroptimalisering.php'
+            'sokemotoroptimalisering.php',
+            'send-epost.php'
         );
 			
 		if($handle = opendir('./pages/')){
@@ -403,6 +404,12 @@ class admin extends Kodesonen{
 			}
 			closedir($handle);
         }
+	}
+	
+	protected function sendEmail() {
+		/* 
+		
+		*/
 	}
 }
 

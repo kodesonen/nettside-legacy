@@ -165,6 +165,24 @@ a .fas {
 	text-align: center;
 	margin: 80px 0px;
 }
+.grid-12 {grid-column: span 12 !important;}
+.grid-11 {grid-column: span 11 !important;}
+.grid-10 {grid-column: span 10 !important;}
+.grid-9 {grid-column: span 9 !important;}
+.grid-8 {grid-column: span 8 !important;}
+.grid-7 {grid-column: span 7 !important;}
+.grid-6 {grid-column: span 6 !important;}
+.grid-5 {grid-column: span 5 !important;}
+.grid-4 {grid-column: span 4 !important;}
+.grid-3 {grid-column: span 3 !important;}
+.grid-2 {grid-column: span 2 !important;}
+.grid-1 {grid-column: span 1 !important;}
+
+.grid-gap-standard {grid-gap: 0px 30px; !important}
+
+#warning-button {color: #fff; background: #c91e1e; }
+#neutral-button {color: #000; background: #dbdbdb; }
+#kodesonen-button {color: #fff; background: #2C3E50;}
 
 /* -------------- /END ------------- */
 
@@ -274,6 +292,40 @@ a .fas {
 }
 .seo-listing-select:hover {
 	background: rgb(234, 234, 234);
+}
+.endre-medlemmer-input{
+	float: left; 
+	width: calc(70% - 20px); 
+	height: 54px;
+	padding: 15px;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+	border-radius: 3px;
+	display: inline-block;
+	border: none;
+	background: rgb(245, 245, 245);
+	font-size: medium;
+}
+.endre-medlemmer-button {
+	float: left; 
+	width: 30%; 
+	margin-top: 0px;
+	background: #222222;
+	padding: 15px;
+	padding-left: 25px !important;
+	border-radius: 5px;
+	transition: .3s;
+	color: #fff;
+	margin-bottom: 10px;
+	margin-right: 6px;
+	margin-left: 6px;
+	border: 0px solid;
+	height: 54px;
+	font-size: medium;
+	cursor: pointer;
+}
+.endre-medlemmer-button:hover {
+	opacity: .8;
 }
 
 /* -------------- /END ------------- */

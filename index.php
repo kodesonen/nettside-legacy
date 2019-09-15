@@ -43,6 +43,7 @@ switch($_GET['side']){
     case 'endre-bruker': include("pages/endre-bruker.php"); break;
     case 'vilkar-og-personvern': include("pages/vilkar-og-personvern.php"); break;
     case 'sokemotoroptimalisering': include("pages/sokemotoroptimalisering.php"); break;
+    case 'send-epost': include("pages/send-epost.php"); break;
     default: include("pages/404.php"); break;
 }
 

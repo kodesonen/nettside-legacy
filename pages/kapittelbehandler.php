@@ -34,7 +34,7 @@
 		</div>
 	</a>
 
-	<a href="/?side=endre-kurs&id=<?php echo $_GET['id']; ?>" class="add_course_select">
+	<a href="/?side=endre-kurs&id=<?php echo $_GET['id']; ?>" class="add_course_select" id="kodesonen-button">
 		<div class="course_select_info">
 			<h2><i class="fas fa-edit" style="padding-right: 6px;"></i> Endre kurs</h2>
 		</div>

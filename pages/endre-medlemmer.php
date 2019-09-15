@@ -18,19 +18,19 @@
 <div class="wrapper">
     <div class="text-info">
         <h1>Endre medlemmer</h1><br/>
-        <p>Her kan du både se på og endre Kodesonens medlemmer.</p>
+        <p>Her kan du både se på og endre Kodesonens medlemmer. For å endre et medlem må du søke etter medlemmet med enten fullt navn eller e-post.</p>
     </div>
 
-    <div style="grid-column: span 12;">
+    <div class="grid-12">
 		<div class="text-info">
 			<h2>Søk etter medlem:</h2>
 		</div>
         <div class="wrapper"><?php if(isset($_POST['submit'])){ $core->findMember(); } ?></div>
 
-        <form action='' method='POST' class="medlem-form">
-            <input style="float: left; width: calc(70% - 20px); height: 54px;" type="text" id="search-user" placeholder="Søk etter navn eller e-post..." name="epost" required>
+        <form action='' method='POST' class="mendre-medlemmer">
+            <input type="text" id="search-user" class="endre-medlemmer-input" placeholder="Søk etter navn eller e-post..." name="epost" required>
             
-            <button style="float: left; width: 30%; margin-top: 0px;" type="submit" name="submit" class="medlem-button add_course_select">Søk etter medlem</button>
+            <button type="submit" name="submit" class="endre-medlemmer-button">Søk etter medlem</button>
         </form>
     </div>
 	

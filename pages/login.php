@@ -1,6 +1,7 @@
 <?php $core->pageHead("Admin login"); ?>
 
 <?php $core->getHeader(); ?>
+
 <div class="wrapper">
 	<div class="medlem-form">
 		<h1>Admin login</h1><hr/>
@@ -20,7 +21,7 @@
 	</div>
 	
 	<div class="sidebar-image">
-		<img src="/assets/img/raw_svg/woman_with_backpack_and_robot.svg"/>
+		<img src="/assets/img/raw_svg/arduino_and_plant.svg"/>
 	</div>
 </div>
 
