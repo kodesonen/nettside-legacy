@@ -23,7 +23,6 @@
     <div class="wrapper">
 		<div class="kurs_info">
 			<h1>Skriv et innlegg</h1>
-			<p>Om man ønsker å legge inn kode i innlegget, anbefales det å bruke <a href="http://hilite.me/" class="hyperlink">kildekode til HTML</a>. Da kan HTMLen legges direkte inn i tekst området.</p>
 		</div>
         <div class="write-course">
 	
@@ -33,15 +32,23 @@
             </div>
 
             <form action='' method='POST'><br/>
-                <label for="navn">Kapittelnavn:</label><br/>
-                <input type="text" class="kapittelnavn" value="<?php $core->getChapterName(); ?>" name="navn">
-                <textarea class="summernote" name="tekst"><?php $core->loadAdminPost(); ?></textarea>
-
-                <hr/>
-				<div class="write-course-buttons">
-					<button type="submit" name="save" class="medlem-button add_course_select save-course"><i class="fas fa-save"></i> Lagre innlegg</button>
-					<button type="submit" name="publish" class="medlem-button add_course_select"><i class="fas fa-upload"></i> Publiser innlegg</button>
-				</div>
+				<div class="wrapper">
+					<div class="grid-12">
+						<label for="navn">Kapittelnavn:</label><br/>
+					</div>
+					<div class="grid-4">
+						<input type="text" class="kapittelnavn" value="<?php $core->getChapterName(); ?>" name="navn">
+					</div>
+					<div class="grid-8">
+						<div class="write-course-buttons">
+							<button type="submit" name="save" class="medlem-button add_course_select save-course"><i class="fas fa-save"></i> Lagre innlegg</button>
+							<button type="submit" name="publish" class="medlem-button add_course_select"><i class="fas fa-upload"></i> Publiser innlegg</button>
+						</div>
+					</div>
+					<div class="grid-12">
+						<textarea class="summernote" name="tekst"><?php $core->loadAdminPost(); ?></textarea>
+					</div>
+				</div
             </form>
         </div>
     </div>
@@ -53,9 +60,33 @@
 
     <script type="text/javascript">
     $(document).ready(function(){
+		var pasteCodeButton = function (context) {
+
+        var button = $.summernote.ui.button({
+            contents: '{ ... }',
+            tooltip: 'Paste Code',
+            click: function () {
+                $('.summernote').summernote('editor.pasteHTML', '<pre><code>Legg til kode her...</code></pre>');
+			}
+		  });
+		  return button.render(); 
+		}
         $('.summernote').summernote({
             height: 400,
-            tabsize: 2
+            tabsize: 2,
+			toolbar: [
+					['style', ['style']],
+					['font', ['bold', 'italic', 'underline', 'clear']],
+					['para', ['ul', 'ol']],
+					['height', ['height']],
+					['insert', ['link', 'picture']],
+					['mybutton', ['pasteCode']],
+					['view', ['fullscreen', 'codeview']],
+					['help', ['help']]
+					], 
+            buttons: {
+                pasteCode: pasteCodeButton
+            }
         });
     });
     </script>
