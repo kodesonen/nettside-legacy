@@ -22,11 +22,11 @@
 				<div class="retning">
 					<select name="retning">
 						<option value="0" disabled selected>Velg din studieretning</option>
-						<option value="data">Dataingeniør</option>
-						<option value="elektro">Elektroingeniør</option>
-						<option value="maskin">Maskiningeniør</option>
-						<option value="lektor">Lektor</option>
-						<option value="annet">Annet</option>
+						<option value="DATAING">Dataingeniør</option>
+						<option value="ELEKING">Elektroingeniør</option>
+						<option value="MASKING">Maskiningeniør</option>
+						<option value="LEKTOR">Lektor</option>
+						<option value="ANNET">Annet</option>
 					</select>
 				</div><br>
 
@@ -34,9 +34,9 @@
 				<div class="retning">
 					<select name="grad">
 						<option disabled selected>Velg din studiegrad</option>
-						<option value="bachelor">Bachelor</option>
-						<option value="master">Master</option>
-						<option value="annet">Annet</option>
+						<option value="BACH">Bachelor</option>
+						<option value="MAST">Master</option>
+						<option value="ANNET">Annet</option>
 					</select>
 				</div>
 
