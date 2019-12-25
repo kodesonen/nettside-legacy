@@ -861,6 +861,15 @@ a .fas {
 	margin-bottom: 30px;
 	border-bottom: 1px solid #f7f7f7;
 }
+.authorPost-section {
+	width: 100%;
+	padding: 15px 15px;
+	border-radius: 5px;
+	transition: .3s;
+	color: #000;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #f7f7f7;
+}
 
 /* Om oss */
 

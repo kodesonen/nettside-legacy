@@ -284,7 +284,7 @@ class Kodesonen{
     public function getAuthor(){
     	$usr = new user;
 		$usr->getAuthorName();
-    }
+	}
 
     public function getPostDate(){
     	$usr = new user;
@@ -299,7 +299,12 @@ class Kodesonen{
     public function loadPrevPost(){
     	$usr = new user;
 		$usr->getPrevPost();
-    }
+	}
+	
+	public function listAuthorPosts(){
+		$usr = new user;
+		$usr->listAuthorPosts();
+	}
 	
 	public function listSEO(){
 		$adm = new admin;

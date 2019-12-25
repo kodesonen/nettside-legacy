@@ -160,6 +160,36 @@ class user extends Kodesonen{
         else $this->labelText("ERROR", "Hmmm", "Vi har ikke lagt ut noen utfordringer for øyeblikket. Kom tilbake senere!");
         
     }
+    
+    public function listAuthorPosts() {
+
+        // Må finne en annen løsning, dette ble ikke pent pga HTML tags fra "innhold" radene.
+        
+        $wordLimit = 100;
+        $query = $this->sql->selectWithData("kursinnlegg", "forfatter", $_GET['id']);
+
+        if($query->rowCount() != 0){
+            while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                $id = $row['id'];
+                $dato = $row['dato'];
+                $innhold = $row['innhold'];
+
+                $words = explode(" ", $innhold);
+                implode(" ", array_slice($words, 0, $wordLimit));
+
+                echo "
+                        <div class='authorPost-section'>
+                     ";
+
+                echo implode(" ", array_slice($words, 0, $wordLimit)); // Print each kurs innlegg with limit.
+
+                echo "
+                        </div>
+                     ";
+            }
+        }
+        else $this->labelText("ERROR", "Oi!", "Vi finner ikke innleggene til brukeren");
+    }
 
     protected function getMemberList(){
         $query = $this->sql->selectNoData("medlemmer");
@@ -286,6 +316,7 @@ class user extends Kodesonen{
             ";
         }
     }
+
 }
 
 ?>

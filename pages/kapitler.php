@@ -13,7 +13,7 @@
 <div class="wrapper">
     <div class="kurs_info">
         <h1>Kurs kapitler</h1><br/>
-        <p>Her finner du de ulike kapitlene innenfor <?php $core->requestData("kurskatalog", "navn"); ?>, og disse kan utforskes ved å trykke på titlene under.</p><br/>
+        <p>Her finner du de ulike kapitlene innenfor <?php $core->requestData("kurskatalog", "navn"); ?>, disse kan utforskes ved å trykke på titlene under.</p><br/>
     </div>
 
 	<?php $core->getChapters(); ?>
