@@ -1,4 +1,5 @@
 <!-- Takk for at du tar en titt! Ønsker du hele kildekoden så sjekk oss ut på Github: https://github.com/kodesonen -->
+
 <!doctype html><html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -32,7 +33,7 @@
 </head>
 <body>
 
-<script src="/assets/js/cookiechoices.js"></script>
+	<script src="/assets/js/cookiechoices.js"></script>
 	<script>
 	  document.addEventListener('DOMContentLoaded', function(event) {
 		cookieChoices.showCookieConsentBar('Vi bruker informasjonskapsler!', 'Kodesonen bruker informasjonskapsler for å samle inn enkel informasjon over din aktivitet på denne nettsiden. Vi gjør dette for å analysere bruksmønsteret og aktiviteten til alle våre besøkende. Hvis dette er greit for deg, klikk på godkjent.', 
