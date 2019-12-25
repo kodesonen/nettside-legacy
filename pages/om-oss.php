@@ -58,6 +58,17 @@
 				</div>
 				</center><br/>
 			</div>
+			
+			<div class="profile-box">
+				<img src="assets/img/team/oestein.jpg"/>
+				<center>
+				<h3>Øystein Løndal Nilsen - <span>Dataingeniør</span></h3>
+				<div class="profile-social-links">
+					<a href="https://www.instagram.com/oysteinlondal/" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.linkedin.com/in/%C3%B8ystein-l%C3%B8ndal-nilsen-4034a2168/?originalSubdomain=no" target="_blank"><i class="fab fa-linkedin"></i></a>
+				</div>
+				</center><br/>
+			</div>
 		</div>
 	</div>
 	
