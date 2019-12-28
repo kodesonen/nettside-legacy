@@ -163,32 +163,30 @@ class user extends Kodesonen{
     
     public function listAuthorPosts() {
 
-        // Må finne en annen løsning, dette ble ikke pent pga HTML tags fra "innhold" radene.
-        
-        $wordLimit = 100;
-        $query = $this->sql->selectWithData("kursinnlegg", "forfatter", $_GET['id']);
+        // Using CAST to limit the amount of characters fetched from ´innhold´ with a visual effect from CSS
+        $query = $this->sql->pdo->query("SELECT kapid, kursid, forfatter, dato, CAST(innhold AS CHAR(1500)) AS kortinnhold, tittel 
+                                        FROM kursinnlegg, kurskapitler 
+                                        WHERE forfatter =". $_GET['id'] ." 
+                                        AND kursinnlegg.kapid = kurskapitler.id ORDER BY dato");
 
         if($query->rowCount() != 0){
             while($row = $query->fetch(PDO::FETCH_ASSOC)){
-                $id = $row['id'];
-                $dato = $row['dato'];
-                $innhold = $row['innhold'];
-
-                $words = explode(" ", $innhold);
-                implode(" ", array_slice($words, 0, $wordLimit));
+                $tittel = $row['tittel'];
+                $innhold = $row['kortinnhold'];
+                $kapid = $row['kapid'];
+                $kursid = $row['kursid'];
 
                 echo "
-                        <div class='authorPost-section'>
-                     ";
-
-                echo implode(" ", array_slice($words, 0, $wordLimit)); // Print each kurs innlegg with limit.
-
-                echo "
-                        </div>
-                     ";
+                        <div class='authorPost-section'><h1>$tittel</h1><br/>". strip_tags($innhold) ."
+                        <a href='/?side=les-innlegg&id=$kapid&kurs=$kursid'><div class='authorPost-button'>Les innlegg</div></a></div>
+                    ";
             }
         }
         else $this->labelText("ERROR", "Oi!", "Vi finner ikke innleggene til brukeren");
+    }
+
+    public function listAuthorStats() {
+
     }
 
     protected function getMemberList(){

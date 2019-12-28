@@ -2,17 +2,27 @@
 
 /* --------- MAIN STRUCTURE --------- */
 
+/* Variabler (CSS custom properties): */
+
+:root {
+	--main-color: #2C3E50;
+	--main-font: 'Lato', sans-serif;
+	--max-width: 1300px;
+}
+
+/* Generelt: */
+
 body{
 	background: #fff;
 }
 * {
 	margin: 0px;
 	padding: 0px;
-	font-family: 'Lato', sans-serif;
+	font-family: var(--main-font);
 }
 .wrapper{
 	margin: auto;
-	max-width: 1300px;
+	max-width: var(--max-width);
 	display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
@@ -50,7 +60,7 @@ a .fas {
 	margin-right: 5px;
 }
 .hyperlink {
-	color: #2C3E50;
+	color: var(--main-color);
 	text-decoration: none;
 }
 .hyperlink:hover {
@@ -79,7 +89,7 @@ a .fas {
 }
 .button {
 	color: #fff;
-	background: #2C3E50;
+	background: var(--main-color);
 	border-radius: 20px;
 	padding: 10px 15px 10px 15px;
 	text-decoration: none;
@@ -141,7 +151,7 @@ a .fas {
 }
 #cookieChoiceInfo a {
 	text-decoration: none;
-	color: #2C3E50;
+	color: var(--main-color);
 	font-size: 20px;
 	font-weight: 300;
 }
@@ -151,7 +161,7 @@ a .fas {
 #cookieChoiceInfo #cookieChoiceDismiss {
 	margin-right: 0px;
 	color: #fff !important;
-	background: #2C3E50;
+	background: var(--main-color);
 	padding: 7px 15px 10px 15px;
 	border-radius: 20px;
 }
@@ -184,7 +194,7 @@ a .fas {
 #warning-button:hover {opacity: .8; }
 #neutral-button {color: #000; background: #dbdbdb; }
 #neutral-button:hover {background: #d3d1d1; }
-#kodesonen-button {color: #fff; background: #2C3E50;}
+#kodesonen-button {color: #fff; background: var(--main-color);}
 #kodesonen-button:hover {background: #0f151b; }
 
 /* -------------- /END ------------- */
@@ -220,7 +230,7 @@ a .fas {
 .nav a li:last-child {
 	margin-right: 0px;
 	color: #fff;
-	background: #2C3E50;
+	background: var(--main-color);
 	padding: 7px 15px 7px 15px;
 	border-radius: 20px;
 	margin-top: -4px;
@@ -344,7 +354,7 @@ a .fas {
 	padding-top: 70px;
 	grid-column: span 12;
 	text-align: center;
-	background-color: #2C3E50;
+	background-color: var(--main-color);
 }
 .front-content h1, .front-content h2, .front-content h3, .front-content h4, .front-content h5, .front-content h6 {
 	padding: 0px 40px 0px 40px;
@@ -358,9 +368,22 @@ a .fas {
 	text-align: center;
 	border: 1px solid #ededed;
 	margin-bottom: 30px;
+	color: #000;
+	text-decoration: none;
+	transition: .3s;
+}
+.front-tab:hover {
+	background: rgb(234, 234, 234);
+}
+.front-tab h2 {
+	color: #000;
+	text-decoration: none;
+}
+.front-tab .fas {
+	color: var(--main-color);
 }
 .first{
-	border-bottom-left-radius: 5px !important;
+	border-bottom-left-radius: 5px !important; 	/* Burde egentlig finne en annen løsning på .first og .last */
 }
 .last{
 	border-bottom-right-radius: 5px;
@@ -425,7 +448,7 @@ a .fas {
 }
 .challenge-info-buttons .hyperlink {
 	margin-left: 10px;
-	color: #2C3E50;
+	color: var(--main-color);
 	text-decoration: none;
 }
 #image-ufordringer-id {
@@ -440,8 +463,7 @@ a .fas {
     -ms-transition: all 1s ease;
     transition: all 1s ease;;
 }
-/* Fiks et overlay for hovering av bilder? Testet her: */ 
-.utfordringer_image_overlay {
+.utfordringer_image_overlay {	/* Fiks et overlay for hovering av bilder? Testet her: */ 
 	position: absolute;
 	color: #f1f1f1;
 	transition: .5s ease;
@@ -476,7 +498,7 @@ a .fas {
 	margin: auto;
 	display: block;
 	width: 80%;
-	max-width: 1300px;
+	max-width: var(--max-width);
 }
 .challenge-info-buttons .hyperlink:hover {
 	text-decoration: underline;
@@ -537,7 +559,7 @@ a .fas {
 	display: block;
 	height: 3em;
 	line-height: 3;
-	background: #2c3e50;
+	background: var(--main-color);
 	overflow: hidden;
 	border-radius: .25em;
 }
@@ -571,7 +593,7 @@ a .fas {
 	margin: 20px 0px 20px 0px;
 }
 .medlem-form p a {
-	color: #2C3E50;
+	color: var(--main-color);
 	text-decoration: none;
 }
 .medlem-form p a:hover {
@@ -591,7 +613,7 @@ a .fas {
 	cursor: pointer;
 	font-size: medium;
 	border-radius: 20px;
-	background: #2C3E50;
+	background: var(--main-color);
 	font-size: 20px;
 	font-weight: 3000;
 }
@@ -703,7 +725,7 @@ a .fas {
 	background: rgb(234, 234, 234);
 }
 .box_symbol {
-	color: #2C3E50;
+	color: var(--main-color);
 	text-align: center;
 	float: left;
 	width: 25%;
@@ -863,12 +885,42 @@ a .fas {
 }
 .authorPost-section {
 	width: 100%;
-	padding: 15px 15px;
+	padding: 40px 40px;
 	border-radius: 5px;
 	transition: .3s;
 	color: #000;
 	margin-bottom: 30px;
 	border-bottom: 1px solid #f7f7f7;
+	background: #ccd9e7;
+	position: relative;
+}
+.authorPost-section:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	pointer-events: none;
+	background-image: linear-gradient(to bottom, rgba(204,217,231,0), rgba(229,237,246, 1) 60%);
+	width: 100%;
+	height: 10em;
+	z-index: 1;
+}
+
+a .authorPost-button {
+	position: absolute;
+    left:50%;
+	margin-left:-40px;
+	margin-top: -10px;
+	z-index: 10;
+	color:#fff;
+	background: var(--main-color);
+	padding: 7px 15px 7px 15px;
+	border-radius: 20px;
+}
+a .authPost-button:hover {
+	background: #0f151b;
+	transition: .3s;
 }
 
 /* Om oss */
@@ -918,7 +970,7 @@ a .fas {
 	margin-top: 10px;
 }
 .profile-social-links a{
-	color: #2C3E50;
+	color: var(--main-color);
 	font-size: x-large;
 }
 .profile-social-links a:hover {
@@ -956,7 +1008,7 @@ a .fas {
 	color: #000;
 }
 .footer-hyperlinks a:hover{
-	color: #2C3E50;
+	color: var(--main-color);
 }
 
 /* -------------- /END ------------- */
