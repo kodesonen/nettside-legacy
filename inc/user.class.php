@@ -186,7 +186,22 @@ class user extends Kodesonen{
     }
 
     public function listAuthorStats() {
+        $query = $this->sql->pdo->query("SELECT innhold, forfatter
+                                        FROM kursinnlegg, kurskapitler
+                                        WHERE forfatter =". $_GET['id'] ."
+                                        AND kursinnlegg.kapid = kurskapitler.id");
 
+        $total_count = $query->rowCount();
+
+        if($total_count > 10) {
+            echo "<br/><p> Er en aktiv forfatter med $total_count publiserte innlegg. </p>";
+        }
+        elseif($total_count > 50) {
+            echo "<br/><p><i class='fas fa-trophy'></i> Er en super aktiv forfatter med $total_count publiserte innlegg. </p>";
+        }
+        else {
+            echo "<br/><p> Det finnes $total_count innlegg skrevet av brukeren. </p>";
+        }
     }
 
     protected function getMemberList(){

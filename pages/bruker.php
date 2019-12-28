@@ -16,7 +16,7 @@
 <div class="wrapper">
     <div class="kurs_info">
 		<h1>Innhold skrevet av <?php $core->requestSpecificData("medlemmer", "id", $_GET ['id'], "navn"); ?></h1>
-		<?php //$core->listAuthorStats(); ?>
+		<?php $core->listAuthorStats(); ?>
     </div>
 
     <div class="course_jump_break">

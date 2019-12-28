@@ -305,6 +305,11 @@ class Kodesonen{
 		$usr = new user;
 		$usr->listAuthorPosts();
 	}
+
+	public function listAuthorStats(){
+		$usr = new user;
+		$usr->listAuthorStats();
+	}
 	
 	public function listSEO(){
 		$adm = new admin;

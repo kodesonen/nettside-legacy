@@ -891,7 +891,7 @@ a .fas {
 	color: #000;
 	margin-bottom: 30px;
 	border-bottom: 1px solid #f7f7f7;
-	background: #ccd9e7;
+	background: rgb(245, 245, 245);
 	position: relative;
 }
 .authorPost-section:after {
@@ -901,7 +901,7 @@ a .fas {
 	bottom: 0;
 	left: 0;
 	pointer-events: none;
-	background-image: linear-gradient(to bottom, rgba(204,217,231,0), rgba(229,237,246, 1) 60%);
+	background-image: linear-gradient(to bottom, rgba(234,234,234, 0), rgba(245,245,245, 1) 60%);
 	width: 100%;
 	height: 10em;
 	z-index: 1;
@@ -918,7 +918,7 @@ a .authorPost-button {
 	padding: 7px 15px 7px 15px;
 	border-radius: 20px;
 }
-a .authPost-button:hover {
+.authPost-button:hover {
 	background: #0f151b;
 	transition: .3s;
 }
