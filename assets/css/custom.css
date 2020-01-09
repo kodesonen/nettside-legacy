@@ -35,6 +35,7 @@ h3 {
 }
 p{
 	font-size: 18px;
+	color: #232323;
 }
 hr {
 	border: 1px solid rgba(0, 0, 0, 0.1);
@@ -51,7 +52,7 @@ td {
 	vertical-align: top;
 }
 tr:nth-child(odd) {
-	background-color: #eaeaea;
+	background-color: #eeeeee;
 }
 .table-bordered {
 	border: 1px solid #dee2e6;
@@ -196,6 +197,62 @@ a .fas {
 #neutral-button:hover {background: #d3d1d1; }
 #kodesonen-button {color: #fff; background: var(--main-color);}
 #kodesonen-button:hover {background: #0f151b; }
+
+/* Github: */
+
+body .gist .gist-file {
+    margin-bottom: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 0;
+}
+
+body .gist .gist-data {
+    border-bottom: none;
+    border-radius: 0;
+    background-color: #f1f3f5;
+}
+
+body .gist .blob-wrapper {
+    border-radius: 0;
+}
+
+body .gist .highlight {
+    background-color: transparent;
+    font-size: 18px;
+}
+
+body .gist .highlight td {
+    padding: 5px 15px !important;
+    line-height: 1;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+body .gist tr:first-child td {
+    padding-top: 15px !important;
+}
+
+body .gist tr:last-child td {
+    padding-bottom: 15px !important;
+}
+
+body .gist .blob-num {
+    color: #c1c1c1;
+	background: #fafafa;
+    pointer-events: none;
+	border-bottom-color: #fafafa !important;
+	border-top-color: #fafafa !important;
+}
+
+body .gist .gist-meta {
+    display: none;
+}
+.gist tr{
+	background-color: #fff !important;
+}
+.gist tr:nth-child(odd) {
+	background-color: #fff !important;
+}
 
 /* -------------- /END ------------- */
 
@@ -913,13 +970,12 @@ a .authorPost-button {
 	margin-left:-40px;
 	margin-top: -10px;
 	z-index: 10;
-	color:#fff;
-	background: var(--main-color);
+	color:var(--main-color);
 	padding: 7px 15px 7px 15px;
 	border-radius: 20px;
 }
 .authPost-button:hover {
-	background: #0f151b;
+	text-decoration: underline;
 	transition: .3s;
 }
 
