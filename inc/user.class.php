@@ -177,7 +177,7 @@ class user extends Kodesonen{
                 $kursid = $row['kursid'];
 
                 echo "
-                        <div class='authorPost-section'><h1>$tittel</h1><br/>". strip_tags($innhold) ."
+                        <div class='authorPost-section'><h1>$tittel</h1> <br/> <p>". strip_tags($innhold) ."</p>
                         <a href='/?side=les-innlegg&id=$kapid&kurs=$kursid'><div class='authorPost-button'>Les innlegg</div></a></div>
                     ";
             }

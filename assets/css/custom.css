@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400, 700, 900');
 
 /* --------- MAIN STRUCTURE --------- */
 
@@ -27,11 +27,17 @@ body{
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
 }
-h1, h2, h4{
+h1, h2 {
+	font-weight: 700;
+	color: #232323;
+}
+h4 {
 	font-weight: 300;
+	color: #232323;
 }
 h3 {
 	font-weight: bold;
+	color: #232323;
 }
 p{
 	font-size: 18px;
@@ -63,9 +69,11 @@ a .fas {
 .hyperlink {
 	color: var(--main-color);
 	text-decoration: none;
+	border-bottom:.1111em solid transparent;
+	font-weight: 700;
 }
-.hyperlink:hover {
-	text-decoration: underline;
+.hyperlink:focus, .hyperlink:hover {
+	border-bottom-color: var(--main-color);
 }
 .disabled_input {
 	background-color: #dbdbdb !important;
@@ -120,6 +128,7 @@ a .fas {
 .breadcrumb-nav li a {
 	color: #000;
 	text-decoration: none;
+	font-weight: 700;
 }
 .breadcrumb-nav li a:hover {
 	text-decoration: underline;
@@ -306,6 +315,9 @@ body .gist .gist-meta {
 
 /* Admin */
 
+.admin-black h1, .admin-black h2, .admin-black h3, .admin-black h4, .admin-black p { /* For admin panel */
+	color: #fff;
+}
 .admin-header {
 	background-color: #222222;
 	padding: 10px;
@@ -824,9 +836,15 @@ body .gist .gist-meta {
 .course_select:hover{
 	background: rgb(234, 234, 234);
 }
+.course_select_symbol h2 {
+	font-weight: 300;
+}
 .course_select_info {
 	float: left;
 	width: 83%;	
+}
+.course_select_info h2 {
+	font-weight: 300;
 }
 .course_select_info h3 {
 	font-weight: 400;
@@ -924,7 +942,11 @@ body .gist .gist-meta {
 .course-navigation-select .fas {
 	margin-top: 7px;
 	font-size: x-large !important;
-	color: #d3d3d3;
+	color: #232323;
+}
+.fa-book-open {
+	color: none !important;
+	font-size: 18px;
 }
 .course-navigation-select .fa-long-arrow-alt-left {
 	float: left;
