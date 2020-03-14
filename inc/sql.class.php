@@ -32,6 +32,15 @@ class sqlCommunication{
         return $query;
 	}
 
+	/* Needs to be completed: 
+	public function selectAuthorData(){
+		$query = $this->pdo->prepare("SELECT id, tittel 
+									  FROM kurskapitler 
+									  INNER JOIN dato, innhold ON kurskapitler.id =  
+									  WHERE id = $_GET['id]");
+	}
+	*/
+
 	public function grabData($table, $column, $data, $request){
 		$query = $this->selectWithData($table, $column, $data);
         if($query->rowCount() != 0){

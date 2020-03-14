@@ -47,6 +47,13 @@ switch($_GET['side']){
     case 'endre-seo': include("pages/endre-seo.php"); break;
     case 'send-epost': include("pages/send-epost.php"); break;
     case 'generelle-innstillinger': include("pages/generelle-innstillinger.php"); break;
+	
+	// Challenges 23.01.2020:
+	case '16779241499': include("pages/challenges/16779241499.php"); break;
+	case '299414291677': include("pages/challenges/299414291677.php"); break;
+	case '30366452': include("pages/challenges/30366452.php"); break;
+	case '44019273': include("pages/challenges/44019273.php"); break;
+	
     default: include("pages/404.php"); break;
 }
 

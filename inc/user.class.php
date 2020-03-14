@@ -133,7 +133,7 @@ class user extends Kodesonen{
                 echo "
                 <div class='challenge-box'>
                     <div class='challenge-image'>
-                        <center><img id='image-ufordringer-id' alt='Dette er en eksempel tekst!' src='assets/img/challenges/meetup-example.jpg'/></center>
+                        <center><img id='image-ufordringer-id' alt='Dette er en eksempel tekst!' src='assets/img/challenges/Wallpaper.png'/></center>
                         <div class='utfordringer_image_overlay'><i class='fas fa-search-plus'></i></div>
                     </div>
 

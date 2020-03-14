@@ -4,7 +4,7 @@
 	<?php $core->getHeader(); ?>
 	<div class="wrapper">
 		<div class="front-content">
-			<h1>En kodeklubb ved Universitet i Sørøst-Norge, Kongsberg. Vi har som formål å skape et trivelig, teknologisk og utfordrende miljø for våre medlemmer. </h1>
+			<h1 class="home-h1">En kodeklubb ved Universitet i Sørøst-Norge, Kongsberg. Vi har som formål å skape et trivelig, teknologisk og utfordrende miljø for våre medlemmer. </h1>
 		</div>
 
 		<a href="/?side=utfordringer" class="front-tab first">

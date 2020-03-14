@@ -371,7 +371,7 @@ class admin extends Kodesonen{
         else $this->labelText("ERROR", "Hei du", "Husk å fylle ut alle tekstfeltene!");
     }
 
-	protected function SEO() { // Burde finne en ny løsning på hvilke sider som kan kunne endres
+	protected function SEO(){
 		$excludedFiles = array(
             'login.php',
             'admin.php', 
@@ -410,8 +410,7 @@ class admin extends Kodesonen{
 		/* 
 		
 		*/
-    }
-       
+	}
 }
 
 ?>

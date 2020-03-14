@@ -20,7 +20,7 @@
 <div class="wrapper">
     <div class="kurs_info">
         <h1><?php $core->getChapterName(); ?></h1><br/>
-        <p>Dato: <?php $core->getPostDate(); ?> | Skrevet av: <a href="/?side=bruker&id=<?php $core->requestSpecificData("kursinnlegg", "kapid", $_GET ['id'], "forfatter"); ?>" class="hyperlink"><?php $core->getAuthor(); ?></a></p>           
+        <p><strong>Dato:</strong> <?php $core->getPostDate(); ?> | <strong>Skrevet av:</strong> <a href="/?side=bruker&id=<?php $core->requestSpecificData("kursinnlegg", "kapid", $_GET ['id'], "forfatter"); ?>" class="hyperlink"><?php $core->getAuthor(); ?></a></p>           
     </div>
 
     <div class="course_jump_break">

@@ -480,6 +480,9 @@ body .gist .gist-meta {
 	top: 50%;
 	transform: translateY(-50%);
 }
+.home-h1 {
+	font-weight: 300;
+}
 
 /* Utfordringer */
 
@@ -819,6 +822,9 @@ body .gist .gist-meta {
 	width: 15%;
 	color: #d3d3d3;
 }
+.box_numbers h4 {
+	color: #cccccc;
+}
 .course_select {
 	grid-column: span 6;
 	background: rgb(245, 245, 245);
@@ -829,6 +835,9 @@ body .gist .gist-meta {
 	margin-bottom: 10px;
 	margin-right: 8px;
 	margin-left: 8px;
+}
+.course_select .fas {
+	color: #cccccc;
 }
 .course_select span {
 	font-weight: 400;
@@ -954,7 +963,7 @@ body .gist .gist-meta {
 }
 .course-navigation-select .fa-long-arrow-alt-right {
 	float: right;
-	margin-right: 15px;
+	margin-left: 15px;
 }
 .course-navigation-info-break {
 	width: 100%;
