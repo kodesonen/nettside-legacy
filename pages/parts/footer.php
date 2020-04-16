@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="wrapper">
         <div class="footer-trademark">
-            <p>© 2019, <a href="/?side=hjem"><?php echo $this->name; ?>.no</a></p>
+            <p>© 2020, <a href="/?side=hjem"><?php echo $this->name; ?>.no</a></p>
         </div>
 
         <div class="footer-hyperlinks">
